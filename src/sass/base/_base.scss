@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap');
+@font-face {
+    font-family: "BrunoAce";
+  
+    src: url("../../fonts/BrunoAceRegular.woff") format("woff"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading;
+}
+
+p {
+    font-family: $p;
+  }
+
+a{
+    font-family: $p;
+}
+  
