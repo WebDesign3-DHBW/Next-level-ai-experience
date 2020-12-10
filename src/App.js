@@ -3,7 +3,7 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="App">
+    <div className="View">
       <section style={{ backgroundColor: "tomato" }}>
         <h1>Section One</h1>
       </section>
