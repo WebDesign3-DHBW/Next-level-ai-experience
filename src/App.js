@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="View">
+      <section style={{ backgroundColor: "tomato" }}>
+        <h1>Section One</h1>
+      </section>
+      <section style={{ backgroundColor: "skyblue" }}>
+        <h1>Section Two</h1>
+      </section>
+      <section style={{ backgroundColor: "fuchsia" }}>
+        <h1>Section Three</h1>
+      </section>
+      <section style={{ backgroundColor: "palegoldenrod" }}>
+        <h1>Section Four</h1>
+      </section>
+      <section style={{ backgroundColor: "mediumseagreen" }}>
+        <h1>Section Five</h1>
+      </section>
     </div>
   );
 }
