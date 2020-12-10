@@ -2,7 +2,7 @@ import "./sass/main.scss";
 
 function App() {
   return (
-    <div className="View">
+    <div className="view">
       <section style={{ backgroundColor: "tomato" }}>
         <h1>Section One</h1>
       </section>
