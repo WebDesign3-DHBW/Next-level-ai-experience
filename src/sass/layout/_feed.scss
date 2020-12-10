@@ -1,22 +1,16 @@
 .view {
-    width: 100vw;
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-  }
-  
-  section {
-    height: 100vh;
-    padding: 4rem;
-    color: white;
-  
-    /* align center */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  
-    /* scroll-snap */
-    scroll-snap-align: start;
-    scroll-snap-stop: normal;
-  }
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  position: relative;
+}
+
+section {
+  height: 100vh;
+  color: white;
+
+  /* scroll-snap */
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
