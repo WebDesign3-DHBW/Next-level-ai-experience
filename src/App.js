@@ -1,10 +1,11 @@
+import Hero from "./components/Hero";
 import "./sass/main.scss";
 
 function App() {
   return (
     <div className="view">
-      <section style={{ backgroundColor: "tomato" }}>
-        <h1>Section One</h1>
+      <section className="Section1">
+        <Hero />
       </section>
       <section style={{ backgroundColor: "skyblue" }}>
         <h1>Section Two</h1>
