@@ -4,7 +4,7 @@ import "./sass/main.scss";
 function App() {
   return (
     <div className="view">
-      <section className="Section1" style={{ backgroundColor: "white" }}>
+      <section className="Section1">
         <Hero />
       </section>
       <section style={{ backgroundColor: "skyblue" }}>
