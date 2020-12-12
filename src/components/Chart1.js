@@ -9,19 +9,37 @@ const BarChart = () => {
     <div>
       <HorizontalBar
         data={{
-          labels: ["1", "2", "3", "4", "5", "6"],
+          labels: [
+            "Sonst. Dienstleist.",
+            "Großhandel",
+            "IKT",
+            "Sonst. Verarb. Gew.",
+            "Elektrot./Maschin.b.",
+            "Chemie/Ph., Gr.st.",
+            "Ver-/Entsorg., Bg.b.",
+            "Untern.nahe Dienstl.",
+            "Verkehr, Logistik",
+            "Fahrzeugbau",
+            "Finanzdienstleist.",
+          ],
           datasets: [
             {
               label: "essenziell",
               stack: "Stack 0",
-              data: [12, 19, 3, 5, 2, 3],
+              data: [20, 17, 17, 13, 12, 11, 10, 10, 10, 4, 0],
               backgroundColor: "blue",
             },
             {
               label: "wichtig",
               stack: "Stack 0",
-              data: [6, 8, 5, 5, 3, 1],
+              data: [56, 64, 60, 60, 72, 74, 72, 66, 73, 71, 68],
               backgroundColor: "green",
+            },
+            {
+              label: "weniger wichtig",
+              stack: "Stack 0",
+              data: [24, 19, 23, 27, 16, 15, 17, 23, 17, 24, 32],
+              backgroundColor: "turquoise",
             },
           ],
         }}
@@ -29,6 +47,12 @@ const BarChart = () => {
         width={600}
         options={{
           maintainAspectRatio: false,
+          title: {
+            display: true,
+            fontSize: 22,
+            text:
+              "Bedeutung des Einsatzes von KI für die Geschäftstätigkeit der Unternehmen der deutschen Wirtschaft 2019 (in %)",
+          },
           scales: {
             yAxes: [
               {
@@ -40,7 +64,6 @@ const BarChart = () => {
             ],
           },
         }}
-        lazy
       />
     </div>
   );
