@@ -7,7 +7,7 @@ function App() {
       <section className="Section1">
         <Hero />
       </section>
-      <section style={{ backgroundColor: "skyblue" }}>
+      <section>
         <h1>Section Two</h1>
       </section>
       <section style={{ backgroundColor: "fuchsia" }}>

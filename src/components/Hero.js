@@ -1,4 +1,4 @@
-import wave from "../images/Wave.svg";
+import wave from "../images/wave1.svg";
 import heroSVG from "../images/HeroSVG.svg";
 
 function Hero() {
@@ -13,7 +13,7 @@ function Hero() {
       </div>
 
       <img className="heroSVG" src={heroSVG} alt="wave vector" />
-      <img className="wave" src={wave} alt="wave vector" />
+      <img id="wave1" src={wave} alt="wave vector" />
     </div>
   );
 }
