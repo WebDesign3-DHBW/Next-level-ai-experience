@@ -1,5 +1,6 @@
 import Hero from "./components/Hero";
 import BarChart from "./components/Chart1";
+import RadarChart from "./components/RadarChart1";
 import "./sass/main.scss";
 
 function App() {
@@ -14,8 +15,8 @@ function App() {
       <section style={{ backgroundColor: "white" }}>
         <BarChart />
       </section>
-      <section style={{ backgroundColor: "palegoldenrod" }}>
-        <h1>Section Four</h1>
+      <section style={{ backgroundColor: "white" }}>
+        <RadarChart />
       </section>
       <section style={{ backgroundColor: "mediumseagreen" }}>
         <h1>Section Five</h1>
