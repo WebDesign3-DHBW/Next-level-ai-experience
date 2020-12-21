@@ -51,7 +51,7 @@ const BarChart = () => {
             display: true,
             fontSize: 22,
             text:
-              "Bedeutung des Einsatzes von KI für die Geschäftstätigkeit der Unternehmen der deutschen Wirtschaft 2019 (in %)",
+              "Abb. 2-12: Bedeutung des Einsatzes von KI für die Geschäftstätigkeit der Unternehmen der deutschen Wirtschaft 2019 (in %)",
           },
           scales: {
             yAxes: [
