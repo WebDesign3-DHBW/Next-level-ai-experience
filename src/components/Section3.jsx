@@ -5,7 +5,7 @@ import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 
 am4core.useTheme(am4themes_animated);
 
-function Section1() {
+function Section3() {
   const chart = useRef(null);
 
   useLayoutEffect(() => {
@@ -66,4 +66,4 @@ function Section1() {
   return <div id="chartdiv" style={{ width: "100%", height: "500px" }}></div>;
 }
 
-export default Section1;
+export default Section3;
