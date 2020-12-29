@@ -31,3 +31,17 @@ p {
 a {
   font-family: $p;
 }
+
+b {
+  color: $primary;
+}
+
+.iconGrey {
+  color: $grey;
+}
+
+.heroH2 {
+    text-align: center;
+    padding-bottom: .5em;
+    border-bottom: 2px solid $primary;
+}
