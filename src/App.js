@@ -1,24 +1,22 @@
-import Hero from "./components/Hero";
-import BarChart from "./components/Chart1";
 import "./sass/main.scss";
 
 function App() {
   return (
-    <div className="view">
-      <section className="Section1">
-        <Hero />
+    <div className='view'>
+      <section>
+        <p>Section 1</p>
       </section>
       <section>
-        <h1>Section Two</h1>
+        <p>Section 2</p>
       </section>
-      <section style={{ backgroundColor: "white" }}>
-        <BarChart />
+      <section>
+        <p>Section 3</p>
       </section>
-      <section style={{ backgroundColor: "palegoldenrod" }}>
-        <h1>Section Four</h1>
+      <section>
+        <p>Section 4</p>
       </section>
-      <section style={{ backgroundColor: "mediumseagreen" }}>
-        <h1>Section Five</h1>
+      <section>
+        <p>Section 5</p>
       </section>
     </div>
   );
