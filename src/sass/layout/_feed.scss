@@ -4,12 +4,13 @@
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   position: relative;
-  background: linear-gradient(212.22deg, #0D1534 7.47%, #17255B 80.67%);
+  background: linear-gradient(212.22deg, #0d1534 7.47%, #17255b 80.67%);
 }
 
 section {
   height: 100vh;
 
+  margin: 0px 50px;
   /* scroll-snap */
   scroll-snap-align: start;
   scroll-snap-stop: normal;
