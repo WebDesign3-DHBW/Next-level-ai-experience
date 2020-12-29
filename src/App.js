@@ -1,10 +1,11 @@
+import Section1 from "./components/Section1";
 import "./sass/main.scss";
 
 function App() {
   return (
-    <div className='view'>
+    <div className="view">
       <section>
-        <p>Section 1</p>
+        <Section1 />
       </section>
       <section>
         <p>Section 2</p>
