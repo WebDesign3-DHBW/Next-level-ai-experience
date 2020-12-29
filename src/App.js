@@ -1,23 +1,48 @@
 import Section3 from "./components/Section3";
 import "./sass/main.scss";
+import Section1 from "./sections/section1/Section1";
+import Section2 from "./sections/section2/Section2";
+import Section3 from "./sections/section3/Section3";
+import Section4 from "./sections/section4/Section4";
+import Section5 from "./sections/section5/Section5";
+import Section6 from "./sections/section6/Section6";
+import Section7 from "./sections/section7/Section7";
+import Section8 from "./sections/section8/Section8";
+import Section9 from "./sections/section9/Section9";
+import Footer from "./sections/footer/Footer";
 
 function App() {
   return (
     <div className="view">
       <section>
-        <p>Section 1</p>
+        <Section1 />
       </section>
       <section>
-        <p>Section 2</p>
+        <Section2 />
       </section>
       <section>
         <Section3 />
       </section>
       <section>
-        <p>Section 4</p>
+        <Section4 />
       </section>
       <section>
-        <p>Section 5</p>
+        <Section5 />
+      </section>
+      <section>
+        <Section6 />
+      </section>
+      <section>
+        <Section7 />
+      </section>
+      <section>
+        <Section8 />
+      </section>
+      <section>
+        <Section9 />
+      </section>
+      <section>
+        <Footer />
       </section>
     </div>
   );
