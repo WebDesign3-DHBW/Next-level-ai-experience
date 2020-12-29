@@ -1,4 +1,3 @@
-import Section3 from "./components/Section3";
 import "./sass/main.scss";
 import Section1 from "./sections/section1/Section1";
 import Section2 from "./sections/section2/Section2";
@@ -13,7 +12,7 @@ import Footer from "./sections/footer/Footer";
 
 function App() {
   return (
-    <div className="view">
+    <div className='view'>
       <section>
         <Section1 />
       </section>
