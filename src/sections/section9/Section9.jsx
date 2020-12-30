@@ -1,7 +1,9 @@
+import PieOfAPie from "./PieOfAPie";
+
 function Section9() {
   return (
     <>
-      <p>Section 9</p>
+      <PieOfAPie />
     </>
   );
 }
