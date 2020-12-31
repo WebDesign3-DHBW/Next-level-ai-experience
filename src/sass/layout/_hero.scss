@@ -1,11 +1,12 @@
-.flexContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  height: 60vh;
-}
 .container {
+  transform: translate(-65%, 150%);
   display: flex;
   flex-direction: column;
   width: 600px;
+}
+
+#tsparticles {
+  width: 100%;
+  height: 150%;
+  transform: translate(0%, -50%);
 }
