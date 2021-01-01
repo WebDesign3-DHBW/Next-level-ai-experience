@@ -3,6 +3,18 @@ import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import am4themes_wdTheme from "../../theme";
+import Chemie from "../../svg/Ph., Gr. st..svg";
+import Entsorg from "../../svg/Entsorg, Bg.b..svg";
+import Fahrzeugbau from "../../svg/Fahrzeugbau.svg";
+import Finanzdienstleist from "../../svg/Finanzdienstleist..svg";
+import Gesamtwirtschaft from "../../svg/Gesamtwirthschaft.svg";
+import Großhandel from "../../svg/Großhandel.svg";
+import IKT from "../../svg/IKT.svg";
+import Maschinenbau from "../../svg/Maschin.b..svg";
+import SonstVerarb from "../../svg/Sonst Verarb. Gew..svg";
+import SonstDienst from "../../svg/Sonst. Dienstleist..svg";
+import UnternNaheDiesnt from "../../svg/Untern. nahe. Dienstl..svg";
+import VerkehrLogistik from "../../svg/Verkehr, Logistik.svg";
 
 am4core.useTheme(am4themes_animated);
 am4core.useTheme(am4themes_wdTheme);
@@ -12,39 +24,127 @@ function Chart() {
 
   useLayoutEffect(() => {
     var x = am4core.create("ersterEinsatz", am4charts.XYChart);
-
-    var dateAxis = x.xAxes.push(new am4charts.DateAxis());
     x.dateFormatter.dateFormat = "yyyy";
-    // dateAxis.dataFields.category = "year";
+
+    // DateAxis
+    var dateAxis = x.xAxes.push(new am4charts.DateAxis());
     dateAxis.title.text = "Jahr";
+    dateAxis.renderer.line.strokeOpacity = 1;
+    dateAxis.renderer.line.strokeWidth = 5;
+    dateAxis.renderer.line.stroke = am4core.color("#004D88");
+    // dateAxis.min = "2010";
+    // dateAxis.max = "2019";
+    // dateAxis.strictMinMax = true;
+    dateAxis.tooltipDateFormat = "yyyy";
+    dateAxis.extraTooltipPrecision = 2;
+    dateAxis.baseInterval = {
+      timeUnit: "year",
+      count: 1,
+    };
+    // dateAxis.skipEmptyPeriods = true;
+
+    // ValueAxis
     var valueAxis = x.yAxes.push(new am4charts.ValueAxis());
     valueAxis.title.text = "Prozent";
+    valueAxis.min = 0;
+    valueAxis.max = 105;
+    // valueAxis.extraMin = 0.1;
+    // valueAxis.extraMax = 0.1;
+    valueAxis.strictMinMax = true;
+    valueAxis.renderer.minLabelPosition = 0.01;
+    valueAxis.renderer.line.strokeOpacity = 1;
+    valueAxis.renderer.line.strokeWidth = 5;
+    valueAxis.renderer.line.stroke = am4core.color("#004D88");
 
-    createSeries("percent", "Finanzdienstleist.");
-    createSeries("percent", "Chemie/Ph., Gr.st.");
-    createSeries("percent", "Elektrot./Maschin.b.");
-    createSeries("percent", "IKT");
-    createSeries("percent", "Großhandel");
-    createSeries("percent", "Verkehr, Logistik");
-    createSeries("percent", "Ver-/Entsorg., Bg.b.");
-    createSeries("percent", "Sonst. Verarb. Gew.");
-    createSeries("percent", "Untern.nahe Dienstl.");
-    createSeries("percent", "Sonst. Dienstleist.");
-    createSeries("percent", "Fahrzeugbau");
-    createSeries("percent", "Gesamtwirtschaft");
+    const series1 = createSeries("Finanzdienstleist.", true);
+    series1.dummyData = {
+      customIcon: Finanzdienstleist,
+    };
+    const series2 = createSeries("Chemie/Ph., Gr.st.", true);
+    series2.dummyData = {
+      customIcon: Chemie,
+    };
+    const series3 = createSeries("Elektrot./Maschin.b.", true);
+    series3.dummyData = {
+      customIcon: Maschinenbau,
+    };
+    const series4 = createSeries("IKT", true);
+    series4.dummyData = {
+      customIcon: IKT,
+    };
+    const series5 = createSeries("Großhandel", true);
+    series5.dummyData = {
+      customIcon: Großhandel,
+    };
+    const series6 = createSeries("Verkehr, Logistik", true);
+    series6.dummyData = {
+      customIcon: VerkehrLogistik,
+    };
+    const series7 = createSeries("Ver-/Entsorg., Bg.b.", true);
+    series7.dummyData = {
+      customIcon: Entsorg,
+    };
+    const series8 = createSeries("Sonst. Verarb. Gew.", true);
+    series8.dummyData = {
+      customIcon: SonstVerarb,
+    };
+    const series9 = createSeries("Untern.nahe Dienstl.", true);
+    series9.dummyData = {
+      customIcon: UnternNaheDiesnt,
+    };
+    const series10 = createSeries("Sonst. Dienstleist.", true);
+    series10.dummyData = {
+      customIcon: SonstDienst,
+    };
+    const series11 = createSeries("Fahrzeugbau", true);
+    series11.dummyData = {
+      customIcon: Fahrzeugbau,
+    };
+    const series12 = createSeries("Gesamtwirtschaft", false);
+    series12.dummyData = {
+      customIcon: Gesamtwirtschaft,
+    };
+
+    // Add chart cursor
+    x.cursor = new am4charts.XYCursor();
+    x.cursor.fullWidthLineX = true;
+    x.cursor.lineX.strokeWidth = 0;
+    x.cursor.lineX.fill = am4core.color("#8F3985");
+    x.cursor.lineX.fillOpacity = 0.1;
+    x.cursor.behavior = "zoomXY";
+    x.cursor.maxTooltipDistance = 1;
+    x.cursor.snapToSeries = [
+      series1,
+      series2,
+      series3,
+      series4,
+      series5,
+      series6,
+      series7,
+      series8,
+      series9,
+      series10,
+      series11,
+      series12,
+    ];
 
     // Create series
-    function createSeries(branch, name) {
+    function createSeries(name, hide) {
       var series = x.series.push(new am4charts.LineSeries());
       series.dataFields.valueY = name;
       series.dataFields.dateX = "year";
       series.name = name;
+      series.strokeWidth = 4;
+      series.bullets.push(new am4charts.CircleBullet());
+      series.tooltipText = "{name} in {dateX}: [bold]{valueY}%[/]";
+      series.hidden = hide;
+      // series.legendSettings.valueText = "{valueY}";
 
       var segment = series.segments.template;
       segment.interactionsEnabled = true;
 
       var hoverState = segment.states.create("hover");
-      hoverState.properties.strokeWidth = 3;
+      hoverState.properties.strokeWidth = 6;
 
       var dimmed = segment.states.create("dimmed");
       dimmed.properties.stroke = am4core.color("#dadada");
@@ -119,25 +219,38 @@ function Chart() {
           Gesamtwirtschaft: 20 + 20 + 33 + 27,
         },
       ];
-      // var value = Math.round(Math.random() * 100) + 100;
-      // for (var i = 1; i < 100; i++) {
-      //   value += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 30 + i / 5);
-      //   var dataItem = { date: new Date(2018, 0, i) };
-      //   dataItem["percent" + branch] = value;
-      //   data.push(dataItem);
-      // }
-      console.log("data", data);
+
       series.data = data;
       return series;
     }
 
+    /* Create legend and enable default markers */
     x.legend = new am4charts.Legend();
-    // x.legend.position = "right";
-    x.legend.scrollable = true;
+    x.legend.useDefaultMarker = true;
+
+    /* Remove square from marker template */
+    var marker = x.legend.markers.template;
+    marker.disposeChildren();
+    marker.width = 40;
+    marker.height = 40;
+
+    // Add custom image instead
+    const customMarker = marker.createChild(am4core.Image);
+    customMarker.width = 40;
+    customMarker.height = 40;
+    customMarker.verticalCenter = "top";
+    customMarker.horizontalCenter = "left";
+    customMarker.adapter.add("href", function (href, target) {
+      if (target.dataItem && target.dataItem.dataContext && target.dataItem.dataContext.dummyData) {
+        return target.dataItem.dataContext.dummyData.customIcon;
+      } else {
+        return href;
+      }
+    });
+
     x.legend.itemContainers.template.events.on("over", function (event) {
       processOver(event.target.dataItem.dataContext);
     });
-
     x.legend.itemContainers.template.events.on("out", function (event) {
       processOut(event.target.dataItem.dataContext);
     });
