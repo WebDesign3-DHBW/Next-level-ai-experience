@@ -15,6 +15,7 @@ import SonstVerarb from "../../svg/Sonst Verarb. Gew..svg";
 import SonstDienst from "../../svg/Sonst. Dienstleist..svg";
 import UnternNaheDiesnt from "../../svg/Untern. nahe. Dienstl..svg";
 import VerkehrLogistik from "../../svg/Verkehr, Logistik.svg";
+import { chemiePath } from "../../utils/svgPaths";
 
 am4core.useTheme(am4themes_animated);
 am4core.useTheme(am4themes_wdTheme);
@@ -56,51 +57,51 @@ function Chart() {
     valueAxis.renderer.line.strokeWidth = 5;
     valueAxis.renderer.line.stroke = am4core.color("#004D88");
 
-    const series1 = createSeries("Finanzdienstleist.", true);
+    const series1 = createSeries("Finanzdienstleist.", true, "#78DF6C");
     series1.dummyData = {
       customIcon: Finanzdienstleist,
     };
-    const series2 = createSeries("Chemie/Ph., Gr.st.", true);
+    const series2 = createSeries("Chemie/Ph., Gr.st.", true, "#0FAA94");
     series2.dummyData = {
-      customIcon: Chemie,
+      path: chemiePath,
     };
-    const series3 = createSeries("Elektrot./Maschin.b.", true);
+    const series3 = createSeries("Elektrot./Maschin.b.", true, "#F09443");
     series3.dummyData = {
       customIcon: Maschinenbau,
     };
-    const series4 = createSeries("IKT", true);
+    const series4 = createSeries("IKT", true, "#EDE750");
     series4.dummyData = {
       customIcon: IKT,
     };
-    const series5 = createSeries("Großhandel", true);
+    const series5 = createSeries("Großhandel", true, "#FF00FF");
     series5.dummyData = {
       customIcon: Großhandel,
     };
-    const series6 = createSeries("Verkehr, Logistik", true);
+    const series6 = createSeries("Verkehr, Logistik", true, "#4CC8DD");
     series6.dummyData = {
       customIcon: VerkehrLogistik,
     };
-    const series7 = createSeries("Ver-/Entsorg., Bg.b.", true);
+    const series7 = createSeries("Ver-/Entsorg., Bg.b.", true, "#BB57FE");
     series7.dummyData = {
       customIcon: Entsorg,
     };
-    const series8 = createSeries("Sonst. Verarb. Gew.", true);
+    const series8 = createSeries("Sonst. Verarb. Gew.", true, "#E1AAFE");
     series8.dummyData = {
       customIcon: SonstVerarb,
     };
-    const series9 = createSeries("Untern.nahe Dienstl.", true);
+    const series9 = createSeries("Untern.nahe Dienstl.", true, "#FA2662");
     series9.dummyData = {
       customIcon: UnternNaheDiesnt,
     };
-    const series10 = createSeries("Sonst. Dienstleist.", true);
+    const series10 = createSeries("Sonst. Dienstleist.", true, "#4985D4");
     series10.dummyData = {
       customIcon: SonstDienst,
     };
-    const series11 = createSeries("Fahrzeugbau", true);
+    const series11 = createSeries("Fahrzeugbau", true, "#FFF8F9");
     series11.dummyData = {
       customIcon: Fahrzeugbau,
     };
-    const series12 = createSeries("Gesamtwirtschaft", false);
+    const series12 = createSeries("Gesamtwirtschaft", false, "#4F4FFE");
     series12.dummyData = {
       customIcon: Gesamtwirtschaft,
     };
@@ -129,13 +130,15 @@ function Chart() {
     ];
 
     // Create series
-    function createSeries(name, hide) {
+    function createSeries(name, hide, color) {
       var series = x.series.push(new am4charts.LineSeries());
       series.dataFields.valueY = name;
       series.dataFields.dateX = "year";
       series.name = name;
       series.strokeWidth = 4;
-      series.bullets.push(new am4charts.CircleBullet());
+      series.stroke = am4core.color(color);
+      const bullet = series.bullets.push(new am4charts.CircleBullet());
+      bullet.fill = color;
       series.tooltipText = "{name} in {dateX}: [bold]{valueY}%[/]";
       series.legendSettings.labelText = " ";
       series.hidden = hide;
@@ -247,6 +250,13 @@ function Chart() {
       } else {
         return href;
       }
+    });
+
+    customMarker.propertyFields.fill = "fill";
+
+    customMarker.adapter.add("dx", function (dx, target) {
+      target.path = target.dataItem.dataContext.dummyData.path;
+      return dx;
     });
 
     x.legend.itemContainers.template.events.on("over", function (event) {
