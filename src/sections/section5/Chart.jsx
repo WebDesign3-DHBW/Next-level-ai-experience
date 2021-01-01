@@ -137,6 +137,7 @@ function Chart() {
       series.strokeWidth = 4;
       series.bullets.push(new am4charts.CircleBullet());
       series.tooltipText = "{name} in {dateX}: [bold]{valueY}%[/]";
+      series.legendSettings.labelText = " ";
       series.hidden = hide;
       // series.legendSettings.valueText = "{valueY}";
 
