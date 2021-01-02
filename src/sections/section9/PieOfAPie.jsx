@@ -2,8 +2,10 @@ import { useLayoutEffect, useRef } from "react";
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
+import am4themes_dark from "@amcharts/amcharts4/themes/dark";
 
 am4core.useTheme(am4themes_animated);
+am4core.useTheme(am4themes_dark);
 
 function PieOfAPie() {
   const chart = useRef(null);
@@ -19,65 +21,109 @@ function PieOfAPie() {
     // Add data
     x.data = [
       {
-        branch: "Lithuania",
-        litres: 500,
+        branch: "IKT",
+        amount: 1.5,
         subData: [
-          { name: "A", value: 200 },
-          { name: "B", value: 150 },
-          { name: "C", value: 100 },
-          { name: "D", value: 50 },
+          { name: "interne laufende Aufwendungen", value: 88 },
+          { name: "Investitionen", value: 10 },
+          { name: "externe Aufwendungen", value: 2 },
         ],
       },
       {
-        branch: "Czech Republic",
-        litres: 300,
+        branch: "Elektrotechnik, Maschinenbau",
+        amount: 0.68,
         subData: [
-          { name: "A", value: 150 },
-          { name: "B", value: 100 },
-          { name: "C", value: 50 },
+          { name: "interne laufende Aufwendungen", value: 66 },
+          { name: "Investitionen", value: 22 },
+          { name: "externe Aufwendungen", value: 12 },
         ],
       },
       {
-        branch: "Ireland",
-        litres: 200,
+        branch: "Fahrzeugbau",
+        amount: 0.84,
         subData: [
-          { name: "A", value: 110 },
-          { name: "B", value: 60 },
-          { name: "C", value: 30 },
+          { name: "interne laufende Aufwendungen", value: 74 },
+          { name: "Investitionen", value: 16 },
+          { name: "externe Aufwendungen", value: 10 },
         ],
       },
       {
-        branch: "Germany",
-        litres: 150,
+        branch: "Unternehmensnahe Dienstleistungen",
+        amount: 0.65,
         subData: [
-          { name: "A", value: 80 },
-          { name: "B", value: 40 },
-          { name: "C", value: 30 },
+          { name: "interne laufende Aufwendungen", value: 74 },
+          { name: "Investitionen", value: 15 },
+          { name: "externe Aufwendungen", value: 11 },
         ],
       },
       {
-        branch: "Australia",
-        litres: 140,
+        branch: "Sonstiges Verarbeitendes Gewerbe",
+        amount: 0.26,
         subData: [
-          { name: "A", value: 90 },
-          { name: "B", value: 40 },
-          { name: "C", value: 10 },
+          { name: "interne laufende Aufwendungen", value: 69 },
+          { name: "Investitionen", value: 20 },
+          { name: "externe Aufwendungen", value: 12 },
         ],
       },
       {
-        branch: "Austria",
-        litres: 120,
+        branch: "Finanzdienstleistungen",
+        amount: 0.24,
         subData: [
-          { name: "A", value: 60 },
-          { name: "B", value: 30 },
-          { name: "C", value: 30 },
+          { name: "interne laufende Aufwendungen", value: 71 },
+          { name: "Investitionen", value: 19 },
+          { name: "externe Aufwendungen", value: 10 },
+        ],
+      },
+      {
+        branch: "Sonstige Dienstleistungen",
+        amount: 0.19,
+        subData: [
+          { name: "interne laufende Aufwendungen", value: 75 },
+          { name: "Investitionen", value: 14 },
+          { name: "externe Aufwendungen", value: 10 },
+        ],
+      },
+      {
+        branch: "Verkehr und Logistik",
+        amount: 0.16,
+        subData: [
+          { name: "interne laufende Aufwendungen", value: 72 },
+          { name: "Investitionen", value: 17 },
+          { name: "externe Aufwendungen", value: 11 },
+        ],
+      },
+      {
+        branch: "Chemie/Pharma, Grundstoffe",
+        amount: 0.14,
+        subData: [
+          { name: "interne laufende Aufwendungen", value: 69 },
+          { name: "Investitionen", value: 19 },
+          { name: "externe Aufwendungen", value: 12 },
+        ],
+      },
+      {
+        branch: "Ver- und Entsorgung, Bergbau",
+        amount: 0.07,
+        subData: [
+          { name: "interne laufende Aufwendungen", value: 73 },
+          { name: "Investitionen", value: 17 },
+          { name: "externe Aufwendungen", value: 11 },
+        ],
+      },
+      {
+        branch: "Großhandel",
+        amount: 0.07,
+        subData: [
+          { name: "interne laufende Aufwendungen", value: 72 },
+          { name: "Investitionen", value: 17 },
+          { name: "externe Aufwendungen", value: 11 },
         ],
       },
     ];
 
     // Add and configure Series
     let pieSeries = x.series.push(new am4charts.PieSeries());
-    pieSeries.dataFields.value = "litres";
+    pieSeries.dataFields.value = "amount";
     pieSeries.dataFields.category = "branch";
     pieSeries.slices.template.states.getKey("active").properties.shiftRadius = 0;
     //pieSeries.labels.template.text = "{category}\n{value.percent.formatNumber('#.#')}%";
