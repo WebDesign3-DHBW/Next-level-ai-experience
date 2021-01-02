@@ -33,7 +33,7 @@ function Chart() {
     dateAxis.renderer.line.strokeOpacity = 1;
     dateAxis.renderer.line.strokeWidth = 5;
     dateAxis.renderer.line.stroke = am4core.color("#004D88");
-    // dateAxis.min = "2010";
+    // dateAxis.min = "0";
     // dateAxis.max = "2019";
     // dateAxis.strictMinMax = true;
     dateAxis.tooltipDateFormat = "yyyy";
@@ -57,54 +57,18 @@ function Chart() {
     valueAxis.renderer.line.strokeWidth = 5;
     valueAxis.renderer.line.stroke = am4core.color("#004D88");
 
-    const series1 = createSeries("Finanzdienstleist.", true, "#78DF6C");
-    series1.dummyData = {
-      customIcon: Finanzdienstleist,
-    };
-    const series2 = createSeries("Chemie/Ph., Gr.st.", true, "#0FAA94");
-    series2.dummyData = {
-      path: chemiePath,
-    };
-    const series3 = createSeries("Elektrot./Maschin.b.", true, "#F09443");
-    series3.dummyData = {
-      customIcon: Maschinenbau,
-    };
-    const series4 = createSeries("IKT", true, "#EDE750");
-    series4.dummyData = {
-      customIcon: IKT,
-    };
-    const series5 = createSeries("Großhandel", true, "#FF00FF");
-    series5.dummyData = {
-      customIcon: Großhandel,
-    };
-    const series6 = createSeries("Verkehr, Logistik", true, "#4CC8DD");
-    series6.dummyData = {
-      customIcon: VerkehrLogistik,
-    };
-    const series7 = createSeries("Ver-/Entsorg., Bg.b.", true, "#BB57FE");
-    series7.dummyData = {
-      customIcon: Entsorg,
-    };
-    const series8 = createSeries("Sonst. Verarb. Gew.", true, "#E1AAFE");
-    series8.dummyData = {
-      customIcon: SonstVerarb,
-    };
-    const series9 = createSeries("Untern.nahe Dienstl.", true, "#FA2662");
-    series9.dummyData = {
-      customIcon: UnternNaheDiesnt,
-    };
-    const series10 = createSeries("Sonst. Dienstleist.", true, "#4985D4");
-    series10.dummyData = {
-      customIcon: SonstDienst,
-    };
-    const series11 = createSeries("Fahrzeugbau", true, "#FFF8F9");
-    series11.dummyData = {
-      customIcon: Fahrzeugbau,
-    };
-    const series12 = createSeries("Gesamtwirtschaft", false, "#4F4FFE");
-    series12.dummyData = {
-      customIcon: Gesamtwirtschaft,
-    };
+    const series1 = createSeries("Finanzdienstleist.", true, "#78DF6C", Finanzdienstleist);
+    const series2 = createSeries("Chemie/Ph., Gr.st.", true, "#0FAA94", chemiePath);
+    const series3 = createSeries("Elektrot./Maschin.b.", true, "#F09443", Maschinenbau);
+    const series4 = createSeries("IKT", true, "#EDE750", IKT);
+    const series5 = createSeries("Großhandel", true, "#FF00FF", Großhandel);
+    const series6 = createSeries("Verkehr, Logistik", true, "#4CC8DD", VerkehrLogistik);
+    const series7 = createSeries("Ver-/Entsorg., Bg.b.", true, "#BB57FE", Entsorg);
+    const series8 = createSeries("Sonst. Verarb. Gew.", true, "#E1AAFE", SonstVerarb);
+    const series9 = createSeries("Untern.nahe Dienstl.", true, "#FA2662", UnternNaheDiesnt);
+    const series10 = createSeries("Sonst. Dienstleist.", true, "#4985D4", SonstDienst);
+    const series11 = createSeries("Fahrzeugbau", true, "#FFF8F9", Fahrzeugbau);
+    const series12 = createSeries("Gesamtwirtschaft", false, "#4F4FFE", Gesamtwirtschaft);
 
     // Add chart cursor
     x.cursor = new am4charts.XYCursor();
@@ -113,7 +77,7 @@ function Chart() {
     x.cursor.lineX.fill = am4core.color("#8F3985");
     x.cursor.lineX.fillOpacity = 0.1;
     x.cursor.behavior = "zoomXY";
-    x.cursor.maxTooltipDistance = 1;
+    x.cursor.maxTooltipDistance = 3;
     x.cursor.snapToSeries = [
       series1,
       series2,
@@ -130,12 +94,20 @@ function Chart() {
     ];
 
     // Create series
-    function createSeries(name, hide, color) {
+    function createSeries(name, hide, color, svg) {
       var series = x.series.push(new am4charts.LineSeries());
+      series.dummyData = {
+        customIcon: svg,
+      };
+      if (svg === chemiePath) {
+        series.dummyData = {
+          path: chemiePath,
+        };
+      }
       series.dataFields.valueY = name;
       series.dataFields.dateX = "year";
       series.name = name;
-      series.strokeWidth = 4;
+      series.strokeWidth = 3;
       series.stroke = am4core.color(color);
       const bullet = series.bullets.push(new am4charts.CircleBullet());
       bullet.fill = color;
@@ -143,6 +115,8 @@ function Chart() {
       series.legendSettings.labelText = " ";
       series.hidden = hide;
       // series.legendSettings.valueText = "{valueY}";
+      series.tooltip.getFillFromObject = false;
+      series.tooltip.background.fill = color;
 
       var segment = series.segments.template;
       segment.interactionsEnabled = true;
@@ -151,7 +125,7 @@ function Chart() {
       hoverState.properties.strokeWidth = 6;
 
       var dimmed = segment.states.create("dimmed");
-      dimmed.properties.stroke = am4core.color("#dadada");
+      dimmed.properties.stroke = am4core.color("#333");
 
       segment.events.on("over", function (event) {
         processOver(event.target.parent.parent.parent);
