@@ -11,7 +11,7 @@ function PieOfAPie() {
   const chart = useRef(null);
 
   useLayoutEffect(() => {
-    let container = am4core.create("chartdiv", am4core.Container);
+    let container = am4core.create("pieofpie", am4core.Container);
     container.width = am4core.percent(100);
     container.height = am4core.percent(100);
     container.layout = "horizontal";
@@ -121,6 +121,9 @@ function PieOfAPie() {
       },
     ];
 
+    // Set inner radius
+    x.innerRadius = am4core.percent(60);
+
     // Add and configure Series
     let pieSeries = x.series.push(new am4charts.PieSeries());
     pieSeries.dataFields.value = "amount";
@@ -131,6 +134,21 @@ function PieOfAPie() {
     pieSeries.slices.template.events.on("hit", function (event) {
       selectSlice(event.target.dataItem);
     });
+
+    // Colors for pieSeries
+    pieSeries.colors.list = [
+      am4core.color("#EDE750"),
+      am4core.color("#F09443"),
+      am4core.color("#FFF8F9"),
+      am4core.color("#FA2662"),
+      am4core.color("#E1AAFE"),
+      am4core.color("#78DF6C"),
+      am4core.color("#4985D4"),
+      am4core.color("#4CC8DD"),
+      am4core.color("#0FAA94"),
+      am4core.color("#BB57FE"),
+      am4core.color("#FF00FF"),
+    ];
 
     let chart2 = container.createChild(am4charts.PieChart);
     chart2.width = am4core.percent(30);
@@ -235,7 +253,7 @@ function PieOfAPie() {
       x.dispose();
     };
   }, []);
-  return <div id='chartdiv' style={{ width: "100%", height: "600px" }}></div>;
+  return <div id='pieofpie' style={{ width: "100%", height: "600px" }}></div>;
 }
 
 export default PieOfAPie;
