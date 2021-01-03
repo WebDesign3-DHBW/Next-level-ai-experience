@@ -2,10 +2,21 @@ import { useLayoutEffect, useRef } from "react";
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
-import am4themes_dark from "@amcharts/amcharts4/themes/dark";
+import am4themes_wdTheme from "../../theme";
+import Chemie from "../../svg/Ph., Gr. st..svg";
+import Entsorg from "../../svg/Entsorg, Bg.b..svg";
+import Fahrzeugbau from "../../svg/Fahrzeugbau.svg";
+import Finanzdienstleist from "../../svg/Finanzdienstleist..svg";
+import Großhandel from "../../svg/Großhandel.svg";
+import IKT from "../../svg/IKT.svg";
+import Maschinenbau from "../../svg/Maschin.b..svg";
+import SonstVerarb from "../../svg/Sonst Verarb. Gew..svg";
+import SonstDienst from "../../svg/Sonst. Dienstleist..svg";
+import UnternNaheDiesnt from "../../svg/Untern. nahe. Dienstl..svg";
+import VerkehrLogistik from "../../svg/Verkehr, Logistik.svg";
 
 am4core.useTheme(am4themes_animated);
-am4core.useTheme(am4themes_dark);
+am4core.useTheme(am4themes_wdTheme);
 
 function PieOfAPie() {
   const chart = useRef(null);
@@ -23,6 +34,7 @@ function PieOfAPie() {
       {
         branch: "IKT",
         amount: 1.5,
+        icon: IKT,
         subData: [
           { name: "interne laufende Aufwendungen", value: 88 },
           { name: "Investitionen", value: 10 },
@@ -32,6 +44,7 @@ function PieOfAPie() {
       {
         branch: "Elektrotechnik, Maschinenbau",
         amount: 0.68,
+        icon: Maschinenbau,
         subData: [
           { name: "interne laufende Aufwendungen", value: 66 },
           { name: "Investitionen", value: 22 },
@@ -41,6 +54,7 @@ function PieOfAPie() {
       {
         branch: "Fahrzeugbau",
         amount: 0.84,
+        icon: Fahrzeugbau,
         subData: [
           { name: "interne laufende Aufwendungen", value: 74 },
           { name: "Investitionen", value: 16 },
@@ -50,6 +64,7 @@ function PieOfAPie() {
       {
         branch: "Unternehmensnahe Dienstleistungen",
         amount: 0.65,
+        icon: UnternNaheDiesnt,
         subData: [
           { name: "interne laufende Aufwendungen", value: 74 },
           { name: "Investitionen", value: 15 },
@@ -59,6 +74,7 @@ function PieOfAPie() {
       {
         branch: "Sonstiges Verarbeitendes Gewerbe",
         amount: 0.26,
+        icon: SonstVerarb,
         subData: [
           { name: "interne laufende Aufwendungen", value: 69 },
           { name: "Investitionen", value: 20 },
@@ -68,6 +84,7 @@ function PieOfAPie() {
       {
         branch: "Finanzdienstleistungen",
         amount: 0.24,
+        icon: Finanzdienstleist,
         subData: [
           { name: "interne laufende Aufwendungen", value: 71 },
           { name: "Investitionen", value: 19 },
@@ -77,6 +94,7 @@ function PieOfAPie() {
       {
         branch: "Sonstige Dienstleistungen",
         amount: 0.19,
+        icon: SonstDienst,
         subData: [
           { name: "interne laufende Aufwendungen", value: 75 },
           { name: "Investitionen", value: 14 },
@@ -86,6 +104,7 @@ function PieOfAPie() {
       {
         branch: "Verkehr und Logistik",
         amount: 0.16,
+        icon: VerkehrLogistik,
         subData: [
           { name: "interne laufende Aufwendungen", value: 72 },
           { name: "Investitionen", value: 17 },
@@ -95,6 +114,7 @@ function PieOfAPie() {
       {
         branch: "Chemie/Pharma, Grundstoffe",
         amount: 0.14,
+        icon: Chemie,
         subData: [
           { name: "interne laufende Aufwendungen", value: 69 },
           { name: "Investitionen", value: 19 },
@@ -104,6 +124,7 @@ function PieOfAPie() {
       {
         branch: "Ver- und Entsorgung, Bergbau",
         amount: 0.07,
+        icon: Entsorg,
         subData: [
           { name: "interne laufende Aufwendungen", value: 73 },
           { name: "Investitionen", value: 17 },
@@ -113,6 +134,7 @@ function PieOfAPie() {
       {
         branch: "Großhandel",
         amount: 0.07,
+        icon: Großhandel,
         subData: [
           { name: "interne laufende Aufwendungen", value: 72 },
           { name: "Investitionen", value: 17 },
@@ -128,6 +150,7 @@ function PieOfAPie() {
     let pieSeries = x.series.push(new am4charts.PieSeries());
     pieSeries.dataFields.value = "amount";
     pieSeries.dataFields.category = "branch";
+    pieSeries.labels.template.html = "<img src={icon} />";
     pieSeries.slices.template.states.getKey("active").properties.shiftRadius = 0;
     //pieSeries.labels.template.text = "{category}\n{value.percent.formatNumber('#.#')}%";
 
