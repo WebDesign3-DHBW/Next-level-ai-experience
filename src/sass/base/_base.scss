@@ -23,6 +23,10 @@ h6 {
   color: $grey;
 }
 
+h2 {
+  display: inline;
+}
+
 p {
   font-family: $p;
   color: $grey;
@@ -44,4 +48,14 @@ b {
     text-align: center;
     padding-bottom: .5em;
     border-bottom: 2px solid $primary;
+}
+
+.h2-box {
+  padding: 15px 170px 15px 50px;
+  width: max-content;
+  transform: translateX(-50px);
+  background-image: url(../../images/H2Box.svg);
+  background-position: right center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }

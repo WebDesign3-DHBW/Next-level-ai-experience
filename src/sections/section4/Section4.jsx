@@ -1,7 +1,11 @@
 function Section4() {
   return (
     <>
-      <p>Section 4</p>
+      <div className="pt-5">
+        <div className="h2-box mb-5">
+          <h2>Indikatoren zur Verbreitung des Einsatzes von KI</h2>
+        </div>
+      </div>
     </>
   );
 }
