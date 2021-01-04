@@ -36,6 +36,7 @@ function Chart3() {
       pieSeries.slices.template.stroke = am4core.color("#fff");
       pieSeries.slices.template.strokeWidth = 2;
       pieSeries.slices.template.strokeOpacity = 1;
+      pieSeries.slices.template.tooltipText = "IKT: {IKT}";
       
       // Disabling labels and ticks on inner circle
       pieSeries.labels.template.disabled = true;
@@ -56,6 +57,7 @@ function Chart3() {
       pieSeries2.slices.template.states.getKey("hover").properties.scale = 1.1;
       pieSeries2.labels.template.disabled = true;
       pieSeries2.ticks.template.disabled = true;
+      pieSeries2.slices.template.tooltipText = "Gesamtwirtschaft: {Gesamtwirtschaft}";
       
       let label = chart.createChild(am4core.Label);
       label.text = "Wissensbasierte Systeme";
