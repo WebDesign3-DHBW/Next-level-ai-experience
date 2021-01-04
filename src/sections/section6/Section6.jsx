@@ -1,3 +1,4 @@
+import Legend from "./Legend";
 import Chart1 from "./Chart1";
 import Chart2 from "./Chart2";
 import Chart3 from "./Chart3";
@@ -6,7 +7,6 @@ import Chart4 from "./Chart4";
 function Section6() {
   return (
     <>
-      <p>Section 6</p>
       <h1>KI Verfahren</h1>
       <div className='row'>
         <div className='col-8 '>
@@ -14,12 +14,13 @@ function Section6() {
         Systeme" werden beinahe eben so häufig genutzt. Sprach- und Textverstehen sind mit 30 % repräsentiert.</p>
         </div>
       </div>
-      <div className="container d-flex">
-        <Chart1 className="mx-auto" /> 
-        <Chart2 />
-        <Chart3 />
-        <Chart4 />
-      </div>  
+      <div className="chartcontainer">
+          <Legend />
+          <Chart1 /> 
+          <Chart2 />
+          <Chart3 />
+          <Chart4 />
+      </div> 
     </>
   );
 }

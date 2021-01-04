@@ -54,11 +54,14 @@ function Chart4() {
       pieSeries2.slices.template.strokeOpacity = 1;
       pieSeries2.slices.template.states.getKey("hover").properties.shiftRadius = 0;
       pieSeries2.slices.template.states.getKey("hover").properties.scale = 1.1;
-      
-      let title = chart.titles.create();
-      title.text = "Sprach- oder Textverstehen";
-      title.marginBottom = "5";
-      title.marginTop = "20";
+      pieSeries2.labels.template.disabled = true;
+      pieSeries2.ticks.template.disabled = true;
+
+      let label = chart.createChild(am4core.Label);
+      label.text = "Sprach- oder Textverstehen";
+      label.align = "center";
+
+      chart.logo.disabled = "true";
 
       }); // end am4core.ready()
   return <div id="chartdiv_sec6_4" style={{ width: "100%", height: "300px" }}></div>;
