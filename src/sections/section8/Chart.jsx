@@ -3,17 +3,17 @@ import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import am4themes_wdTheme from "../../theme";
-import PhGrst from "../../svg/WPhGrst.svg";
-import EntsorgBgb from "../../svg/WEntsorgBgb.svg";
-import Fahrzeugbau from "../../svg/WFahrzeugbau.svg";
-import Finanzdienstleist from "../../svg/WFinanzdienstleist.svg";
-import Großhandel from "../../svg/WGroßhandel.svg";
-import IKT from "../../svg/WIKT.svg";
-import Maschinb from "../../svg/WMaschinb.svg";
-import SonstVerarbGew from "../../svg/WSonstVerarbGew.svg";
-import SonstDienstleist from "../../svg/WSonstDienstleist.svg";
-import UnternnaheDienstl from "../../svg/WUnternnaheDienstl.svg";
-import VerkehrLogistik from "../../svg/WVerkehrLogistik.svg";
+import PhGrst from "../../svg/GPhGrst.svg";
+import EntsorgBgb from "../../svg/GEntsorgBgb.svg";
+import Fahrzeugbau from "../../svg/GFahrzeugbau.svg";
+import Finanzdienstleist from "../../svg/GFinanzdienstleist.svg";
+import Großhandel from "../../svg/GGroßhandel.svg";
+import IKT from "../../svg/GIKT.svg";
+import Maschinb from "../../svg/GMaschinb.svg";
+import SonstVerarbGew from "../../svg/GSonstVerarbGew.svg";
+import SonstDienstleist from "../../svg/GSonstDienstleist.svg";
+import UnternnaheDienstl from "../../svg/GUnternnaheDienstl.svg";
+import VerkehrLogistik from "../../svg/GVerkehrLogistik.svg";
 
 am4core.useTheme(am4themes_animated);
 am4core.useTheme(am4themes_wdTheme);
@@ -107,6 +107,9 @@ function Chart() {
     seriesTemplate.bulletsContainer.hiddenState.properties.visible = true;
     // create hover state
     var columnTemplate = seriesTemplate.columns.template;
+    columnTemplate.fillOpacity = 0.7;
+    columnTemplate.strokeWidth = 0;
+    columnTemplate.tooltipText = "{branch}";
 
     var hoverState = columnTemplate.states.create("hover");
 
@@ -120,7 +123,7 @@ function Chart() {
 
     // add logo
     var image = columnTemplate.createChild(am4core.Image);
-    image.opacity = 0.3;
+    image.opacity = 0.5;
     image.align = "center";
     image.valign = "middle";
     image.width = am4core.percent(80);
@@ -137,9 +140,9 @@ function Chart() {
     var centerText = seriesTemplate.bullets.push(new am4charts.LabelBullet());
     centerText.locationX = 0.5;
     centerText.locationY = 0.5;
-    centerText.label.text = "{value}";
-    centerText.label.scale = 1.3;
-    centerText.label.fill = am4core.color("#dddddd");
+    centerText.label.text = "[font-size: 20px; bold]{value}[/]";
+
+    centerText.label.fill = am4core.color("#fff");
 
     x.logo.disabled = true;
     chart.current = x;
