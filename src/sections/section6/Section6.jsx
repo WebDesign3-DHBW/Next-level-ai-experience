@@ -10,7 +10,7 @@ function Section6() {
       <h1>KI Verfahren</h1>
       <div className='row'>
         <div className='col-8 '>
-        < p>Am weitesten verbreitet war im Jahr 2019 in der deutschen Wirtschaft maschinelles Lernen und Beweisen als eingesetztes Verfahren mit 55 %.  Zur Erkennung von Bild und Ton setzen 49 % der Unternehmen auf KI. “Wissensbasierte
+        <p>Am weitesten verbreitet war im Jahr 2019 in der deutschen Wirtschaft maschinelles Lernen und Beweisen als eingesetztes Verfahren mit 55 %.  Zur Erkennung von Bild und Ton setzen 49 % der Unternehmen auf KI. “Wissensbasierte
         Systeme" werden beinahe eben so häufig genutzt. Sprach- und Textverstehen sind mit 30 % repräsentiert.</p>
         </div>
       </div>
