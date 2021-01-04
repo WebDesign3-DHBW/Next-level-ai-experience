@@ -3,17 +3,17 @@ import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import am4themes_wdTheme from "../../theme";
-import Chemie from "../../svg/Ph., Gr. st..svg";
-import Entsorg from "../../svg/Entsorg, Bg.b..svg";
+import Chemie from "../../svg/PhGrst.svg";
+import Entsorg from "../../svg/EntsorgBgb.svg";
 import Fahrzeugbau from "../../svg/Fahrzeugbau.svg";
-import Finanzdienstleist from "../../svg/Finanzdienstleist..svg";
+import Finanzdienstleist from "../../svg/Finanzdienstleist.svg";
 import Großhandel from "../../svg/Großhandel.svg";
 import IKT from "../../svg/IKT.svg";
-import Maschinenbau from "../../svg/Maschin.b..svg";
-import SonstVerarb from "../../svg/Sonst Verarb. Gew..svg";
-import SonstDienst from "../../svg/Sonst. Dienstleist..svg";
-import UnternNaheDiesnt from "../../svg/Untern. nahe. Dienstl..svg";
-import VerkehrLogistik from "../../svg/Verkehr, Logistik.svg";
+import Maschinenbau from "../../svg/Maschinb.svg";
+import SonstVerarb from "../../svg/SonstVerarbGew.svg";
+import SonstDienst from "../../svg/SonstDienstleist.svg";
+import UnternNaheDiesnt from "../../svg/UnternnaheDienstl.svg";
+import VerkehrLogistik from "../../svg/VerkehrLogistik.svg";
 
 am4core.useTheme(am4themes_animated);
 am4core.useTheme(am4themes_wdTheme);
@@ -35,6 +35,7 @@ function PieOfAPie() {
         branch: "IKT",
         amount: 1.5,
         icon: IKT,
+        color: am4core.color("#EDE750"),
         subData: [
           { name: "interne laufende Aufwendungen", value: 88 },
           { name: "Investitionen", value: 10 },
@@ -45,6 +46,7 @@ function PieOfAPie() {
         branch: "Elektrotechnik, Maschinenbau",
         amount: 0.68,
         icon: Maschinenbau,
+        color: am4core.color("#F09443"),
         subData: [
           { name: "interne laufende Aufwendungen", value: 66 },
           { name: "Investitionen", value: 22 },
@@ -55,6 +57,8 @@ function PieOfAPie() {
         branch: "Fahrzeugbau",
         amount: 0.84,
         icon: Fahrzeugbau,
+        color: am4core.color("#FFF8F9"),
+
         subData: [
           { name: "interne laufende Aufwendungen", value: 74 },
           { name: "Investitionen", value: 16 },
@@ -65,6 +69,7 @@ function PieOfAPie() {
         branch: "Unternehmensnahe Dienstleistungen",
         amount: 0.65,
         icon: UnternNaheDiesnt,
+        color: am4core.color("#FA2662"),
         subData: [
           { name: "interne laufende Aufwendungen", value: 74 },
           { name: "Investitionen", value: 15 },
@@ -75,6 +80,7 @@ function PieOfAPie() {
         branch: "Sonstiges Verarbeitendes Gewerbe",
         amount: 0.26,
         icon: SonstVerarb,
+        color: am4core.color("#E1AAFE"),
         subData: [
           { name: "interne laufende Aufwendungen", value: 69 },
           { name: "Investitionen", value: 20 },
@@ -85,6 +91,7 @@ function PieOfAPie() {
         branch: "Finanzdienstleistungen",
         amount: 0.24,
         icon: Finanzdienstleist,
+        color: am4core.color("#78DF6C"),
         subData: [
           { name: "interne laufende Aufwendungen", value: 71 },
           { name: "Investitionen", value: 19 },
@@ -95,6 +102,7 @@ function PieOfAPie() {
         branch: "Sonstige Dienstleistungen",
         amount: 0.19,
         icon: SonstDienst,
+        color: am4core.color("#4985D4"),
         subData: [
           { name: "interne laufende Aufwendungen", value: 75 },
           { name: "Investitionen", value: 14 },
@@ -105,6 +113,7 @@ function PieOfAPie() {
         branch: "Verkehr und Logistik",
         amount: 0.16,
         icon: VerkehrLogistik,
+        color: am4core.color("#4CC8DD"),
         subData: [
           { name: "interne laufende Aufwendungen", value: 72 },
           { name: "Investitionen", value: 17 },
@@ -115,6 +124,7 @@ function PieOfAPie() {
         branch: "Chemie/Pharma, Grundstoffe",
         amount: 0.14,
         icon: Chemie,
+        color: am4core.color("#0FAA94"),
         subData: [
           { name: "interne laufende Aufwendungen", value: 69 },
           { name: "Investitionen", value: 19 },
@@ -125,6 +135,7 @@ function PieOfAPie() {
         branch: "Ver- und Entsorgung, Bergbau",
         amount: 0.07,
         icon: Entsorg,
+        color: am4core.color("#BB57FE"),
         subData: [
           { name: "interne laufende Aufwendungen", value: 73 },
           { name: "Investitionen", value: 17 },
@@ -135,6 +146,7 @@ function PieOfAPie() {
         branch: "Großhandel",
         amount: 0.07,
         icon: Großhandel,
+        color: am4core.color("#FF00FF"),
         subData: [
           { name: "interne laufende Aufwendungen", value: 72 },
           { name: "Investitionen", value: 17 },
@@ -148,33 +160,26 @@ function PieOfAPie() {
 
     // Add and configure Series
     let pieSeries = x.series.push(new am4charts.PieSeries());
+    pieSeries.labels.template.applyOnClones = true;
     pieSeries.dataFields.value = "amount";
     pieSeries.dataFields.category = "branch";
-    pieSeries.labels.template.html = "<img src={icon} />";
+    pieSeries.labels.template.html = "<img src={icon} height=30 width=30/>";
+
+    pieSeries.alignLabels = false;
+
+    pieSeries.slices.template.fill = am4core.color("rgba(0, 0, 0, 0)");
+    pieSeries.slices.template.propertyFields.stroke = "color";
+    pieSeries.slices.template.strokeWidth = 3;
+    pieSeries.ticks.template.propertyFields.stroke = "color";
+    pieSeries.ticks.template.strokeOpacity = 1;
     pieSeries.slices.template.states.getKey("active").properties.shiftRadius = 0;
-    //pieSeries.labels.template.text = "{category}\n{value.percent.formatNumber('#.#')}%";
 
     pieSeries.slices.template.events.on("hit", function (event) {
       selectSlice(event.target.dataItem);
     });
 
-    // Colors for pieSeries
-    pieSeries.colors.list = [
-      am4core.color("#EDE750"),
-      am4core.color("#F09443"),
-      am4core.color("#FFF8F9"),
-      am4core.color("#FA2662"),
-      am4core.color("#E1AAFE"),
-      am4core.color("#78DF6C"),
-      am4core.color("#4985D4"),
-      am4core.color("#4CC8DD"),
-      am4core.color("#0FAA94"),
-      am4core.color("#BB57FE"),
-      am4core.color("#FF00FF"),
-    ];
-
     let chart2 = container.createChild(am4charts.PieChart);
-    chart2.width = am4core.percent(30);
+    chart2.width = am4core.percent(35);
     chart2.radius = am4core.percent(80);
 
     // Add and configure Series
@@ -182,40 +187,30 @@ function PieOfAPie() {
     pieSeries2.dataFields.value = "value";
     pieSeries2.dataFields.category = "name";
     pieSeries2.slices.template.states.getKey("active").properties.shiftRadius = 0;
-    // pieSeries2.labels.template.radius = am4core.percent(50);
-    // pieSeries2.labels.template.inside = true;
-    //pieSeries2.labels.template.fill = am4core.color("#ffffff");
     pieSeries2.labels.template.disabled = true;
     pieSeries2.ticks.template.disabled = true;
     pieSeries2.alignLabels = false;
     pieSeries2.events.on("positionchanged", updateLines);
-
-    let interfaceColors = new am4core.InterfaceColorSet();
+    pieSeries2.slices.template.fill = am4core.color("rgba(0, 0, 0, 0)");
+    pieSeries2.slices.template.stroke = am4core.color("#ffffff");
+    pieSeries2.slices.template.strokeWidth = 3;
 
     let line1 = container.createChild(am4core.Line);
     line1.strokeDasharray = "2,2";
     line1.strokeOpacity = 0.5;
-    line1.stroke = interfaceColors.getFor("alternativeBackground");
+    line1.stroke = am4core.color("#ffffff");
     line1.isMeasured = false;
 
     let line2 = container.createChild(am4core.Line);
     line2.strokeDasharray = "2,2";
     line2.strokeOpacity = 0.5;
-    line2.stroke = interfaceColors.getFor("alternativeBackground");
+    line2.stroke = am4core.color("#ffffff");
     line2.isMeasured = false;
 
     let selectedSlice;
 
     function selectSlice(dataItem) {
       selectedSlice = dataItem.slice;
-
-      let fill = selectedSlice.fill;
-
-      let count = dataItem.dataContext.subData.length;
-      pieSeries2.colors.list = [];
-      for (var i = 0; i < count; i++) {
-        pieSeries2.colors.list.push(fill.brighten((i * 2) / count));
-      }
 
       chart2.data = dataItem.dataContext.subData;
       pieSeries2.appear();
@@ -233,9 +228,6 @@ function PieOfAPie() {
       animation.events.on("animationprogress", updateLines);
 
       selectedSlice.events.on("transformed", updateLines);
-
-      //  var animation = chart2.animate({property:"dx", from:-container.pixelWidth / 2, to:0}, 2000, am4core.ease.elasticOut)
-      //  animation.events.on("animationprogress", updateLines)
     }
 
     function updateLines() {
