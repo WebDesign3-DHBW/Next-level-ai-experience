@@ -12,6 +12,7 @@ function Chart1() {
       // Create chart instance
       var chart = am4core.create("chartdiv_sec6", am4charts.PieChart);
       
+
       // Let's cut a hole in our Pie chart the size of 40% the radius
       chart.innerRadius = am4core.percent(40);
       
@@ -24,7 +25,8 @@ function Chart1() {
       }, {
         "Nutzen": "Nutzen es nicht",
         "IKT": 41,
-        "Gesamtwirtschaft": 45
+        "Gesamtwirtschaft": 45,
+        "color": am4core.color("#cc0000")
       }
 
     ];
