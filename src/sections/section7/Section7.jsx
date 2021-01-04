@@ -1,21 +1,27 @@
-// import Chart from "./Chart";
+import Chart1 from "./Chart1";
+import Chart2 from "./Chart2";
+import Chart3 from "./Chart3";
+import Chart4 from "./Chart4";
+import Chart5 from "./Chart5";
 
 function Section7() {
   return (
-    <div className="container d-flex align-items-center" style={{ height: "100vh" }}>
-      <div className="row">
-        <div className="col-8 mx-auto">
-          <h2 className="mb-2 text-center">Bedeutung des Einsatzes von KI</h2>
-          <p>
-            Der Einsatz von KI wird von den meisten Unternehmen, die KI einsetzen (65 %), als
-            wichtig für die Geschäftigkeit eingestuft. Für 12 % der KI einsetzenden Unternehmen ist
-            KI essenziell für ihre Geschäftstätigkeit, d.h. ohne KI könnten die entsprechenden
-            Aktivitäten gar nicht ausgeführt werden.
-          </p>
+    <>
+      <h1>Anwendungsgebiete</h1>
+      <div className='row'>
+        <div className='col-8 '>
+        < p>Künstliche Intelligenz wird am häufigsten im Bereich von Produkten und Dienstleistungen (60 %) der KI
+          einsetzenden Unternehmen verwendet. Knapp dahinter wird KI für die Automatisierung von Prozessen genutzt (56 %). Eine Analyse mit KI Daten setzen 34 % der Unternehmen ein und zu 22 % wird künstliche Intelligenz zur Kommunikation mit Kunden verwendet.</p>
         </div>
-        <div className="col-12 mt-4">{/* <Chart /> */}</div>
       </div>
-    </div>
+      <div className="chartcontainer">
+          <Chart1 /> 
+          <Chart2 />
+          <Chart3 />
+          <Chart4 />
+          <Chart5 />
+      </div> 
+    </>
   );
 }
 export default Section7;
