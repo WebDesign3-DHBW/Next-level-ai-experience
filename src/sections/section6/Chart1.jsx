@@ -54,11 +54,14 @@ function Chart1() {
       pieSeries2.slices.template.strokeOpacity = 1;
       pieSeries2.slices.template.states.getKey("hover").properties.shiftRadius = 0;
       pieSeries2.slices.template.states.getKey("hover").properties.scale = 1.1;
+      pieSeries2.labels.template.disabled = true;
+      pieSeries2.ticks.template.disabled = true;
       
-      let title = chart.titles.create();
-      title.text = "Maschinelles Lernen und Beweisen";
-      title.marginBottom = "5";
-      title.marginTop = "20";
+      let label = chart.createChild(am4core.Label);
+      label.text = "Maschinelles Lernen und Beweisen";
+      label.align = "center";
+
+      chart.logo.disabled = "true";
 
       }); // end am4core.ready()
   return <div id="chartdiv_sec6" style={{ width: "100%", height: "300px" }}></div>;
