@@ -5,12 +5,13 @@ function Section8() {
     <div className="container d-flex align-items-center" style={{ height: "100vh" }}>
       <div className="row">
         <div className="col-8 mx-auto">
-          <h2 className="mb-2 text-center">Bedeutung des Einsatzes von KI</h2>
+          <h2 className="mb-2 text-center">Verteilung Umsatz</h2>
           <p>
-            Der Einsatz von KI wird von den meisten Unternehmen, die KI einsetzen (65 %), als
-            wichtig für die Geschäftigkeit eingestuft. Für 12 % der KI einsetzenden Unternehmen ist
-            KI essenziell für ihre Geschäftstätigkeit, d.h. ohne KI könnten die entsprechenden
-            Aktivitäten gar nicht ausgeführt werden.
+            Im Jahr 2019 erzielten die Unternehmen der deutschen Wirtschaft mit Produkten und
+            Dienstleistungen mit direktem KI-Einsatz einen Umsatz von annähernd 60 Mrd. €. Dies
+            entspricht nur 1,1 % des gesamten Umsatzes der deutschen Wirtschaft. Neben der
+            IKT-Branche verzeichnen vor allem Finanzdienstleistungen und unternehmensnahe
+            Dienstleistungen einen überdurchschnittlichen Anteil.
           </p>
         </div>
         <div className="col-12 mt-4">
