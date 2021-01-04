@@ -12,7 +12,6 @@ function Chart1() {
       // Create chart instance
       var chart = am4core.create("chartdiv_sec6", am4charts.PieChart);
       
-
       // Let's cut a hole in our Pie chart the size of 40% the radius
       chart.innerRadius = am4core.percent(40);
       
@@ -25,8 +24,7 @@ function Chart1() {
       }, {
         "Nutzen": "Nutzen es nicht",
         "IKT": 41,
-        "Gesamtwirtschaft": 45,
-        "color": am4core.color("#cc0000")
+        "Gesamtwirtschaft": 45
       }
 
     ];
@@ -49,7 +47,6 @@ function Chart1() {
       // Disable sliding out of slices
       pieSeries.slices.template.states.getKey("hover").properties.shiftRadius = 0;
       pieSeries.slices.template.states.getKey("hover").properties.scale = 0.9;
-
       // Add second series
       var pieSeries2 = chart.series.push(new am4charts.PieSeries());
       pieSeries2.dataFields.value = "Gesamtwirtschaft";
