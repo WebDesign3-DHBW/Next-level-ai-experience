@@ -167,7 +167,8 @@ function PieOfAPie() {
 
     pieSeries.alignLabels = false;
 
-    pieSeries.slices.template.fill = am4core.color("rgba(0, 0, 0, 0)");
+    pieSeries.slices.template.propertyFields.fill = "color";
+    pieSeries.slices.template.fillOpacity = 0.2;
     pieSeries.slices.template.propertyFields.stroke = "color";
     pieSeries.slices.template.strokeWidth = 3;
     pieSeries.ticks.template.propertyFields.stroke = "color";
@@ -191,9 +192,9 @@ function PieOfAPie() {
     pieSeries2.ticks.template.disabled = true;
     pieSeries2.alignLabels = false;
     pieSeries2.events.on("positionchanged", updateLines);
-    pieSeries2.slices.template.fill = am4core.color("rgba(0, 0, 0, 0)");
-    pieSeries2.slices.template.stroke = am4core.color("#ffffff");
-    pieSeries2.slices.template.strokeWidth = 3;
+    // pieSeries2.slices.template.fill = am4core.color("rgba(0, 0, 0, 0)");
+    pieSeries2.slices.template.stroke = am4core.color("#ccc");
+    pieSeries2.slices.template.strokeWidth = 1;
 
     let line1 = container.createChild(am4core.Line);
     line1.strokeDasharray = "2,2";
