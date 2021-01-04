@@ -12,34 +12,52 @@ import Footer from "./sections/footer/Footer";
 
 function App() {
   return (
-    <div className='view'>
-      <section>
-        <Section1 />
-      </section>
-      <section>
-        <Section2 />
-      </section>
-      <section>
-        <Section3 />
-      </section>
-      <section>
-        <Section4 />
-      </section>
-      <section>
-        <Section5 />
-      </section>
-      <section>
-        <Section6 />
-      </section>
-      <section>
-        <Section7 />
-      </section>
-      <section>
-        <Section8 />
-      </section>
-      <section>
-        <Section9 />
-      </section>
+    <div className="view">
+      <div className="bg-section1">
+        <section>
+          <Section1 />
+        </section>
+      </div>
+      <div className="bg-section2">
+        <section>
+          <Section2 />
+        </section>
+      </div>
+      <div className="bg-A">
+        <section>
+          <Section3 />
+        </section>
+      </div>
+      <div className="bg-B">
+        <section>
+          <Section4 />
+        </section>
+      </div>
+      <div className="bg-A">
+        <section>
+          <Section5 />
+        </section>
+      </div>
+      <div className="bg-B">
+        <section>
+          <Section6 />
+        </section>
+      </div>
+      <div className="bg-A">
+        <section>
+          <Section7 />
+        </section>
+      </div>
+      <div className="bg-B">
+        <section>
+          <Section8 />
+        </section>
+      </div>
+      <div className="bg-A">
+        <section>
+          <Section9 />
+        </section>
+      </div>
       <section>
         <Footer />
       </section>

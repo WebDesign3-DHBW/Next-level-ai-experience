@@ -1,0 +1,23 @@
+.bg-section1 {
+    background-image: url(../../images/Bg-H1.svg), url(../../images/Bg-H2.svg),;
+    background-position: right top, left bottom;
+    background-repeat: no-repeat;
+}
+
+.bg-section2 {
+    background-image: url(../../images/Bg-H2b.svg), url(../../images/Bg-rb.svg),;
+    background-position: left top, right bottom;
+    background-repeat: no-repeat;
+}
+
+.bg-A {
+    background-image: url(../../images/Bg-rt.svg), url(../../images/Bg-lb.svg),;
+    background-position: right top, left bottom;
+    background-repeat: no-repeat;
+}
+
+.bg-B {
+    background-image: url(../../images/Bg-lt.svg), url(../../images/Bg-rb.svg),;
+    background-position: left top, right bottom;
+    background-repeat: no-repeat;
+}
