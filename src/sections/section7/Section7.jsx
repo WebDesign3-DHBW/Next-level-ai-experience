@@ -7,16 +7,17 @@ import Chart5 from "./Chart5";
 function Section7() {
   return (
     <>
-      <div className="container pt-5 mr-0">
-        <div className="h2l-box row mb-3">
+      <div className="container pt-5 mr-0 ml-0">
+        <div className="h2-box row mb-3">
         <h2>Anwendungsgebiete</h2>
+        </div>
         <div className="d-inline-block mt-5 mr-0">
           <div className="d-flex">
           <div className="w-50 mr-auto mb-5">
-            <p>Am weitesten verbreitet war im Jahr 2019 in der deutschen Wirtschaft <b>maschinelles Lernen und Beweisen</b> als eingesetztes Verfahren <b>mit 55 %</b>.  Zur <b>Erkennung von Bild und Ton</b> setzen <b>49 %</b> der Unternehmen auf KI. <b>Wissensbasierte
-            Systeme</b> werden beinahe eben so häufig genutzt. <b>Sprach- und Textverstehen</b> sind mit <b>30 %</b> repräsentiert.</p>
+            <p>Künstliche Intelligenz wird am häufigsten im Bereich von <b>Produkten und Dienstleistungen</b> (60 %) der KI
+einsetzenden Unternehmen verwendet. Knapp dahinter wird KI für die <b>Automatisierung von Prozessen</b> genutzt (56 %). Eine Analyse mit KI Daten setzen 34 % der Unternehmen ein und zu 22 % wird künstliche Intelligenz zur <b>Kommunikation mit Kunden</b> verwendet.</p>
           </div>
-        </div>
+        
         </div>
         </div>
       </div>
