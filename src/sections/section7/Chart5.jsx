@@ -66,6 +66,14 @@ function Chart5() {
       label.text = "Andere Anwendungsgebiete";
       label.align = "center";
 
+      let bullet = pieSeries.createChild(am4charts.Bullet);
+      let image = bullet.createChild(am4core.Image);
+      image.href = "../../svg/Buch.svg";
+      image.width = 30;
+      image.height = 30;
+      image.horizontalCenter = "middle";
+      image.verticalCenter = "middle";
+
       chart.logo.disabled = "true";
 
       }); // end am4core.ready()

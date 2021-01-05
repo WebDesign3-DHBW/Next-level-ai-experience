@@ -67,6 +67,14 @@ function Chart3() {
       label.text = "KI Anwendungen für Datenanalyse";
       label.align = "center";
 
+      let bullet = pieSeries.createChild(am4charts.Bullet);
+      let image = bullet.createChild(am4core.Image);
+      image.href = "../../svg/Buch.svg";
+      image.width = 30;
+      image.height = 30;
+      image.horizontalCenter = "middle";
+      image.verticalCenter = "middle";
+
       chart.logo.disabled = "true";
 
       }); // end am4core.ready()
