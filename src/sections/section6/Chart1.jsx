@@ -35,7 +35,6 @@ function Chart1() {
       var pieSeries = chart.series.push(new am4charts.PieSeries());
       pieSeries.dataFields.value = "IKT";
       pieSeries.dataFields.category = "Nutzen";
-      pieSeries.slices.template.stroke = am4core.color("#fff");
       pieSeries.slices.template.strokeWidth = 0;
       pieSeries.slices.template.tooltipText = "IKT: {IKT}";
       pieSeries.radius = am4core.percent(43);
@@ -55,7 +54,6 @@ function Chart1() {
       var pieSeries2 = chart.series.push(new am4charts.PieSeries());
       pieSeries2.dataFields.value = "Gesamtwirtschaft";
       pieSeries2.dataFields.category = "Nutzen";
-      pieSeries2.slices.template.stroke = am4core.color("#fff");
       pieSeries2.slices.template.strokeWidth = 0;
       pieSeries2.slices.template.states.getKey("hover").properties.shiftRadius = 0;
       pieSeries2.slices.template.states.getKey("hover").properties.scale = 1.1;
