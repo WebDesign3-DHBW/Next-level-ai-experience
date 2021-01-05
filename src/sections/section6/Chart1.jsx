@@ -1,6 +1,7 @@
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
+import Bild from "../../svg/Bild.svg";
 
 am4core.useTheme(am4themes_animated);
 
@@ -20,15 +21,13 @@ function Chart1() {
       chart.data = [{
         "Nutzen": "Nutzen Maschinelles Lernen und Beweisen",
         "IKT": 59,
-        "Gesamtwirtschaft": 55
-
+        "Gesamtwirtschaft": 55,
       }, {
         "Nutzen": "Nutzen es nicht",
         "IKT": 41,
         "Gesamtwirtschaft": 45,
         "color": am4core.color("#cc0000")
       }
-
     ];
       
       // Add and configure Series
@@ -66,6 +65,15 @@ function Chart1() {
       let label = chart.createChild(am4core.Label);
       label.text = "Maschinelles Lernen und Beweisen";
       label.align = "center";
+
+      let bullet = pieSeries.createChild(am4charts.Bullet);
+      let image = bullet.createChild(am4core.Image);
+      image.href = "https://developer.android.com/guide/practices/ui_guidelines/images/Single_Icon_Parallax_Demo_01_2x_ext.gif";
+      image.width = 30;
+      image.height = 30;
+      image.horizontalCenter = "middle";
+      image.verticalCenter = "middle";
+
 
       chart.logo.disabled = "true";
 

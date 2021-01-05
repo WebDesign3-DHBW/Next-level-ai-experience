@@ -65,6 +65,14 @@ function Chart4() {
       label.text = "Sprach- oder Textverstehen";
       label.align = "center";
 
+      let bullet = pieSeries.createChild(am4charts.Bullet);
+      let image = bullet.createChild(am4core.Image);
+      image.href = "https://developer.android.com/guide/practices/ui_guidelines/images/Single_Icon_Parallax_Demo_01_2x_ext.gif";
+      image.width = 30;
+      image.height = 30;
+      image.horizontalCenter = "middle";
+      image.verticalCenter = "middle";
+
       chart.logo.disabled = "true";
 
       }); // end am4core.ready()
