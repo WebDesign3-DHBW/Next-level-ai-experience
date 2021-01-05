@@ -11,7 +11,7 @@ function Chart() {
   const chart = useRef(null);
 
   useLayoutEffect(() => {
-    var x = am4core.create("chartdiv", am4charts.XYChart);
+    var x = am4core.create("stackedbarchart", am4charts.XYChart);
 
     // Add data
     x.data = [
@@ -131,7 +131,7 @@ function Chart() {
       x.dispose();
     };
   }, []);
-  return <div id='chartdiv' style={{ width: "100%", height: "600px" }}></div>;
+  return <div id='stackedbarchart' style={{ width: "100%", height: "600px" }}></div>;
 }
 
 export default Chart;
