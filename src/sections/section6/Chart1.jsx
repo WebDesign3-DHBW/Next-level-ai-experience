@@ -26,7 +26,6 @@ function Chart1() {
         "Nutzen": "Nutzen es nicht",
         "IKT": 41,
         "Gesamtwirtschaft": 45,
-        "color": am4core.color("#cc0000")
       }
     ];
       
@@ -68,7 +67,8 @@ function Chart1() {
 
       let bullet = pieSeries.createChild(am4charts.Bullet);
       let image = bullet.createChild(am4core.Image);
-      image.href = "https://developer.android.com/guide/practices/ui_guidelines/images/Single_Icon_Parallax_Demo_01_2x_ext.gif";
+      image.href = "../../svg/Buch.svg";
+      console.log("Das ist mein selbstgezeichnetes ", {Bild});
       image.width = 30;
       image.height = 30;
       image.horizontalCenter = "middle";
