@@ -9,6 +9,12 @@ import Section7 from "./sections/section7/Section7";
 import Section8 from "./sections/section8/Section8";
 import Section9 from "./sections/section9/Section9";
 import Footer from "./sections/footer/Footer";
+import * as am4core from "@amcharts/amcharts4/core";
+
+// Enable queuing
+// am4core.options.queue = true;
+// am4core.options.onlyShowOnViewport = true;
+// am4core.options.viewportTarget = document.getElementById("charts");
 
 function App() {
   return (
