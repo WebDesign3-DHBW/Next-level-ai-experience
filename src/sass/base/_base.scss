@@ -51,11 +51,22 @@ b {
 }
 
 .h2-box {
-  padding: 15px 170px 15px 50px;
   width: max-content;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 15px 170px 15px 50px;
   transform: translateX(-50px);
   background-image: url(../../images/H2Box.svg);
   background-position: right center;
+}
+
+.h2r-box {
+  width: max-content;
   background-size: cover;
   background-repeat: no-repeat;
+  padding: 15px 50px 15px 170px;
+  transform: translateX(50px);
+  background-image: url(../../images/H2Boxbr-01.svg);
+  background-position: left center;
+  float: right;
 }
