@@ -3,7 +3,7 @@ import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import am4themes_wdTheme from "../../theme";
-import Chemie from "../../svg/Ph., Gr. st..svg";
+// import Chemie from "../../svg/Ph., Gr. st..svg";
 import Entsorg from "../../svg/Entsorg, Bg.b..svg";
 import Fahrzeugbau from "../../svg/Fahrzeugbau.svg";
 import Finanzdienstleist from "../../svg/Finanzdienstleist..svg";
@@ -248,7 +248,7 @@ function Chart() {
       });
 
       x.series.each(function (series) {
-        if (series != hoveredSeries) {
+        if (series !== hoveredSeries) {
           series.segments.each(function (segment) {
             segment.setState("dimmed");
           });
@@ -273,7 +273,7 @@ function Chart() {
       x.dispose();
     };
   }, []);
-  return <div id="ersterEinsatz" style={{ width: "100%", height: "600px" }}></div>;
+  return <div id='ersterEinsatz' style={{ width: "100%", height: "600px" }}></div>;
 }
 
 export default Chart;
