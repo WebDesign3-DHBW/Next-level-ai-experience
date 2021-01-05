@@ -117,6 +117,7 @@ function BarChart() {
     valueAxis.min = 0;
     valueAxis.max = 7500;
     valueAxis.strictMinMax = true;
+    valueAxis.renderer.grid.template.disabled = true;
     valueAxis.title.text = "KI Ausgaben je Unternehmen in 1.000€";
 
     let series = x.series.push(new am4charts.ColumnSeries());

@@ -2,22 +2,29 @@ import Chart from "./Chart";
 
 function Section3() {
   return (
-    <div className='container d-flex align-items-center' style={{ height: "100vh" }}>
-      <div className='row'>
-        <div className='col-8 mx-auto'>
-          <h2 className='mb-2 text-center'>Bedeutung des Einsatzes von KI</h2>
-          <p>
-            Der Einsatz von KI wird von den meisten Unternehmen, die KI einsetzen (65 %), als
-            wichtig für die Geschäftigkeit eingestuft. Für 12 % der KI einsetzenden Unternehmen ist
-            KI essenziell für ihre Geschäftstätigkeit, d.h. ohne KI könnten die entsprechenden
-            Aktivitäten gar nicht ausgeführt werden.
-          </p>
-        </div>
-        <div className='col-12 mt-4'>
-          <Chart />
+    <>
+      <div className='pt-5'>
+        <div className='h2-box mb-1'>
+          <h2>Bedeutung des Einsatzes von KI</h2>
         </div>
       </div>
-    </div>
+      <div className='container d-flex' style={{ marginTop: "100px" }}>
+        <div className='row'>
+          <div className='col-8'>
+            <Chart />
+          </div>
+          <div className='col-4 mt-3'>
+            <p>
+              Der Einsatz von KI wird von den meisten Unternehmen, die KI einsetzen (65 %),{" "}
+              <b>als wichtig für die Geschäftigkeit</b> eingestuft. Für 12 % der KI einsetzenden
+              Unternehmen ist KI essenziell für ihre Geschäftstätigkeit, d.h.{" "}
+              <b>ohne KI könnten </b>
+              die entsprechenden Aktivitäten <b>gar nicht ausgeführt werden</b>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
 export default Section3;
