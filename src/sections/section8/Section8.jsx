@@ -3,11 +3,13 @@ import BarChart from "./BarChart";
 
 function Section8() {
   return (
-    <div className="container d-flex align-items-center" style={{ height: "100vh" }}>
-      <div className="row">
-        <div className="col-8 mx-auto">
-          <h2 className="mb-2 text-center">Verteilung Umsatz</h2>
-          <p>
+    <div className="container d-flex justify-content-center" style={{ height: "100vh" }}>
+      <div className="row ">
+        <div className="col-8">
+          <div className="h2r-box row mb-3 mr-0 ml-auto">
+            <h2>Verteilung KI</h2>
+          </div>
+          <p className="mr-0 ml-auto">
             Im Jahr 2019 erzielten die Unternehmen der deutschen Wirtschaft mit Produkten und
             Dienstleistungen mit direktem KI-Einsatz einen Umsatz von annähernd 60 Mrd. €. Dies
             entspricht nur 1,1 % des gesamten Umsatzes der deutschen Wirtschaft. Neben der

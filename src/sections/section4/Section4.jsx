@@ -7,7 +7,9 @@ function Section4() {
     <>
       <div className="pt-5">
         <div className="h2r-box mb-5">
-          <h2>Indikatoren zur Verbreitung des Einsatzes von KI</h2>
+          <div className="h2r-box row mb-3">
+            <h2>Indikatoren zur Verbreitung des Einsatzes von KI</h2>
+          </div>
         </div>
         <div className="d-inline-block mt-5">
           <div className="d-flex">
