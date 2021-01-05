@@ -53,7 +53,6 @@ function Chart3() {
       var pieSeries2 = chart.series.push(new am4charts.PieSeries());
       pieSeries2.dataFields.value = "Gesamtwirtschaft";
       pieSeries2.dataFields.category = "Nutzen";
-      pieSeries2.slices.template.stroke = am4core.color("#fff");
       pieSeries2.slices.template.strokeWidth = 0;
       pieSeries2.slices.template.states.getKey("hover").properties.shiftRadius = 0;
       pieSeries2.slices.template.states.getKey("hover").properties.scale = 1.1;
