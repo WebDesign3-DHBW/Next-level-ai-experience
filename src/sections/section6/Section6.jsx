@@ -14,7 +14,6 @@ function Section6() {
         </div>
       </div>
       <div className="chartcontainer">
-          <Legend />
           <Chart1 /> 
           <Chart2 />
           <Chart3 />
