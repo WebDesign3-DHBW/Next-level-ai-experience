@@ -3,10 +3,14 @@ import BarChart from "./BarChart";
 
 function Section9() {
   return (
-    <div className='d-flex ' style={{ height: "100vh", width: "100%" }}>
-      <div className='row d-flex justify-content-center'>
-        <div className='col-8 mx-auto'>
-          <h2 className='mb-2 text-center'>Zusammensetzung KI Ausgaben</h2>
+    <div className='d-flex' style={{ height: "100vh", width: "100%" }}>
+      <div className='row d-flex'>
+        <div className='col-8'>
+          <div className='pt-5'>
+              <div className='h2-box mb-1'>
+                <h2>Zusammensetzung KI Ausgaben</h2>
+              </div>
+            </div>
           <p>
             Die Summe aller Ausgaben für KI-Verfahren sowie deren Entwicklung, Einführung und Pflege
             beliefen sich 2019 auf rund 4,8 Mrd. € in der deutschen Wirtschaft. Die IKT-Branche
