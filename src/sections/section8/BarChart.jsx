@@ -33,73 +33,73 @@ function BarChart() {
     x.data = [
       {
         branch: "Fahrzeugbau",
-        value: 7056,
+        value: 3.0,
         icon: Fahrzeugbau,
         color: am4core.color("#FFF8F9"),
       },
       {
         branch: "Elektrot./Maschin.b.",
-        value: 718,
+        value: 6.9,
         icon: Maschinenbau,
         color: am4core.color("#F09443"),
       },
       {
         branch: "IKT",
-        value: 382,
+        value: 11.7,
         icon: IKT,
         color: am4core.color("#EDE750"),
       },
       {
         branch: "Verkehr, Logistik",
-        value: 321,
+        value: 6.3,
         icon: VerkehrLogistik,
         color: am4core.color("#4CC8DD"),
       },
       {
         branch: "Finanzdienstleist.",
-        value: 286,
+        value: 8.4,
         icon: Finanzdienstleist,
         color: am4core.color("#78DF6C"),
       },
       {
         branch: "Chemie/Ph., Gr.st.",
-        value: 282,
+        value: 4.8,
         icon: Chemie,
         color: am4core.color("#0FAA94"),
       },
       {
         branch: "Ver-/Entsorg., Bg.b.",
-        value: 245,
+        value: 6.4,
         icon: Entsorg,
         color: am4core.color("#BB57FE"),
       },
       {
         branch: "Sonst. Dienstleist.",
-        value: 210,
+        value: 5.9,
         icon: SonstDienst,
         color: am4core.color("#4985D4"),
       },
       {
         branch: "Großhandel",
-        value: 171,
+        value: 8.1,
         icon: Großhandel,
         color: am4core.color("#FF00FF"),
       },
       {
         branch: "Sonst. Verarb. Gew.",
-        value: 130,
+        value: 11.6,
         icon: SonstVerarb,
         color: am4core.color("#E1AAFE"),
       },
       {
         branch: "Untern.nahe Dienstl.",
-        value: 93,
+        value: 14,
         icon: UnternNaheDiesnt,
         color: am4core.color("#FA2662"),
       },
       {
         branch: "Gesamtwirtschaft",
-        value: 276,
+        value: 7.7,
         icon: Gesamtwirtschaft,
         color: am4core.color("#4F4FFE"),
       },
@@ -115,9 +115,10 @@ function BarChart() {
 
     let valueAxis = x.xAxes.push(new am4charts.ValueAxis());
     valueAxis.min = 0;
-    valueAxis.max = 7500;
-    valueAxis.strictMinMax = true;
-    valueAxis.title.text = "KI Ausgaben je Unternehmen in 1.000€";
+    // valueAxis.max = 7500;
+    // valueAxis.strictMinMax = true;
+    valueAxis.title.text =
+      "Umsatzanteil von Produkten oder Dienstleistungen mit KI-Einsatz in Unternehmn der deutschen Wirtschaft 2019";
 
     let series = x.series.push(new am4charts.ColumnSeries());
     series.dataFields.categoryY = "branch";
@@ -134,7 +135,7 @@ function BarChart() {
     labelBullet.label.truncate = false;
     labelBullet.label.hideOversized = false;
     labelBullet.label.dx = 5;
-    labelBullet.label.text = "{value}";
+    labelBullet.label.text = "{value} %";
 
     var image = new am4core.Image();
     image.width = 35;
