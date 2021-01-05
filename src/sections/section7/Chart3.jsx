@@ -33,7 +33,6 @@ function Chart3() {
       var pieSeries = chart.series.push(new am4charts.PieSeries());
       pieSeries.dataFields.value = "IKT";
       pieSeries.dataFields.category = "Nutzen";
-      pieSeries.slices.template.stroke = am4core.color("#fff");
       pieSeries.slices.template.strokeWidth = 0;
       pieSeries.slices.template.tooltipText = "IKT: {IKT}";
       pieSeries.radius = am4core.percent(43);
