@@ -6,15 +6,17 @@ import Chart4 from "./Chart4";
 function Section6() {
   return (
     <>
-      <div className="pt-5">
-        <div className="h2r-box mb-5">
+      <div className="container pt-5 mr-0">
+        <div className="h2r-box row mb-3">
           <h2>KI Verfahren</h2>
         </div>
-      </div>
-      <div className='row'>
-        <div className='col-8 '>
-        <p>Am weitesten verbreitet war im Jahr 2019 in der deutschen Wirtschaft maschinelles Lernen und Beweisen als eingesetztes Verfahren mit 55 %.  Zur Erkennung von Bild und Ton setzen 49 % der Unternehmen auf KI. “Wissensbasierte
-        Systeme" werden beinahe eben so häufig genutzt. Sprach- und Textverstehen sind mit 30 % repräsentiert.</p>
+        <div className="d-inline-block mt-5 mr-0">
+          <div className="d-flex">
+          <div className="w-50 ml-auto mb-5">
+            <p>Am weitesten verbreitet war im Jahr 2019 in der deutschen Wirtschaft <b>maschinelles Lernen und Beweisen</b> als eingesetztes Verfahren <b>mit 55 %</b>.  Zur <b>Erkennung von Bild und Ton</b> setzen <b>49 %</b> der Unternehmen auf KI. <b>Wissensbasierte
+            Systeme</b> werden beinahe eben so häufig genutzt. <b>Sprach- und Textverstehen</b> sind mit <b>30 %</b> repräsentiert.</p>
+          </div>
+        </div>
         </div>
       </div>
       <div className="chartcontainer">
