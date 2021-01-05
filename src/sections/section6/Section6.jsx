@@ -6,7 +6,11 @@ import Chart4 from "./Chart4";
 function Section6() {
   return (
     <>
-      <h1>KI Verfahren</h1>
+      <div className="pt-5">
+        <div className="h2r-box mb-5">
+          <h2>KI Verfahren</h2>
+        </div>
+      </div>
       <div className='row'>
         <div className='col-8 '>
         <p>Am weitesten verbreitet war im Jahr 2019 in der deutschen Wirtschaft maschinelles Lernen und Beweisen als eingesetztes Verfahren mit 55 %.  Zur Erkennung von Bild und Ton setzen 49 % der Unternehmen auf KI. “Wissensbasierte
