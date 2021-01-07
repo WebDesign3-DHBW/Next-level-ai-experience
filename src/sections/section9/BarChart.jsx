@@ -159,7 +159,7 @@ function BarChart() {
       x.dispose();
     };
   }, []);
-  return <div id='s9_barchart' style={{ width: "100%", height: "800px" }}></div>;
+  return <div id='s9_barchart' style={{ width: "100%", height: "600px" }}></div>;
 }
 
 export default BarChart;

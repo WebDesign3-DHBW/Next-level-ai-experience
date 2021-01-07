@@ -42,7 +42,7 @@ function Chart() {
     dateAxis.extraTooltipPrecision = 2;
     dateAxis.baseInterval = {
       timeUnit: "year",
-      count: 0.5,
+      count: 0,
     };
 
     dateAxis.gridIntervals.setAll([
@@ -143,6 +143,21 @@ function Chart() {
 
       var data = [
         {
+          year: "2009",
+          "Finanzdienstleist.": 6,
+          "Chemie/Ph., Gr.st.": 11,
+          "Elektrot./Maschin.b.": 17,
+          IKT: 9,
+          Großhandel: 8,
+          "Verkehr, Logistik": 20,
+          "Ver-/Entsorg., Bg.b.": 12,
+          "Sonst. Verarb. Gew.": 35,
+          "Untern.nahe Dienstl.": 24,
+          "Sonst. Dienstleist.": 43,
+          Fahrzeugbau: 17,
+          Gesamtwirtschaft: 20,
+        },
+        {
           year: "2010",
           "Finanzdienstleist.": 6,
           "Chemie/Ph., Gr.st.": 11,
@@ -202,6 +217,9 @@ function Chart() {
           Fahrzeugbau: 17 + 39 + 26 + 18,
           Gesamtwirtschaft: 20 + 20 + 33 + 27,
         },
+        {
+          year: "2020",
+        }
       ];
 
       series.data = data;

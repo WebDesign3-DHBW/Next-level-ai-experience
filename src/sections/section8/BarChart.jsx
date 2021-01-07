@@ -160,7 +160,7 @@ valueAxis.renderer.grid.template.disabled = true;
       x.dispose();
     };
   }, []);
-  return <div id="s8_barchart" style={{ width: "100%", height: "800px" }}></div>;
+  return <div className="" id="s8_barchart" style={{ width: "100%", height: "700px" }}></div>;
 }
 
 export default BarChart;
