@@ -76,12 +76,46 @@ function Chart5(props) {
       image.horizontalCenter = "middle";
       image.verticalCenter = "middle";
 
+      pieSeries.tooltip.label.adapter.add("text", function (text, target) {
+        if (target.dataItem && target.dataItem.values.value.percent === 89) {
+          return "";
+        } else {
+          return text;
+        }
+      });
+
+      pieSeries2.tooltip.label.adapter.add("text", function (text, target) {
+        if (target.dataItem && target.dataItem.values.value.percent === 89) {
+          return "";
+        } else {
+          return text;
+        }
+      });
+
+      pieSeries.events.on("beforedatavalidated", function (ev) {
+        ev.target.slices.each(function (slice) {
+          slice.states.getKey("hover").properties.scale = 1;
+          if (slice.dataItem.values.value.percent === 89) {
+            slice.states.getKey("active").properties.shiftRadius = 0;
+          }
+        });
+      });
+
+      pieSeries2.events.on("beforedatavalidated", function (ev) {
+        ev.target.slices.each(function (slice) {
+          slice.states.getKey("hover").properties.scale = 1;
+          if (slice.dataItem.values.value.percent === 89) {
+            slice.states.getKey("active").properties.shiftRadius = 0;
+          }
+        });
+      });
+
       x.logo.disabled = true;
       chart.current = x;
     }
   }, [inViewport]);
   return (
-    <div id='chartdiv_sec7_5' style={{ width: "100%", height: "300px" }} ref={forwardedRef}></div>
+    <div id="chartdiv_sec7_5" style={{ width: "100%", height: "300px" }} ref={forwardedRef}></div>
   );
 }
 

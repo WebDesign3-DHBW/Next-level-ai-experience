@@ -72,12 +72,50 @@ function Chart1(props) {
       image.horizontalCenter = "middle";
       image.verticalCenter = "middle";
 
-      x.logo.disabled = true;
+      pieSeries.tooltip.label.adapter.add("text", function (text, target) {
+        if (target.dataItem && target.dataItem.values.value.percent === 41) {
+          return "";
+        } else {
+          return text;
+        }
+      });
+
+      pieSeries2.tooltip.label.adapter.add("text", function (text, target) {
+        if (target.dataItem && target.dataItem.values.value.percent === 45) {
+          return "";
+        } else {
+          return text;
+        }
+      });
+
+      pieSeries.events.on("childadded", function (ev) {
+        ev.target.slices.each(function (slice) {
+          slice.states.getKey("hover").properties.scale = 1;
+          if (slice.dataItem.values.value.percent === 41) {
+            slice.states.getKey("active").properties.shiftRadius = 0;
+          }
+        });
+      });
+
+      pieSeries2.events.on("childadded", function (ev) {
+        ev.target.slices.each(function (slice) {
+          slice.states.getKey("hover").properties.scale = 1;
+          if (slice.dataItem.values.value.percent === 45) {
+            slice.states.getKey("active").properties.shiftRadius = 0;
+          }
+        });
+      });
+
+      let label = chart.createChild(am4core.Label);
+      label.text = "Maschinelles Lernen und Beweisen";
+      label.align = "center";
+
+      chart.logo.disabled = "true";
       chart.current = x;
     }
   }, [inViewport]); // end am4core.ready()
   return (
-    <div id='chartdiv_sec6' style={{ width: "100%", height: "300px" }} ref={forwardedRef}></div>
+    <div id="chartdiv_sec6" style={{ width: "100%", height: "300px" }} ref={forwardedRef}></div>
   );
 }
 

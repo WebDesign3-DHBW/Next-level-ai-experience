@@ -74,12 +74,46 @@ function Chart2(props) {
       image.horizontalCenter = "middle";
       image.verticalCenter = "middle";
 
-      x.logo.disabled = true;
+      pieSeries.tooltip.label.adapter.add("text", function (text, target) {
+        if (target.dataItem && target.dataItem.values.value.percent === 53) {
+          return "";
+        } else {
+          return text;
+        }
+      });
+
+      pieSeries2.tooltip.label.adapter.add("text", function (text, target) {
+        if (target.dataItem && target.dataItem.values.value.percent === 51) {
+          return "";
+        } else {
+          return text;
+        }
+      });
+
+      pieSeries.events.on("beforedatavalidated", function (ev) {
+        ev.target.slices.each(function (slice) {
+          slice.states.getKey("hover").properties.scale = 1;
+          if (slice.dataItem.values.value.percent === 53) {
+            slice.states.getKey("active").properties.shiftRadius = 0;
+          }
+        });
+      });
+
+      pieSeries2.events.on("beforedatavalidated", function (ev) {
+        ev.target.slices.each(function (slice) {
+          slice.states.getKey("hover").properties.scale = 1;
+          if (slice.dataItem.values.value.percent === 51) {
+            slice.states.getKey("active").properties.shiftRadius = 0;
+          }
+        });
+      });
+
+      chart.logo.disabled = "true";
       chart.current = x;
     }
   }, [inViewport]); // end am4core.ready()
   return (
-    <div id='chartdiv_sec6_2' style={{ width: "100%", height: "300px" }} ref={forwardedRef}></div>
+    <div id="chartdiv_sec6_2" style={{ width: "100%", height: "300px" }} ref={forwardedRef}></div>
   );
 }
 
