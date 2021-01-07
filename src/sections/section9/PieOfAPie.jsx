@@ -36,8 +36,6 @@ function PieOfAPie() {
         amount: 1.5,
         icon: IKT,
         color: am4core.color("#EDE750"),
-        isActive: true,
-
         subData: [
           { name: "interne laufende Aufwendungen", value: 88 },
           { name: "Investitionen", value: 10 },
