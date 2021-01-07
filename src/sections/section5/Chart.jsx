@@ -35,7 +35,6 @@ function Chart() {
     dateAxis.renderer.line.strokeOpacity = 1;
     dateAxis.renderer.line.strokeWidth = 5;
     dateAxis.renderer.line.stroke = am4core.color("#004D88");
-    dateAxis.renderer.minGridDistance = 80;
     // dateAxis.min = "0";
     // dateAxis.max = "2020";
     dateAxis.strictMinMax = true;
