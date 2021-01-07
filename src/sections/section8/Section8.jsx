@@ -1,4 +1,5 @@
 import Chart from "../section8/Chart";
+import BarChart from "./BarChart";
 
 function Section8() {
   return (
@@ -14,7 +15,10 @@ function Section8() {
             Dienstleistungen einen überdurchschnittlichen Anteil.
           </p>
         </div>
-        <div className="col-12 mt-4">
+        <div className="col-6 mt-4 align-self-center">
+          <BarChart />
+        </div>
+        <div className="col-6 mt-4 align-self-center">
           <Chart />
         </div>
       </div>

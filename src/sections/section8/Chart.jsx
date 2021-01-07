@@ -140,7 +140,7 @@ function Chart() {
     var centerText = seriesTemplate.bullets.push(new am4charts.LabelBullet());
     centerText.locationX = 0.5;
     centerText.locationY = 0.5;
-    centerText.label.text = "[font-size: 20px; bold]{value}[/]";
+    centerText.label.text = "[font-size: 20px; bold]{value} Mrd. €[/] ";
 
     centerText.label.fill = am4core.color("#fff");
 
