@@ -12,9 +12,9 @@ function Section9() {
               </div>
             </div>
           <p>
-            Die Summe aller Ausgaben für KI-Verfahren sowie deren Entwicklung, Einführung und Pflege
-            beliefen sich 2019 auf rund 4,8 Mrd. € in der deutschen Wirtschaft. Die IKT-Branche
-            verzeichnet dabei mit 1,5 Mrd. € (31 %) den größten Anteil der Ausgaben. In der
+            Die Summe aller <b>Ausgaben</b> für KI-Verfahren sowie deren Entwicklung, Einführung und Pflege
+            beliefen sich 2019 auf rund <b>4,8 Mrd. €</b> in der deutschen Wirtschaft. Die <b>IKT-Branche</b>
+            verzeichnet dabei <b>mit 1,5 Mrd. € (31 %) den größten Anteil der Ausgaben</b>. In der
             Gesamtwirtschaft setzen sich die KI-Ausgaben hauptsächlich (76 %) aus intern laufenden
             Aufwendungen zusammen, die im Wesentlichen Personalaufwendungen umfassen.
           </p>

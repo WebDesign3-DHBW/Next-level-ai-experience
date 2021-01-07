@@ -27,21 +27,28 @@ function Chart() {
     var x = am4core.create("ersterEinsatz", am4charts.XYChart);
     x.dateFormatter.dateFormat = "yyyy";
 
+    x.paddingRight = 20;
+
     // DateAxis
     var dateAxis = x.xAxes.push(new am4charts.DateAxis());
     dateAxis.title.text = "Jahr";
     dateAxis.renderer.line.strokeOpacity = 1;
     dateAxis.renderer.line.strokeWidth = 5;
     dateAxis.renderer.line.stroke = am4core.color("#004D88");
+    dateAxis.renderer.minGridDistance = 80;
     // dateAxis.min = "0";
-    // dateAxis.max = "2019";
-    // dateAxis.strictMinMax = true;
+    // dateAxis.max = "2020";
+    dateAxis.strictMinMax = true;
     dateAxis.tooltipDateFormat = "yyyy";
     dateAxis.extraTooltipPrecision = 2;
     dateAxis.baseInterval = {
       timeUnit: "year",
-      count: 1,
+      count: 0.5,
     };
+
+    dateAxis.gridIntervals.setAll([
+      { timeUnit: "year", count: 1 },
+    ]);
     // dateAxis.skipEmptyPeriods = true;
 
     // ValueAxis
