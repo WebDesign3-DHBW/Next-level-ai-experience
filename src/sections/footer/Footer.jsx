@@ -8,6 +8,7 @@ function Footer() {
           </div>
         </div>
         <p>
+          Ein studentisches Projekt der <br />
           DHBW Campus Mosbach, Studiengang Onlinemedien <br />
           Lohrtalweg 10
           <br />
