@@ -69,7 +69,7 @@ function Chart1() {
 
     chart.logo.disabled = "true";
   }); // end am4core.ready()
-  return <div id="chartdiv_sec6" style={{ width: "100%", height: "300px" }}></div>;
+  return <div id='chartdiv_sec6' style={{ width: "100%", height: "300px" }}></div>;
 }
 
 export default Chart1;

@@ -1,7 +1,17 @@
 import Chart from "./Chart";
-import handleViewport from "react-in-viewport";
+// import handleViewport from "react-in-viewport";
 
-const ViewportBlock = handleViewport(Chart /** options: {}, config: {} **/);
+// const Block = (props: { inViewport: boolean }) => {
+//   const { forwardedRef } = props;
+
+//   return (
+//     <div className='viewport-block' ref={forwardedRef}>
+//       <p>Hier könnte Ihr Chart sein!</p>
+//     </div>
+//   );
+// };
+
+// const ViewportBlock = handleViewport(Block /** options: {}, config: {} **/);
 
 function Section3() {
   return (
@@ -17,11 +27,11 @@ function Section3() {
           </p>
         </div>
         <div className='col-12 mt-4'>
-          <ViewportBlock
+          {/* <ViewportBlock
             onEnterViewport={() => console.log("enter")}
             onLeaveViewport={() => console.log("leave")}
-          />
-          {/* <Chart /> */}
+          /> */}
+          <Chart />
         </div>
       </div>
     </div>
