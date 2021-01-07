@@ -119,6 +119,7 @@ function BarChart() {
     // valueAxis.strictMinMax = true;
     valueAxis.title.text =
       "Umsatzanteil von Produkten oder Dienstleistungen mit KI-Einsatz in Unternehmn der deutschen Wirtschaft 2019";
+valueAxis.renderer.grid.template.disabled = true;
 
     let series = x.series.push(new am4charts.ColumnSeries());
     series.dataFields.categoryY = "branch";
