@@ -97,7 +97,7 @@ function App() {
                 </div>
               </div>
               <div className="section">
-                <div>
+                <div className="bg-footer">
                   <section>
                     <Footer />
                   </section>
