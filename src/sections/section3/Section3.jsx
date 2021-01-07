@@ -1,4 +1,7 @@
 import Chart from "./Chart";
+import handleViewport from "react-in-viewport";
+
+const ViewportBlock = handleViewport(Chart /** options: {}, config: {} **/);
 
 function Section3() {
   return (
@@ -14,7 +17,11 @@ function Section3() {
           </p>
         </div>
         <div className='col-12 mt-4'>
-          <Chart />
+          <ViewportBlock
+            onEnterViewport={() => console.log("enter")}
+            onLeaveViewport={() => console.log("leave")}
+          />
+          {/* <Chart /> */}
         </div>
       </div>
     </div>
