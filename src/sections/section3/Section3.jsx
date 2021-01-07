@@ -14,10 +14,6 @@ function Section3() {
           </p>
         </div>
         <div className='col-12 mt-4'>
-          {/* <ViewportBlock
-            onEnterViewport={() => console.log("enter")}
-            onLeaveViewport={() => console.log("leave")}
-          /> */}
           <Chart />
         </div>
       </div>
