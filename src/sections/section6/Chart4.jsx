@@ -75,6 +75,11 @@ function Chart4(props) {
       image.horizontalCenter = "middle";
       image.verticalCenter = "middle";
 
+      const slice1 = pieSeries.slices.template;
+      slice1.states.getKey("hover").properties.scale = 1;
+      const slice2 = pieSeries2.slices.template;
+      slice2.states.getKey("hover").properties.scale = 1;
+
       pieSeries.tooltip.label.adapter.add("text", function (text, target) {
         if (target.dataItem && target.dataItem.values.value.percent === 77) {
           return "";
@@ -93,7 +98,6 @@ function Chart4(props) {
 
       pieSeries.events.on("beforedatavalidated", function (ev) {
         ev.target.slices.each(function (slice) {
-          slice.states.getKey("hover").properties.scale = 1;
           if (slice.dataItem.values.value.percent === 77) {
             slice.states.getKey("active").properties.shiftRadius = 0;
           }
@@ -102,7 +106,6 @@ function Chart4(props) {
 
       pieSeries2.events.on("beforedatavalidated", function (ev) {
         ev.target.slices.each(function (slice) {
-          slice.states.getKey("hover").properties.scale = 1;
           if (slice.dataItem.values.value.percent === 70) {
             slice.states.getKey("active").properties.shiftRadius = 0;
           }

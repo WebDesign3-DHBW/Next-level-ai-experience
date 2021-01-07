@@ -60,10 +60,6 @@ function Chart1(props) {
       pieSeries2.slices.template.tooltipText = "Gesamtwirtschaft: {Gesamtwirtschaft}";
       pieSeries2.colors.list = [am4core.color("#4F4FFE"), am4core.color("rgba(0, 77, 136, 0.3)")];
 
-      let label = x.createChild(am4core.Label);
-      label.text = "Maschinelles Lernen und Beweisen";
-      label.align = "center";
-
       let bullet = pieSeries.createChild(am4charts.Bullet);
       let image = bullet.createChild(am4core.Image);
       image.href = buchHref;
@@ -71,6 +67,11 @@ function Chart1(props) {
       image.height = 50;
       image.horizontalCenter = "middle";
       image.verticalCenter = "middle";
+
+      const slice1 = pieSeries.slices.template;
+      slice1.states.getKey("hover").properties.scale = 1;
+      const slice2 = pieSeries2.slices.template;
+      slice2.states.getKey("hover").properties.scale = 1;
 
       pieSeries.tooltip.label.adapter.add("text", function (text, target) {
         if (target.dataItem && target.dataItem.values.value.percent === 41) {
@@ -90,7 +91,6 @@ function Chart1(props) {
 
       pieSeries.events.on("childadded", function (ev) {
         ev.target.slices.each(function (slice) {
-          slice.states.getKey("hover").properties.scale = 1;
           if (slice.dataItem.values.value.percent === 41) {
             slice.states.getKey("active").properties.shiftRadius = 0;
           }
@@ -99,18 +99,17 @@ function Chart1(props) {
 
       pieSeries2.events.on("childadded", function (ev) {
         ev.target.slices.each(function (slice) {
-          slice.states.getKey("hover").properties.scale = 1;
           if (slice.dataItem.values.value.percent === 45) {
             slice.states.getKey("active").properties.shiftRadius = 0;
           }
         });
       });
 
-      let label = chart.createChild(am4core.Label);
+      let label = x.createChild(am4core.Label);
       label.text = "Maschinelles Lernen und Beweisen";
       label.align = "center";
 
-      chart.logo.disabled = "true";
+      x.logo.disabled = "true";
       chart.current = x;
     }
   }, [inViewport]); // end am4core.ready()
