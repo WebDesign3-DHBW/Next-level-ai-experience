@@ -5,7 +5,7 @@ import "pathseg";
 function Section1() {
   return (
     <>
-      <div className="container">
+      <div className="header-container">
         <h1>Einsatz von KI in der deutschen Wirtschaft</h1>
         <p>
           Im Jahr 2019 haben 17.500 Unternehmen im Bereich der Innovationserhebung Künstlicher
