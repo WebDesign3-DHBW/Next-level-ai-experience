@@ -83,7 +83,13 @@ $translucency: 0.2;
 }
 
 .bg-footer {
-  background-image: url(../../images/Bg-rb.svg);
+  background-image: url(../../images/Bg-rb.svg),
+      linear-gradient(
+        355deg,
+        rgba(49, 49, 49, 1) 0%,
+        rgba(49, 49, 49, 0.88) 40%,
+        rgba(49, 49, 49, 0) 100%
+      );
   background-position: right bottom;
   background-repeat: no-repeat;
 }
