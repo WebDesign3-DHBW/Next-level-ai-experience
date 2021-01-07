@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@amcharts/amcharts4": "^4.10.13",
+    "@fullpage/react-fullpage": "^0.1.18",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.5.0",
@@ -16,7 +17,9 @@
     "react-icons": "^4.1.0",
     "react-in-viewport": "^1.0.0-alpha.15",
     "react-particles-js": "^3.4.1",
+
     "react-scripts": "4.0.1",
+    "react-tsparticles": "^1.18.11",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
