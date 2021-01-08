@@ -116,11 +116,12 @@ function BarChart(props) {
       categoryAxis.renderer.inversed = true;
       categoryAxis.renderer.grid.template.disabled = true;
 
-      let valueAxis = x.xAxes.push(new am4charts.ValueAxis());
-      valueAxis.min = 0;
-      valueAxis.max = 7500;
-      valueAxis.strictMinMax = true;
-      valueAxis.title.text = "KI Ausgaben je Unternehmen in 1.000€";
+    let valueAxis = x.xAxes.push(new am4charts.ValueAxis());
+    valueAxis.min = 0;
+    valueAxis.max = 7500;
+    valueAxis.strictMinMax = true;
+    valueAxis.renderer.grid.template.disabled = true;
+    valueAxis.title.text = "KI Ausgaben je Unternehmen in 1.000€";
 
       let series = x.series.push(new am4charts.ColumnSeries());
       series.dataFields.categoryY = "branch";

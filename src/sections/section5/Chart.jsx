@@ -30,22 +30,28 @@ function Chart(props) {
       var x = am4core.create("ersterEinsatz", am4charts.XYChart);
       x.dateFormatter.dateFormat = "yyyy";
 
-      // DateAxis
-      var dateAxis = x.xAxes.push(new am4charts.DateAxis());
-      dateAxis.title.text = "Jahr";
-      dateAxis.renderer.line.strokeOpacity = 1;
-      dateAxis.renderer.line.strokeWidth = 5;
-      dateAxis.renderer.line.stroke = am4core.color("#004D88");
-      // dateAxis.min = "0";
-      // dateAxis.max = "2019";
-      // dateAxis.strictMinMax = true;
-      dateAxis.tooltipDateFormat = "yyyy";
-      dateAxis.extraTooltipPrecision = 2;
-      dateAxis.baseInterval = {
-        timeUnit: "year",
-        count: 1,
-      };
-      // dateAxis.skipEmptyPeriods = true;
+    x.paddingRight = 20;
+
+    // DateAxis
+    var dateAxis = x.xAxes.push(new am4charts.DateAxis());
+    dateAxis.title.text = "Jahr";
+    dateAxis.renderer.line.strokeOpacity = 1;
+    dateAxis.renderer.line.strokeWidth = 5;
+    dateAxis.renderer.line.stroke = am4core.color("#004D88");
+    // dateAxis.min = "0";
+    // dateAxis.max = "2020";
+    dateAxis.strictMinMax = true;
+    dateAxis.tooltipDateFormat = "yyyy";
+    dateAxis.extraTooltipPrecision = 2;
+    dateAxis.baseInterval = {
+      timeUnit: "year",
+      count: 0,
+    };
+
+    dateAxis.gridIntervals.setAll([
+      { timeUnit: "year", count: 1 },
+    ]);
+    // dateAxis.skipEmptyPeriods = true;
 
       // ValueAxis
       var valueAxis = x.yAxes.push(new am4charts.ValueAxis());
@@ -138,68 +144,86 @@ function Chart(props) {
           processOut(event.target.parent.parent.parent);
         });
 
-        var data = [
-          {
-            year: "2010",
-            "Finanzdienstleist.": 6,
-            "Chemie/Ph., Gr.st.": 11,
-            "Elektrot./Maschin.b.": 17,
-            IKT: 9,
-            Großhandel: 8,
-            "Verkehr, Logistik": 20,
-            "Ver-/Entsorg., Bg.b.": 12,
-            "Sonst. Verarb. Gew.": 35,
-            "Untern.nahe Dienstl.": 24,
-            "Sonst. Dienstleist.": 43,
-            Fahrzeugbau: 17,
-            Gesamtwirtschaft: 20,
-          },
-          {
-            year: "2015",
-            "Finanzdienstleist.": 6 + 19,
-            "Chemie/Ph., Gr.st.": 11 + 14,
-            "Elektrot./Maschin.b.": 17 + 15,
-            IKT: 9 + 26,
-            Großhandel: 8 + 30,
-            "Verkehr, Logistik": 20 + 19,
-            "Ver-/Entsorg., Bg.b.": 12 + 31,
-            "Sonst. Verarb. Gew.": 35 + 9,
-            "Untern.nahe Dienstl.": 24 + 20,
-            "Sonst. Dienstleist.": 43 + 11,
-            Fahrzeugbau: 17 + 39,
-            Gesamtwirtschaft: 20 + 20,
-          },
-          {
-            year: "2017",
-            "Finanzdienstleist.": 6 + 19 + 38,
-            "Chemie/Ph., Gr.st.": 11 + 14 + 51,
-            "Elektrot./Maschin.b.": 17 + 15 + 41,
-            IKT: 9 + 26 + 39,
-            Großhandel: 8 + 30 + 41,
-            "Verkehr, Logistik": 20 + 19 + 16,
-            "Ver-/Entsorg., Bg.b.": 12 + 31 + 31,
-            "Sonst. Verarb. Gew.": 35 + 9 + 35,
-            "Untern.nahe Dienstl.": 24 + 20 + 29,
-            "Sonst. Dienstleist.": 43 + 11 + 14,
-            Fahrzeugbau: 17 + 39 + 26,
-            Gesamtwirtschaft: 20 + 20 + 33,
-          },
-          {
-            year: "2019",
-            "Finanzdienstleist.": 6 + 19 + 38 + 37,
-            "Chemie/Ph., Gr.st.": 11 + 14 + 51 + 23,
-            "Elektrot./Maschin.b.": 17 + 15 + 41 + 27,
-            IKT: 9 + 26 + 39 + 27,
-            Großhandel: 8 + 30 + 41 + 22,
-            "Verkehr, Logistik": 20 + 19 + 16 + 45,
-            "Ver-/Entsorg., Bg.b.": 12 + 31 + 31 + 26,
-            "Sonst. Verarb. Gew.": 35 + 9 + 35 + 21,
-            "Untern.nahe Dienstl.": 24 + 20 + 29 + 27,
-            "Sonst. Dienstleist.": 43 + 11 + 14 + 32,
-            Fahrzeugbau: 17 + 39 + 26 + 18,
-            Gesamtwirtschaft: 20 + 20 + 33 + 27,
-          },
-        ];
+      var data = [
+        {
+          year: "2009",
+          "Finanzdienstleist.": 6,
+          "Chemie/Ph., Gr.st.": 11,
+          "Elektrot./Maschin.b.": 17,
+          IKT: 9,
+          Großhandel: 8,
+          "Verkehr, Logistik": 20,
+          "Ver-/Entsorg., Bg.b.": 12,
+          "Sonst. Verarb. Gew.": 35,
+          "Untern.nahe Dienstl.": 24,
+          "Sonst. Dienstleist.": 43,
+          Fahrzeugbau: 17,
+          Gesamtwirtschaft: 20,
+        },
+        {
+          year: "2010",
+          "Finanzdienstleist.": 6,
+          "Chemie/Ph., Gr.st.": 11,
+          "Elektrot./Maschin.b.": 17,
+          IKT: 9,
+          Großhandel: 8,
+          "Verkehr, Logistik": 20,
+          "Ver-/Entsorg., Bg.b.": 12,
+          "Sonst. Verarb. Gew.": 35,
+          "Untern.nahe Dienstl.": 24,
+          "Sonst. Dienstleist.": 43,
+          Fahrzeugbau: 17,
+          Gesamtwirtschaft: 20,
+        },
+        {
+          year: "2015",
+          "Finanzdienstleist.": 6 + 19,
+          "Chemie/Ph., Gr.st.": 11 + 14,
+          "Elektrot./Maschin.b.": 17 + 15,
+          IKT: 9 + 26,
+          Großhandel: 8 + 30,
+          "Verkehr, Logistik": 20 + 19,
+          "Ver-/Entsorg., Bg.b.": 12 + 31,
+          "Sonst. Verarb. Gew.": 35 + 9,
+          "Untern.nahe Dienstl.": 24 + 20,
+          "Sonst. Dienstleist.": 43 + 11,
+          Fahrzeugbau: 17 + 39,
+          Gesamtwirtschaft: 20 + 20,
+        },
+        {
+          year: "2017",
+          "Finanzdienstleist.": 6 + 19 + 38,
+          "Chemie/Ph., Gr.st.": 11 + 14 + 51,
+          "Elektrot./Maschin.b.": 17 + 15 + 41,
+          IKT: 9 + 26 + 39,
+          Großhandel: 8 + 30 + 41,
+          "Verkehr, Logistik": 20 + 19 + 16,
+          "Ver-/Entsorg., Bg.b.": 12 + 31 + 31,
+          "Sonst. Verarb. Gew.": 35 + 9 + 35,
+          "Untern.nahe Dienstl.": 24 + 20 + 29,
+          "Sonst. Dienstleist.": 43 + 11 + 14,
+          Fahrzeugbau: 17 + 39 + 26,
+          Gesamtwirtschaft: 20 + 20 + 33,
+        },
+        {
+          year: "2019",
+          "Finanzdienstleist.": 6 + 19 + 38 + 37,
+          "Chemie/Ph., Gr.st.": 11 + 14 + 51 + 23,
+          "Elektrot./Maschin.b.": 17 + 15 + 41 + 27,
+          IKT: 9 + 26 + 39 + 27,
+          Großhandel: 8 + 30 + 41 + 22,
+          "Verkehr, Logistik": 20 + 19 + 16 + 45,
+          "Ver-/Entsorg., Bg.b.": 12 + 31 + 31 + 26,
+          "Sonst. Verarb. Gew.": 35 + 9 + 35 + 21,
+          "Untern.nahe Dienstl.": 24 + 20 + 29 + 27,
+          "Sonst. Dienstleist.": 43 + 11 + 14 + 32,
+          Fahrzeugbau: 17 + 39 + 26 + 18,
+          Gesamtwirtschaft: 20 + 20 + 33 + 27,
+        },
+        {
+          year: "2020",
+        }
+      ];
 
         series.data = data;
         return series;
