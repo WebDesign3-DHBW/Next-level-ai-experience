@@ -74,12 +74,49 @@ function Chart2(props) {
       image.horizontalCenter = "middle";
       image.verticalCenter = "middle";
 
-      x.logo.disabled = true;
+      const slice1 = pieSeries.slices.template;
+      slice1.states.getKey("hover").properties.scale = 1;
+      const slice2 = pieSeries2.slices.template;
+      slice2.states.getKey("hover").properties.scale = 1;
+
+      pieSeries.tooltip.label.adapter.add("text", function (text, target) {
+        if (target.dataItem && target.dataItem.values.value.percent === 53) {
+          return "";
+        } else {
+          return text;
+        }
+      });
+
+      pieSeries2.tooltip.label.adapter.add("text", function (text, target) {
+        if (target.dataItem && target.dataItem.values.value.percent === 51) {
+          return "";
+        } else {
+          return text;
+        }
+      });
+
+      pieSeries.events.on("beforedatavalidated", function (ev) {
+        ev.target.slices.each(function (slice) {
+          if (slice.dataItem.values.value.percent === 53) {
+            slice.states.getKey("active").properties.shiftRadius = 0;
+          }
+        });
+      });
+
+      pieSeries2.events.on("beforedatavalidated", function (ev) {
+        ev.target.slices.each(function (slice) {
+          if (slice.dataItem.values.value.percent === 51) {
+            slice.states.getKey("active").properties.shiftRadius = 0;
+          }
+        });
+      });
+
+      x.logo.disabled = "true";
       chart.current = x;
     }
   }, [inViewport]); // end am4core.ready()
   return (
-    <div id='chartdiv_sec6_2' style={{ width: "100%", height: "300px" }} ref={forwardedRef}></div>
+    <div id="chartdiv_sec6_2" style={{ width: "100%", height: "300px" }} ref={forwardedRef}></div>
   );
 }
 
