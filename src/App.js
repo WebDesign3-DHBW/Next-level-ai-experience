@@ -36,7 +36,7 @@ function App() {
               <div className="section">
                 <div className="bg-section1">
                   <section>
-                    <Section1 />
+                    <Section1 fullpageApi={fullpageApi} />
                   </section>
                 </div>
               </div>

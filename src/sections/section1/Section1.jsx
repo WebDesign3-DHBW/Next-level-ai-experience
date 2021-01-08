@@ -2,7 +2,7 @@ import Particles from "react-tsparticles";
 import Kopf from "./kopf.svg";
 import "pathseg";
 
-function Section1() {
+function Section1({ fullpageApi }) {
   return (
     <>
       <div className="header-container">
@@ -443,7 +443,7 @@ function Section1() {
           },
         }}
       />
-      <div class="scroll-down" address="true" />
+      <div class="scroll-down" address="true" onClick={() => fullpageApi.moveSectionDown()} />
     </>
   );
 }
