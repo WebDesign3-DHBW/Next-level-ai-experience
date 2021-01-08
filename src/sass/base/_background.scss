@@ -1,23 +1,95 @@
+$translucency: 0.2;
+
 .bg-section1 {
-    background-image: url(../../images/Bg-H1.svg), url(../../images/Bg-H2.svg),;
-    background-position: right top, left bottom;
-    background-repeat: no-repeat;
+  background-image: url(../../images/Bg-H1.svg), url(../../images/Bg-H2.svg);
+  background-position: right top, left bottom;
+  background-repeat: no-repeat;
 }
 
 .bg-section2 {
-    background-image: url(../../images/Bg-H2b.svg), url(../../images/Bg-rb.svg),;
-    background-position: left top, right bottom;
+  background-image: url(../../images/Bg-H2b.svg);
+  background-position: left top;
+  background-repeat: no-repeat;
+}
+
+.bg-section2 {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-image: url(../../images/Bg-rb.svg);
+    background-position: right bottom;
     background-repeat: no-repeat;
+    opacity: $translucency;
+  }
 }
 
 .bg-A {
-    background-image: url(../../images/Bg-rt.svg), url(../../images/Bg-lb.svg),;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-image: url(../../images/Bg-rt.svg), url(../../images/Bg-lb.svg);
     background-position: right top, left bottom;
     background-repeat: no-repeat;
+    opacity: $translucency;
+  }
 }
 
 .bg-B {
-    background-image: url(../../images/Bg-lt.svg), url(../../images/Bg-rb.svg),;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-image: url(../../images/Bg-lt.svg), url(../../images/Bg-rb.svg);
     background-position: left top, right bottom;
     background-repeat: no-repeat;
+    opacity: $translucency;
+  }
+}
+
+.bg-footer {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-image: url(../../images/Bg-lt.svg),
+      linear-gradient(
+        355deg,
+        rgba(49, 49, 49, 1) 0%,
+        rgba(49, 49, 49, 0.88) 40%,
+        rgba(49, 49, 49, 0) 100%
+      );
+    background-position: left top;
+    background-repeat: no-repeat;
+    opacity: $translucency;
+  }
+}
+
+.bg-footer {
+  background-image: url(../../images/Bg-rb.svg),
+      linear-gradient(
+        355deg,
+        rgba(49, 49, 49, 1) 0%,
+        rgba(49, 49, 49, 0.88) 40%,
+        rgba(49, 49, 49, 0) 100%
+      );
+  background-position: right bottom;
+  background-repeat: no-repeat;
 }

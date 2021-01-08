@@ -15,15 +15,18 @@ import SonstVerarb from "../../svg/SonstVerarbGew.svg";
 import SonstDienst from "../../svg/SonstDienstleist.svg";
 import UnternNaheDiesnt from "../../svg/UnternnaheDienstl.svg";
 import VerkehrLogistik from "../../svg/VerkehrLogistik.svg";
+import handleViewport from "react-in-viewport";
 
 am4core.useTheme(am4themes_animated);
 am4core.useTheme(am4themes_wdTheme);
 
-function Chart() {
+function Chart(props) {
   const chart = useRef(null);
+  const { inViewport, forwardedRef } = props;
 
   useLayoutEffect(() => {
-    var x = am4core.create("stackedbarchart", am4charts.XYChart);
+    if (inViewport) {
+      var x = am4core.create("stackedbarchart", am4charts.XYChart);
 
     x.paddingLeft = 50;
     x.maskBullets = false;
@@ -115,8 +118,8 @@ function Chart() {
       },
     ];
 
-    x.legend = new am4charts.Legend();
-    x.legend.position = "bottom";
+      x.legend = new am4charts.Legend();
+      x.legend.position = "bottom";
 
     // Create axes
     let categoryAxis = x.yAxes.push(new am4charts.CategoryAxis());
@@ -124,32 +127,35 @@ function Chart() {
     categoryAxis.renderer.grid.template.opacity = 0;
     categoryAxis.renderer.labels.template.dx = -50;
 
-    let valueAxis = x.xAxes.push(new am4charts.ValueAxis());
-    valueAxis.min = 0;
-    valueAxis.max = 100;
-    valueAxis.renderer.grid.template.opacity = 0;
-    valueAxis.renderer.ticks.template.strokeOpacity = 0.5;
-    valueAxis.renderer.ticks.template.length = 10;
-    valueAxis.renderer.line.strokeOpacity = 0.5;
-    valueAxis.renderer.baseGrid.disabled = true;
-    valueAxis.renderer.minGridDistance = 40;
+      let valueAxis = x.xAxes.push(new am4charts.ValueAxis());
+      valueAxis.min = 0;
+      valueAxis.max = 100;
+      valueAxis.renderer.grid.template.opacity = 0;
+      valueAxis.renderer.ticks.template.strokeOpacity = 0.5;
+      valueAxis.renderer.ticks.template.length = 10;
+      valueAxis.renderer.line.strokeOpacity = 0.5;
+      valueAxis.renderer.baseGrid.disabled = true;
+      valueAxis.renderer.minGridDistance = 40;
 
-    // Create series
-    function createSeries(field, name) {
-      let series = x.series.push(new am4charts.ColumnSeries());
-      series.dataFields.valueX = field;
-      series.dataFields.categoryY = "branch";
-      series.stacked = true;
-      series.name = name;
+      // Create series
+      function createSeries(field, name) {
+        let series = x.series.push(new am4charts.ColumnSeries());
+        series.dataFields.valueX = field;
+        series.dataFields.categoryY = "branch";
+        series.stacked = true;
+        series.name = name;
 
-      let labelBullet = series.bullets.push(new am4charts.LabelBullet());
-      labelBullet.locationX = 0.5;
-      labelBullet.label.text = "{valueX}";
-    }
+        let labelBullet = series.bullets.push(new am4charts.LabelBullet());
+        labelBullet.locationX = 0.5;
+        labelBullet.label.text = "{valueX}";
+      }
 
-    createSeries("essenziell", "essenziell");
-    createSeries("wichtig", "wichtig");
-    createSeries("wenigerwichtig", "weniger wichtig");
+      createSeries("essenziell", "essenziell");
+      createSeries("wichtig", "wichtig");
+      createSeries("wenigerwichtig", "weniger wichtig");
+
+      x.numberFormatter.numberFormat = "#.";
+      x.logo.disabled = true;
 
     var image = new am4core.Image();
     image.width = 35;
@@ -169,11 +175,15 @@ function Chart() {
     x.logo.disabled = true;
     chart.current = x;
 
-    return () => {
-      x.dispose();
-    };
-  }, []);
-  return <div id='stackedbarchart' style={{ width: "100%", height: "600px" }}></div>;
+      return () => {
+        x.dispose();
+      };
+    }
+  }, [inViewport]);
+
+  return (
+    <div id='stackedbarchart' style={{ width: "100%", height: "600px" }} ref={forwardedRef}></div>
+  );
 }
 
-export default Chart;
+export default handleViewport(Chart);
