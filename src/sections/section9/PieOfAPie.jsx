@@ -267,16 +267,15 @@ function PieOfAPie(props) {
           line2.y2 = p22.y;
         }
       }
-    }
 
-    x.events.on("datavalidated", function () {
-      setTimeout(function () {
-        selectSlice(pieSeries.dataItems.getIndex(0));
-      }, 1000);
-    });
+      x.events.on("datavalidated", function () {
+        setTimeout(function () {
+          selectSlice(pieSeries.dataItems.getIndex(0));
+        }, 1000);
+      });
 
-    container.logo.disabled = true;
-    chart.current = x;
+      container.logo.disabled = true;
+      chart.current = x;
 
       return () => {
         x.dispose();
