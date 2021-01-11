@@ -29,7 +29,7 @@ function Footer() {
         </p>
         <p>
           Datengrundlage
-          <br /> „Einsatz von Künstlicher Intelligenz in der Deutschen Wirtschaft" <br />
+          <br /> „Einsatz von Künstlicher Intelligenz in der Deutschen Wirtschaft“ <br />
           Stand der KI-Nutzung im Jahr 2019 <br />
           Bundesministerium für Wirtschaft und Energie (BMWi)
           <br />
