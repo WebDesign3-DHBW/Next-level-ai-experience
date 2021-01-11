@@ -79,10 +79,15 @@ b {
 
   ul li .fp-tooltip {
     font-size: 20px !important;
+    font-family: $p !important;
     transform: translateY(-25%);
     color: $secondary !important;
     background-color: white;
     padding: 5px 10px;
     border-radius: 5px;
+
+    &:hover {
+      display: none;
+    }
 }
 }
