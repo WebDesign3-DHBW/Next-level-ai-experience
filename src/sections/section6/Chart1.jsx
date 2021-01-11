@@ -3,11 +3,13 @@ import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import { buchHref } from "../../svg/svgHref";
+import handleViewport from "react-in-viewport";
 
 am4core.useTheme(am4themes_animated);
 
 function Chart1(props) {
   const chart = useRef(null);
+  const { inViewport, forwardedRef } = props;
 
   useLayoutEffect(() => {
     if (inViewport) {
@@ -88,33 +90,44 @@ function Chart1(props) {
           return "";
         } else {
           return text;
-      }
-    });
-
-    pieSeries.events.on("childadded", function (ev) {
-      ev.target.slices.each(function (slice) {
-        if (slice.dataItem.values.value.percent === 41) {
-          slice.states.getKey("active").properties.shiftRadius = 0;
         }
       });
-    });
 
-    pieSeries2.events.on("childadded", function (ev) {
-      ev.target.slices.each(function (slice) {
-        if (slice.dataItem.values.value.percent === 45) {
-          slice.states.getKey("active").properties.shiftRadius = 0;
+      pieSeries2.tooltip.label.adapter.add("text", function (text, target) {
+        if (target.dataItem && target.dataItem.values.value.percent === 45) {
+          return "";
+        } else {
+          return text;
         }
       });
-    });
 
-    let label = x.createChild(am4core.Label);
-    label.text = "Maschinelles Lernen und Beweisen";
-    label.align = "center";
+      pieSeries.events.on("childadded", function (ev) {
+        ev.target.slices.each(function (slice) {
+          if (slice.dataItem.values.value.percent === 41) {
+            slice.states.getKey("active").properties.shiftRadius = 0;
+          }
+        });
+      });
 
-    x.logo.disabled = "true";
-    chart.current = x;
-  }, []); // end am4core.ready()
-  return <div id="chartdiv_sec6" style={{ width: "100%", height: "300px" }}></div>;
+      pieSeries2.events.on("childadded", function (ev) {
+        ev.target.slices.each(function (slice) {
+          if (slice.dataItem.values.value.percent === 45) {
+            slice.states.getKey("active").properties.shiftRadius = 0;
+          }
+        });
+      });
+
+      let label = x.createChild(am4core.Label);
+      label.text = "Maschinelles Lernen und Beweisen";
+      label.align = "center";
+
+      x.logo.disabled = "true";
+      chart.current = x;
+    }
+  }, [inViewport]); // end am4core.ready()
+  return (
+    <div id="chartdiv_sec6" style={{ width: "100%", height: "300px" }} ref={forwardedRef}></div>
+  );
 }
 
-export default Chart1;
+export default handleViewport(Chart1);
