@@ -22,7 +22,7 @@ function Section2() {
             </div>
             <div className="d-flex">
               <p>
-                Grafische Aufbereitung der Studie durch Studenten der
+                Grafische Aufbereitung der Studie durch Studierende der
                 <br /><b> DHBW Mosbach, Onlinemedien </b><br /> Nils Eisenhauer, Natascha Forster, Felix
                 Keller, Ole Mantei
               </p>
