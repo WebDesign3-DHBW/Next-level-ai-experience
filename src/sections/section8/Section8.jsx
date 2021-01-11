@@ -6,7 +6,7 @@ function Section8() {
     <>
       <div className="row ml-auto mr-0 justify-content-end">
         <div className="row h2r-box my-5">
-          <h2>Verteilung Umsatz</h2>
+          <h2>Verteilung des Umsatzes</h2>
         </div>
       </div>
         <div className="row">

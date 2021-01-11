@@ -15,7 +15,7 @@ function Section7() {
           <div className="d-flex">
           <div className="w-50 mr-auto mb-5">
             <p>Künstliche Intelligenz wird am häufigsten im Bereich von <b>Produkten und Dienstleistungen</b> (60 %) der KI
-einsetzenden Unternehmen verwendet. Knapp dahinter wird KI für die <b>Automatisierung von Prozessen</b> genutzt (56 %). Eine Analyse mit KI Daten setzen 34 % der Unternehmen ein und zu 22 % wird künstliche Intelligenz zur <b>Kommunikation mit Kunden</b> verwendet.</p>
+einsetzenden Unternehmen verwendet. Knapp dahinter wird KI für die <b>Automatisierung von Prozessen</b> <br/>genutzt (56 %). Eine Analyse mit KI Daten setzen 34 % der Unternehmen ein und zu 22 % wird künstliche Intelligenz zur <b>Kommunikation mit Kunden</b> verwendet.</p>
           </div>
         
         </div>

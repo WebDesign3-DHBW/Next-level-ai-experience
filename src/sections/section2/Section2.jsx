@@ -8,7 +8,7 @@ function Section2() {
         <div className="content">
           <h2 className="heroH2 mb-5">Die Studie</h2>
           <p>
-            Die Daten des Berichts “Einsatz von Künstlicher Intelligenz in der
+            Die Daten des Berichts „Einsatz von Künstlicher Intelligenz in der
             Deutschen Wirtschaft” des <b>Bundesministerium für Wirtschaft und
             Energie aus dem Jahr 2019</b> basieren auf einer Sonderauswertung der
             Deutschen Innovationserhebung des Jahres 2019 sowie einer
@@ -22,9 +22,9 @@ function Section2() {
             </div>
             <div className="d-flex">
               <p>
-                Grafische Aufbereitung der Studie
-                <br /><b> DHBW Mosbach, Onlinemedien </b><br /> Nils Eisenhauer, Felix
-                Keller, Natascha Forster, Ole Mantei
+                Grafische Aufbereitung der Studie durch Studenten der
+                <br /><b> DHBW Mosbach, Onlinemedien </b><br /> Nils Eisenhauer, Natascha Forster, Felix
+                Keller, Ole Mantei
               </p>
             </div>
           </div>

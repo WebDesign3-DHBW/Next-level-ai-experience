@@ -14,7 +14,7 @@ function Section6() {
           <div className="d-flex">
           <div className="w-50 ml-auto mb-5">
             <p>Am weitesten verbreitet war im Jahr 2019 in der deutschen Wirtschaft <b>maschinelles Lernen und Beweisen</b> als eingesetztes Verfahren <b>mit 55 %</b>.  Zur <b>Erkennung von Bild und Ton</b> setzen <b>49 %</b> der Unternehmen auf KI. <b>Wissensbasierte
-            Systeme</b> werden beinahe eben so häufig genutzt. <b>Sprach- und Textverstehen</b> sind mit <b>30 %</b> repräsentiert.</p>
+            Systeme</b> werden beinahe eben so häufig genutzt. <br/><b>Sprach- und Textverstehen</b> sind mit <b>30 %</b> repräsentiert.</p>
           </div>
         </div>
         </div>

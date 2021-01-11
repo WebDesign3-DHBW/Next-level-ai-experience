@@ -15,9 +15,9 @@ function Section3() {
           </div>
           <div className='col-4 mt-3'>
             <p>
-              Der Einsatz von KI wird von den meisten Unternehmen, die KI einsetzen (65 %),{" "}
+              Der Einsatz von KI wird von den meisten Unternehmen, die KI einsetzen (65 %),<br/>{" "}
               <b>als wichtig für die Geschäftigkeit</b> eingestuft. Für 12 % der KI einsetzenden
-              Unternehmen ist KI essenziell für ihre Geschäftstätigkeit, d.h.{" "}
+              Unternehmen ist KI essenziell für ihre Geschäftstätigkeit, <br/>d.h.{" "}
               <b>ohne KI könnten </b>
               die entsprechenden Aktivitäten <b>gar nicht ausgeführt werden</b>.
             </p>
