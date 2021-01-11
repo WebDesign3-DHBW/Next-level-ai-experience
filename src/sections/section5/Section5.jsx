@@ -11,7 +11,7 @@ function Section5() {
             <p>
               Vor dem Jahr 2010 haben <b>bereits 20%</b> der KI einsetzenden Unternehmen KI für sich
               genutzt. Weitere 20 % begannen mit der Nutzung in der ersten Hälfte der 2010er Jahre.
-              In den folgenden Jahren hat KI an weiterer Popularität gewonnen.
+              In den folgenden Jahren hat KI erneut an Popularität gewonnen.
             </p>
           </div>
           </div>

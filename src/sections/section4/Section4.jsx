@@ -28,7 +28,7 @@ function Section4() {
                 Berichtskreis der Innovationserhebung Verfahren der Künstlichen
                 Intelligenz in ihrem Unternehmen ein. Dies entspricht einem
                 Anteil von 5,8 %. In der{' '}
-                <b>IKT-Branche lag dieser Anteilswert mit 17,8 % </b>
+                <b>IKT-Branche liegt dieser Anteilswert mit 17,8 % </b>
                 erheblich höher. Auch die Ausgaben im Bereich KI (0,58 % des
                 Umsatzes) und der Anteil der hauptsächlich Beschäftigen (1,51 %)
                 waren in der IKT-Branche am höchsten.
