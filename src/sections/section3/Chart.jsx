@@ -155,6 +155,7 @@ function Chart(props) {
       createSeries("wenigerwichtig", "weniger wichtig");
 
       x.numberFormatter.numberFormat = "#.";
+      x.language.locale["_decimalSeparator"] = ",";
       x.logo.disabled = true;
 
     var image = new am4core.Image();
@@ -171,8 +172,6 @@ function Chart(props) {
     });
     categoryAxis.dataItems.template.bullet = image;
 
-    x.numberFormatter.numberFormat = "#.";
-    x.logo.disabled = true;
     chart.current = x;
 
       return () => {
