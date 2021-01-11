@@ -9,7 +9,7 @@ function Section2() {
           <h2 className="heroH2 mb-5">Die Studie</h2>
           <p>
             Die Daten des Berichts „Einsatz von Künstlicher Intelligenz in der
-            Deutschen Wirtschaft” des <b>Bundesministerium für Wirtschaft und
+            Deutschen Wirtschaft“ des <b>Bundesministerium für Wirtschaft und
             Energie aus dem Jahr 2019</b> basieren auf einer Sonderauswertung der
             Deutschen Innovationserhebung des Jahres 2019 sowie einer
             Zusatzbefragung von KI einsetzenden Unternehmen.
