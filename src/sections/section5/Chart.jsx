@@ -43,13 +43,15 @@ function Chart(props) {
       dateAxis.strictMinMax = true;
       dateAxis.tooltipDateFormat = "yyyy";
       dateAxis.extraTooltipPrecision = 2;
-      dateAxis.baseInterval = {
-        timeUnit: "year",
-        count: 0,
-      };
 
       dateAxis.gridIntervals.setAll([{ timeUnit: "year", count: 1 }]);
       // dateAxis.skipEmptyPeriods = true;
+      dateAxis.renderer.labels.template.adapter.add("text", (text, label) => {
+        if (text === "2010") {
+          return "vor " + text;
+        }
+        return text;
+      });
 
       // ValueAxis
       var valueAxis = x.yAxes.push(new am4charts.ValueAxis());
@@ -118,12 +120,14 @@ function Chart(props) {
         series.stroke = am4core.color(color);
         const bullet = series.bullets.push(new am4charts.CircleBullet());
         bullet.fill = color;
-        series.tooltipText = "{name} in {dateX}: [bold]{valueY}%[/]";
+        // series.tooltipText = "{name} in {dateX}: [bold]{valueY}%[/]";
         series.legendSettings.labelText = " ";
         series.hidden = hide;
         // series.legendSettings.valueText = "{valueY}";
         series.tooltip.getFillFromObject = false;
         series.tooltip.background.fill = color;
+
+        series.dataFields.customValue = "year";
 
         var segment = series.segments.template;
         segment.interactionsEnabled = true;
@@ -134,30 +138,15 @@ function Chart(props) {
         var dimmed = segment.states.create("dimmed");
         dimmed.properties.stroke = am4core.color("#333");
 
-        segment.events.on("over", function (event) {
-          processOver(event.target.parent.parent.parent);
-        });
+        // segment.events.on("over", function (event) {
+        //   processOver(event.target.parent.parent.parent);
+        // });
 
-        segment.events.on("out", function (event) {
-          processOut(event.target.parent.parent.parent);
-        });
+        // segment.events.on("out", function (event) {
+        //   processOut(event.target.parent.parent.parent);
+        // });
 
         const data = [
-          {
-            year: "2009",
-            "Finanzdienstleist.": 6,
-            "Chemie/Ph., Gr.st.": 11,
-            "Elektrot./Maschin.b.": 17,
-            IKT: 9,
-            Großhandel: 8,
-            "Verkehr, Logistik": 20,
-            "Ver-/Entsorg., Bg.b.": 12,
-            "Sonst. Verarb. Gew.": 35,
-            "Untern.nahe Dienstl.": 24,
-            "Sonst. Dienstleist.": 43,
-            Fahrzeugbau: 17,
-            Gesamtwirtschaft: 20,
-          },
           {
             year: "2010",
             "Finanzdienstleist.": 6,
@@ -225,7 +214,16 @@ function Chart(props) {
 
         series.adapter.add("tooltipText", function (ev) {
           let text = "[bold]{dateX}[/]\n";
+
           x.series.each(function (item) {
+            // if (
+            //   item.tooltipDataItem.dataContext &&
+            //   item.tooltipDataItem.dataContext.year === "2010" &&
+            //   !item.isHidden
+            // ) {
+            //   // let text = "[bold]vor {dateX}[/]\n";
+            //   text = text.replace(/^/, "vor ");
+            // }
             if (!item.isHidden)
               text +=
                 "[" +
@@ -236,6 +234,7 @@ function Chart(props) {
                 item.dataFields.valueY +
                 "}\n";
           });
+
           return text;
         });
 
@@ -283,38 +282,38 @@ function Chart(props) {
         return dx;
       });
 
-      x.legend.itemContainers.template.events.on("over", function (event) {
-        processOver(event.target.dataItem.dataContext);
-      });
-      x.legend.itemContainers.template.events.on("out", function (event) {
-        processOut(event.target.dataItem.dataContext);
-      });
+      // x.legend.itemContainers.template.events.on("over", function (event) {
+      //   processOver(event.target.dataItem.dataContext);
+      // });
+      // x.legend.itemContainers.template.events.on("out", function (event) {
+      //   processOut(event.target.dataItem.dataContext);
+      // });
 
-      function processOver(hoveredSeries) {
-        hoveredSeries.toFront();
+      // function processOver(hoveredSeries) {
+      //   hoveredSeries.toFront();
 
-        hoveredSeries.segments.each(function (segment) {
-          segment.setState("hover");
-        });
+      //   hoveredSeries.segments.each(function (segment) {
+      //     segment.setState("hover");
+      //   });
 
-        x.series.each(function (series) {
-          if (series !== hoveredSeries) {
-            series.segments.each(function (segment) {
-              segment.setState("dimmed");
-            });
-            series.bulletsContainer.setState("dimmed");
-          }
-        });
-      }
+      //   x.series.each(function (series) {
+      //     if (series !== hoveredSeries) {
+      //       series.segments.each(function (segment) {
+      //         segment.setState("dimmed");
+      //       });
+      //       series.bulletsContainer.setState("dimmed");
+      //     }
+      //   });
+      // }
 
-      function processOut(hoveredSeries) {
-        x.series.each(function (series) {
-          series.segments.each(function (segment) {
-            segment.setState("default");
-          });
-          series.bulletsContainer.setState("default");
-        });
-      }
+      // function processOut(hoveredSeries) {
+      //   x.series.each(function (series) {
+      //     series.segments.each(function (segment) {
+      //       segment.setState("default");
+      //     });
+      //     series.bulletsContainer.setState("default");
+      //   });
+      // }
 
       x.logo.disabled = true;
       chart.current = x;
