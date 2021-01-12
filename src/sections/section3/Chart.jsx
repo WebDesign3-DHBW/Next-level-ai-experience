@@ -68,7 +68,7 @@ function Chart(props) {
           icon: UnternNaheDiesnt,
         },
         {
-          branch: "Ver-/Entsorg., Bgergb.",
+          branch: "Ver-/Entsorg., Bergb.",
           essenziell: 10.2,
           wichtig: 72.4,
           wenigerwichtig: 17.4,
