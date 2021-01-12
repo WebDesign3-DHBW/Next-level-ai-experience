@@ -4,15 +4,15 @@ import * as am4charts from '@amcharts/amcharts4/charts';
 import am4themes_animated from '@amcharts/amcharts4/themes/animated';
 import { buchHref } from '../../svg/svgHref';
 import handleViewport from 'react-in-viewport';
+import Chart4 from './Chart4';
 
 am4core.useTheme(am4themes_animated);
 
 function Chart1(props) {
   const chart = useRef(null);
-  const { inViewport, forwardedRef } = props;
 
   useLayoutEffect(() => {
-    if (inViewport) {
+    
       var x = am4core.create('chartdiv_sec6', am4charts.PieChart);
 
       // Let's cut a hole in our Pie chart the size of 40% the radius
@@ -41,9 +41,10 @@ function Chart1(props) {
       pieSeries.radius = am4core.percent(43);
       pieSeries.colors.list = [
         am4core.color('#EDE750'),
-        am4core.color('rgba(0, 77, 136, 0.3)'),
+        am4core.color('rgba(165, 173, 180, 0.3)'), // Note: Here
       ];
 
+      // Note: Here
       pieSeries.slices.template.propertyFields.stroke = am4core.color(
         '#EDE750'
       );
@@ -75,9 +76,10 @@ function Chart1(props) {
         'Gesamtwirtschaft: {Gesamtwirtschaft}';
       pieSeries2.colors.list = [
         am4core.color('#4F4FFE'),
-        am4core.color('rgba(0, 77, 136, 0.3)'),
+        am4core.color('rgba(165, 173, 180, 0.3)'), // Note: Here
       ];
 
+      // Note: Here
       pieSeries2.slices.template.propertyFields.stroke = am4core.color(
         'rgb(0, 77, 136)'
       );
@@ -136,15 +138,14 @@ function Chart1(props) {
 
       x.logo.disabled = 'true';
       chart.current = x;
-    }
-  }, [inViewport]); // end am4core.ready()
+    
+  }, []); // end am4core.ready()
   return (
     <div
       id="chartdiv_sec6"
       style={{ width: '100%', height: '300px' }}
-      ref={forwardedRef}
     ></div>
   );
 }
 
-export default handleViewport(Chart1);
+export default Chart1;
