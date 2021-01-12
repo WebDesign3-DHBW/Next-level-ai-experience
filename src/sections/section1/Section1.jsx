@@ -443,7 +443,7 @@ function Section1({ fullpageApi }) {
           },
         }}
       />
-      <div class="scroll-down" address="true" onClick={() => fullpageApi.moveSectionDown()} />
+      <div className="scroll-down" address="true" onClick={() => fullpageApi.moveSectionDown()} />
     </>
   );
 }
