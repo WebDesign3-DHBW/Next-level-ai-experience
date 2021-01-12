@@ -29,7 +29,9 @@ function BarChart(props) {
       var x = am4core.create("s8_barchart", am4charts.XYChart);
 
       // x.radius = am4core.percent(105);
-      x.paddingLeft = 50;
+      x.paddingLeft = 70;
+      x.paddingRight = 70;
+      x.paddingTop = 50;
       x.maskBullets = false;
 
       // Add data
@@ -65,13 +67,13 @@ function BarChart(props) {
           color: am4core.color("#78DF6C"),
         },
         {
-          branch: "Chemie/Ph., Gr.st.",
+          branch: "Chemie/Ph., Grundst. In.",
           value: 4.8,
           icon: Chemie,
           color: am4core.color("#0FAA94"),
         },
         {
-          branch: "Ver-/Entsorg., Bg.b.",
+          branch: "Ver-/Entsorg., Bergb.",
           value: 6.4,
           icon: Entsorg,
           color: am4core.color("#BB57FE"),
@@ -112,17 +114,19 @@ function BarChart(props) {
       categoryAxis.renderer.grid.template.location = 0;
       categoryAxis.dataFields.category = "branch";
       categoryAxis.renderer.minGridDistance = 1;
-      categoryAxis.renderer.labels.template.dx = -50;
+      categoryAxis.renderer.labels.template.dx = -75;
       categoryAxis.renderer.inversed = true;
       categoryAxis.renderer.grid.template.disabled = true;
 
       let valueAxis = x.xAxes.push(new am4charts.ValueAxis());
-      valueAxis.min = 0;
-      // valueAxis.max = 7500;
-      // valueAxis.strictMinMax = true;
+      valueAxis.title.dy = -20;
+      valueAxis.title.fill = "#ddd";
+
       valueAxis.title.text =
         "Umsatzanteil von Produkten oder Dienstleistungen mit KI-Einsatz \n in Unternehmn der deutschen Wirtschaft 2019";
       valueAxis.renderer.grid.template.disabled = true;
+      valueAxis.renderer.opposite = true;
+      valueAxis.renderer.disabled = true;
 
       let series = x.series.push(new am4charts.ColumnSeries());
       series.dataFields.categoryY = "branch";
@@ -138,7 +142,7 @@ function BarChart(props) {
       labelBullet.label.horizontalCenter = "left";
       labelBullet.label.truncate = false;
       labelBullet.label.hideOversized = false;
-      labelBullet.label.dx = 5;
+      labelBullet.label.dx = 15;
       labelBullet.label.text = "{value} %";
 
       var image = new am4core.Image();
@@ -146,7 +150,7 @@ function BarChart(props) {
       image.height = 35;
       image.verticalCenter = "middle";
       image.horizontalCenter = "right";
-      image.dx = -10;
+      image.dx = -25;
       image.adapter.add("href", (href, target) => {
         if (target.dataItem) {
           return target.dataItem._dataContext.icon;
@@ -166,9 +170,9 @@ function BarChart(props) {
   }, [inViewport]);
   return (
     <div
-      className=''
-      id='s8_barchart'
-      style={{ width: "100%", height: "700px" }}
+      className=""
+      id="s8_barchart"
+      style={{ width: "100%", height: "690px" }}
       ref={forwardedRef}></div>
   );
 }

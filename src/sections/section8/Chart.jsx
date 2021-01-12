@@ -42,37 +42,37 @@ function Chart(props) {
           icon: Fahrzeugbau,
         },
         {
-          branch: "Verkehr, Logistik",
+          branch: "Verkehr und Logistik",
           color: "#4CC8DD",
           value: 1.5,
           icon: VerkehrLogistik,
         },
         {
-          branch: "Untern.nahe Dienstl.",
+          branch: "Unternehmensnahe Dienstleistungen",
           color: "#FA2662",
           value: 4.8,
           icon: UnternnaheDienstl,
         },
         {
-          branch: "Ver-/Entsorg., Bg.b.",
+          branch: "Ver- und Entsorgung, Bergbau",
           color: "#BB57FE",
           value: 4.5,
           icon: EntsorgBgb,
         },
         {
-          branch: "Chemie/Ph., Gr.st.",
+          branch: "Chemie-/Pharma-, Grundstoffindustrie",
           color: "#0FAA94",
           value: 3.6,
           icon: PhGrst,
         },
         {
-          branch: "Elektrot./Maschin.b.",
+          branch: "Elektrotechnik, Maschinenbau",
           color: "#F09443",
           value: 4.9,
           icon: Maschinb,
         },
         {
-          branch: "Sonst. Verarb. Gew.",
+          branch: "Sonstiges Verarbeitendes Gewerbe",
           color: "#E1AAFE",
           value: 6,
           icon: SonstVerarbGew,
@@ -90,7 +90,7 @@ function Chart(props) {
           icon: Großhandel,
         },
         {
-          branch: "Sonst. Dienstleist.",
+          branch: "Sonstige Dienstleistungen",
           color: "#4985D4",
           value: 0.8,
           icon: SonstDienstleist,
@@ -155,7 +155,7 @@ function Chart(props) {
       };
     }
   }, [inViewport]);
-  return <div id='treemap' style={{ width: "100%", height: "600px" }} ref={forwardedRef}></div>;
+  return <div id="treemap" style={{ width: "100%", height: "600px" }} ref={forwardedRef}></div>;
 }
 
 export default handleViewport(Chart);

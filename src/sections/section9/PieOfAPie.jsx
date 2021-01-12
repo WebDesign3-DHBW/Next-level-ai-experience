@@ -124,7 +124,7 @@ function PieOfAPie(props) {
           ],
         },
         {
-          branch: "Chemie/Pharma, Grundstoffe",
+          branch: "Chemie-/Pharma-, Grundstoffindustrie",
           amount: 0.14,
           icon: Chemie,
           color: am4core.color("#0FAA94"),
@@ -282,7 +282,7 @@ function PieOfAPie(props) {
       };
     }
   }, [inViewport]);
-  return <div id='pieofpie' style={{ width: "100%", height: "600px" }} ref={forwardedRef}></div>;
+  return <div id="pieofpie" style={{ width: "100%", height: "600px" }} ref={forwardedRef}></div>;
 }
 
 export default handleViewport(PieOfAPie);
