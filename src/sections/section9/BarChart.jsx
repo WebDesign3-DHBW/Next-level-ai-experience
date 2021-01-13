@@ -29,7 +29,8 @@ function BarChart(props) {
       var x = am4core.create("s9_barchart", am4charts.XYChart);
 
       // x.radius = am4core.percent(105);
-      x.paddingLeft = 50;
+      x.paddingLeft = 60;
+      x.paddingRight = -10;
       x.maskBullets = false;
 
       // Add data
@@ -65,13 +66,13 @@ function BarChart(props) {
           color: am4core.color("#78DF6C"),
         },
         {
-          branch: "Chemie/Ph., Gr.st.",
+          branch: "Chemie/Ph., Grundst. In.",
           value: 282,
           icon: Chemie,
           color: am4core.color("#0FAA94"),
         },
         {
-          branch: "Ver-/Entsorg., Bg.b.",
+          branch: "Ver-/Entsorg., Bergb.",
           value: 245,
           icon: Entsorg,
           color: am4core.color("#BB57FE"),
@@ -109,35 +110,35 @@ function BarChart(props) {
       ];
 
       let categoryAxis = x.yAxes.push(new am4charts.CategoryAxis());
-      categoryAxis.renderer.grid.template.location = 0;
       categoryAxis.dataFields.category = "branch";
       categoryAxis.renderer.minGridDistance = 1;
-      categoryAxis.renderer.labels.template.dx = -50;
+      categoryAxis.renderer.labels.template.dx = -70;
       categoryAxis.renderer.inversed = true;
       categoryAxis.renderer.grid.template.disabled = true;
 
-    let valueAxis = x.xAxes.push(new am4charts.ValueAxis());
-    valueAxis.min = 0;
-    valueAxis.max = 7500;
-    valueAxis.strictMinMax = true;
-    valueAxis.renderer.grid.template.disabled = true;
-    valueAxis.title.text = "KI Ausgaben je Unternehmen in 1.000€";
+      let valueAxis = x.xAxes.push(new am4charts.ValueAxis());
+      valueAxis.renderer.grid.template.disabled = true;
+      valueAxis.title.text = "KI Ausgaben je Unternehmen in 1.000€";
+      valueAxis.renderer.disabled = true;
+      valueAxis.renderer.opposite = true;
+      valueAxis.title.dy = -10;
+      valueAxis.title.dx = -47;
+      valueAxis.title.fill = "#ddd";
 
       let series = x.series.push(new am4charts.ColumnSeries());
       series.dataFields.categoryY = "branch";
       series.dataFields.valueX = "value";
-      series.columns.template.height = am4core.percent(40);
+      series.columns.template.height = am4core.percent(70);
       series.columns.template.propertyFields.fill = "color";
       series.columns.template.fillOpacity = 0.2;
       series.columns.template.propertyFields.stroke = "color";
       series.columns.template.strokeWidth = 3;
 
       let labelBullet = series.bullets.push(new am4charts.LabelBullet());
-      // labelBullet.locationX = 1;
       labelBullet.label.horizontalCenter = "left";
       labelBullet.label.truncate = false;
       labelBullet.label.hideOversized = false;
-      labelBullet.label.dx = 5;
+      labelBullet.label.dx = 15;
       labelBullet.label.text = "{value}";
 
       var image = new am4core.Image();
@@ -145,7 +146,7 @@ function BarChart(props) {
       image.height = 35;
       image.verticalCenter = "middle";
       image.horizontalCenter = "right";
-      image.dx = -10;
+      image.dx = -25;
       image.adapter.add("href", (href, target) => {
         if (target.dataItem) {
           return target.dataItem._dataContext.icon;
@@ -154,7 +155,7 @@ function BarChart(props) {
       });
       categoryAxis.dataItems.template.bullet = image;
 
-      x.numberFormatter.numberFormat = "#.";
+      x.numberFormatter.numberFormat = "#,###";
       x.logo.disabled = true;
       chart.current = x;
 
@@ -163,7 +164,7 @@ function BarChart(props) {
       };
     }
   }, [inViewport]);
-  return <div id='s9_barchart' style={{ width: "100%", height: "800px" }} ref={forwardedRef}></div>;
+  return <div id="s9_barchart" style={{ width: "100%", height: "600px" }} ref={forwardedRef}></div>;
 }
 
 export default handleViewport(BarChart);

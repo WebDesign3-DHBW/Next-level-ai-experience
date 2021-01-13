@@ -131,7 +131,7 @@ function BarChart(props) {
       let series = x.series.push(new am4charts.ColumnSeries());
       series.dataFields.categoryY = "branch";
       series.dataFields.valueX = "value";
-      series.columns.template.height = am4core.percent(40);
+      series.columns.template.height = am4core.percent(70);
       series.columns.template.propertyFields.fill = "color";
       series.columns.template.fillOpacity = 0.2;
       series.columns.template.propertyFields.stroke = "color";

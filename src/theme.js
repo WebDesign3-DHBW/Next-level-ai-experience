@@ -8,7 +8,7 @@ function am4themes_wdTheme(target) {
     target.fontFamily = "IBM Plex Sans";
   }
   if (target instanceof am4core.ColorSet) {
-    target.list = [am4core.color("#65737E"), am4core.color("#343D46"), am4core.color("#4F5B66")];
+    target.list = [am4core.color("#65737E"), am4core.color("#4F5B66"), am4core.color("#343D46")];
   }
 }
 

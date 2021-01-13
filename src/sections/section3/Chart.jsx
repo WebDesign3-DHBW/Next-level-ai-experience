@@ -158,6 +158,7 @@ function Chart(props) {
 
       x.numberFormatter.numberFormat = "#.";
       x.language.locale["_decimalSeparator"] = ",";
+      x.language.locale["_thousandSeparator"] = ".";
       x.logo.disabled = true;
 
       var image = new am4core.Image();
