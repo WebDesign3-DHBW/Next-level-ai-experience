@@ -35,6 +35,18 @@ function Section6() {
         <Chart3 />
         <Chart4 />
       </div>
+      <div className="container pt-2 mr-0 ml-0">
+        <div className="d-inline-block mt-5 mr-0">
+          <div className="d-flex">
+            <div className="w-50 mr-auto mb-5">
+              <p>
+                Die <b>IKT-Branche</b> setzt häufiger KI-Verfahren im Bereich
+                <b> maschinelles Lernen/Beweisen</b> und <b>wissensbasierte Systeme</b> ein, als es in der Gesamtwirtschaft üblich ist.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
