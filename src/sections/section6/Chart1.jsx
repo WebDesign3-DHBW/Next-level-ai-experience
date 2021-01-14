@@ -4,7 +4,6 @@ import * as am4charts from '@amcharts/amcharts4/charts';
 import am4themes_animated from '@amcharts/amcharts4/themes/animated';
 import { buchHref } from '../../svg/svgHref';
 import handleViewport from 'react-in-viewport';
-import Chart4 from './Chart4';
 
 am4core.useTheme(am4themes_animated);
 
