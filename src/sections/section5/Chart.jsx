@@ -20,6 +20,7 @@ import handleViewport from "react-in-viewport";
 
 am4core.useTheme(am4themes_animated);
 am4core.useTheme(am4themes_wdTheme);
+am4core.options.autoSetClassNsame = true;
 
 function Chart(props) {
   const chart = useRef(null);
@@ -125,6 +126,8 @@ function Chart(props) {
         // series.tooltipText = "{name} in {dateX}: [bold]{valueY}%[/]";
         series.legendSettings.labelText = " ";
         series.hidden = hide;
+
+        series.id = name + "-Id";
         // series.legendSettings.valueText = "{valueY}";
         series.tooltip.getFillFromObject = false;
         series.tooltip.background.fill = color;
@@ -197,10 +200,10 @@ function Chart(props) {
           {
             year: "2019",
             "Finanzdienstleist.": 6 + 19 + 38 + 37,
-            "Chemie/Ph., Gr.st.": 11 + 14 + 51 + 23,
+            "Chemie/Ph., Gr.st.": 11 + 14 + 51 + 24,
             "Elektrot./Maschin.b.": 17 + 15 + 41 + 27,
-            IKT: 9 + 26 + 39 + 27,
-            Großhandel: 8 + 30 + 41 + 22,
+            IKT: 9 + 26 + 39 + 26,
+            Großhandel: 8 + 30 + 41 + 21,
             "Verkehr, Logistik": 20 + 19 + 16 + 45,
             "Ver-/Entsorg., Bg.b.": 12 + 31 + 31 + 26,
             "Sonst. Verarb. Gew.": 35 + 9 + 35 + 21,
@@ -259,14 +262,14 @@ function Chart(props) {
             // );
 
             // Buggy
-            if (
-              item.tooltipDataItem.dataContext &&
-              item.tooltipDataItem.dataContext.year === "2010" &&
-              !item.isHidden
-            ) {
-              // let text = "[bold]vor {dateX}[/]\n";
-              text = text.replace(/^/, "[bold]vor [/]");
-            }
+            // if (
+            //   item.tooltipDataItem.dataContext &&
+            //   item.tooltipDataItem.dataContext.year === "2010" &&
+            //   !item.isHidden
+            // ) {
+            //   // let text = "[bold]vor {dateX}[/]\n";
+            //   text = text.replace(/^/, "[bold]vor [/]");
+            // }
             if (!item.isHidden) {
               text +=
                 "[" +
