@@ -107,10 +107,12 @@ function Chart(props) {
         var series = x.series.push(new am4charts.LineSeries());
         series.dummyData = {
           customIcon: svg,
+          legendTooltip: name,
         };
         if (svg === chemiePath) {
           series.dummyData = {
             path: chemiePath,
+            legendTooltip: name,
           };
         }
         series.dataFields.valueY = name;
@@ -324,6 +326,7 @@ function Chart(props) {
       /* Create legend and enable default markers */
       x.legend = new am4charts.Legend();
       x.legend.useDefaultMarker = true;
+      x.legend.itemContainers.template.tooltipText = "{dataContext.dummyData.legendTooltip}";
 
       /* Remove square from marker template */
       var marker = x.legend.markers.template;
