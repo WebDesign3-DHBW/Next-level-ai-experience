@@ -8,17 +8,17 @@ function Section9() {
         <div className="col-8">
           <div className="pt-5">
             <div className="h2-box mb-5">
-              <h2>Zusammensetzung KI Ausgaben</h2>
+              <h2>Zusammensetzung der KI Ausgaben</h2>
             </div>
           </div>
-          <div className="pb-0 mb-0">
+          <div className="pb-0 mb-0 col-9">
           <p>
             Die Summe aller <b>Ausgaben</b> für KI-Verfahren sowie deren Entwicklung, Einführung und
             Pflege beliefen sich 2019 auf rund <b>4,8 Mrd. €</b> in der deutschen Wirtschaft. Die{" "}
             <b>IKT-Branche</b>
-            verzeichnet dabei <b>mit 1,5 Mrd. € (31 %) den größten Anteil der Ausgaben</b>. In der
-            Gesamtwirtschaft setzen sich die KI-Ausgaben hauptsächlich (76 %) aus intern laufenden
-            Aufwendungen zusammen, die im Wesentlichen Personalaufwendungen umfassen.
+            verzeichnet dabei <br/><b>mit 1,5 Mrd. € (31 %) den größten Anteil der Ausgaben</b>. In der
+            Gesamtwirtschaft setzen sich <br/>die KI-Ausgaben hauptsächlich (76 %) aus intern laufenden
+            Aufwendungen zusammen, <br/>die im Wesentlichen Personalaufwendungen umfassen.
           </p>
           </div>
         </div>

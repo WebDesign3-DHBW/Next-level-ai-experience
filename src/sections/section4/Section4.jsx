@@ -12,13 +12,13 @@ function Section4() {
         <div className="d-inline-block mt-5">
           <div className="d-flex">
             <div className="w-75 h-100 d-flex">
-              <div style={{ width: '40%' }}>
+              <div style={{ width: '46%' }}>
                 <Chart />
               </div>
-              <div style={{ width: '30%' }}>
+              <div style={{ width: '27%' }}>
                 <Chart2 />
               </div>
-              <div style={{ width: '30%' }}>
+              <div style={{ width: '27%' }}>
                 <Chart3 />
               </div>
             </div>
@@ -28,7 +28,7 @@ function Section4() {
                 Berichtskreis der Innovationserhebung Verfahren der Künstlichen
                 Intelligenz in ihrem Unternehmen ein. Dies entspricht einem
                 Anteil von 5,8 %. In der{' '}
-                <b>IKT-Branche lag dieser Anteilswert mit 17,8 % </b>
+                <b>IKT-Branche liegt dieser Anteilswert mit 17,8 % </b>
                 erheblich höher. Auch die Ausgaben im Bereich KI (0,58 % des
                 Umsatzes) und der Anteil der hauptsächlich Beschäftigen (1,51 %)
                 waren in der IKT-Branche am höchsten.

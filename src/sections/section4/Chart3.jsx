@@ -110,6 +110,7 @@ function Chart3(props) {
         series.dataFields.categoryY = "branch";
         series.stacked = true;
         series.name = name;
+        series.columns.template.height = am4core.percent(70);
 
         series.columns.template.propertyFields.fill = "color";
         series.columns.template.fillOpacity = 0.2;
@@ -120,7 +121,7 @@ function Chart3(props) {
         labelBullet.label.horizontalCenter = "left";
         labelBullet.label.truncate = false;
         labelBullet.label.hideOversized = false;
-        labelBullet.label.dx = 5;
+        labelBullet.label.dx = 15;
         labelBullet.label.text = "{valueX}";
       }
 

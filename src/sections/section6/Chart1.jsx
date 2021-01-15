@@ -34,12 +34,18 @@ function Chart1(props) {
 
       // Add and configure Series
       var pieSeries = x.series.push(new am4charts.PieSeries());
+
       pieSeries.dataFields.value = "IKT";
       pieSeries.dataFields.category = "Nutzen";
       pieSeries.slices.template.strokeWidth = 0;
       pieSeries.slices.template.tooltipText = "IKT: {IKT}";
       pieSeries.radius = am4core.percent(43);
       pieSeries.colors.list = [am4core.color("#EDE750"), am4core.color("rgba(0, 77, 136, 0.3)")];
+      pieSeries.slices.template.propertyFields.stroke = am4core.color("#EDE750");
+      pieSeries.slices.template.strokeWidth = 2;
+      pieSeries.slices.template.strokeOpacity = 1;
+      pieSeries.slices.template.fillOpacity = 0.15;
+
 
       // Disabling labels and ticks on inner circle
       pieSeries.labels.template.disabled = true;
@@ -59,6 +65,11 @@ function Chart1(props) {
       pieSeries2.ticks.template.disabled = true;
       pieSeries2.slices.template.tooltipText = "Gesamtwirtschaft: {Gesamtwirtschaft}";
       pieSeries2.colors.list = [am4core.color("#4F4FFE"), am4core.color("rgba(0, 77, 136, 0.3)")];
+      pieSeries2.slices.template.propertyFields.stroke = am4core.color("rgb(0, 77, 136)");
+      pieSeries2.slices.template.strokeWidth = 2;
+      pieSeries2.slices.template.strokeOpacity = 1;
+      pieSeries2.slices.template.fillOpacity = 0.15;
+
 
       let bullet = pieSeries.createChild(am4charts.Bullet);
       let image = bullet.createChild(am4core.Image);
@@ -106,15 +117,19 @@ function Chart1(props) {
       });
 
       let label = x.createChild(am4core.Label);
-      label.text = "Maschinelles Lernen und Beweisen";
-      label.align = "center";
+      label.text = 'Maschinelles Lernen und Beweisen';
+      label.align = 'center';
 
-      x.logo.disabled = "true";
+      x.logo.disabled = 'true';
       chart.current = x;
     }
   }, [inViewport]); // end am4core.ready()
   return (
-    <div id="chartdiv_sec6" style={{ width: "100%", height: "300px" }} ref={forwardedRef}></div>
+    <div
+      id="chartdiv_sec6"
+      style={{ width: '100%', height: '300px' }}
+      ref={forwardedRef}
+    ></div>
   );
 }
 
