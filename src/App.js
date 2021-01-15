@@ -34,10 +34,10 @@ function App() {
       render={({ state, fullpageApi }) => {
         return (
           <ReactFullpage.Wrapper>
+            <Infomodal />
             <div className="view">
               <div className="section">
                 <div className="bg-section1">
-                  <Infomodal/>
                   <section>
                     <Section1 fullpageApi={fullpageApi} />
                   </section>
