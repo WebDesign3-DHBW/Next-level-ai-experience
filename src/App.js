@@ -10,8 +10,7 @@ import Section7 from "./sections/section7/Section7";
 import Section8 from "./sections/section8/Section8";
 import Section9 from "./sections/section9/Section9";
 import Footer from "./sections/footer/Footer";
-import { useModal, Modal } from "react-morphing-modal";
-import { Infomodal } from "./sections/infomodal/Infomodal";
+import Infomodal from "./sections/infomodal/Infomodal";
 
 function App() {
   return (
@@ -39,6 +38,7 @@ function App() {
             <ReactFullpage.Wrapper>
               <div className="section">
                 <div className="bg-section1">
+                  <Infomodal />
                   <section>
                     <Section1 fullpageApi={fullpageApi} />
                   </section>
