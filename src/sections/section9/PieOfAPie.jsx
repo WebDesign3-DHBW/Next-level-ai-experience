@@ -169,7 +169,7 @@ function PieOfAPie(props) {
       pieSeries.labels.template.applyOnClones = true;
       pieSeries.dataFields.value = "amount";
       pieSeries.dataFields.category = "branch";
-      pieSeries.labels.template.html = "<img src={icon} height=30 width=30/> <p>{amount}</p>";
+      pieSeries.labels.template.text = "{amount}";
 
       pieSeries.alignLabels = false;
 
