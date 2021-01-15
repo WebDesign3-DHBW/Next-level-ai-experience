@@ -17,6 +17,7 @@ function App() {
       scrollingSpeed={1000}
       navigation={true}
       navigationPosition={"right"}
+      licenseKey={"214B5874-B885472A-8C782F6A-A63F49CD"}
       navigationTooltips={[
         "Start",
         "Studie",
