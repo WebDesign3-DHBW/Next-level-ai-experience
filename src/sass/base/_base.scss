@@ -74,15 +74,25 @@ b {
 
 #fp-nav {
   span {
-    background-color: $primary !important;
+    background-color: white !important;
   }
 
-  ul li .fp-tooltip {
+  li {
+    margin: 12px !important;
+  }
+
+  .fp-tooltip {
     font-size: 20px !important;
+    font-family: $p !important;
     transform: translateY(-25%);
     color: $secondary !important;
     background-color: white;
-    padding: 5px 10px;
+    padding: 1px 6px;
     border-radius: 5px;
+    cursor: default !important;
+
+    &:hover {
+      display: none !important;
+    }
   }
 }
