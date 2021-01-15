@@ -1,16 +1,27 @@
-import React from 'react';
-import { useModal, Modal } from 'react-morphing-modal';
-import 'react-morphing-modal/dist/ReactMorphingModal.css';
+import { useRef } from "react";
+import { useModal, Modal } from "react-morphing-modal";
+import "react-morphing-modal/dist/ReactMorphingModal.css";
 
-function Infomodal() {
-  const { modalProps, getTriggerProps } = useModal();
+const Button = ({ openModal }) => {
+  const btnRef = useRef(null);
+  function handleClick() {
+    // do some complicated stuff
+    openModal(btnRef);
+  }
 
   return (
-    <div>
-      <button {...getTriggerProps()}>Show modal</button>
-      <Modal {...modalProps}>Hello World</Modal>
-    </div>
+    <button className="modalButtom" ref={btnRef} onClick={handleClick}>
+      Show modal
+    </button>
   );
-}
+};
 
-export default Infomodal;
+export const Infomodal = () => {
+  const { modalProps, open } = useModal();
+  return (
+    <>
+      <Button openModal={open} />
+      <Modal {...modalProps}>Hello World</Modal>
+    </>
+  );
+};
