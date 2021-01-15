@@ -32,6 +32,9 @@ function PieOfAPie(props) {
 
       let x = container.createChild(am4charts.PieChart);
 
+      x.paddingTop = 40;
+      x.paddingBottom = 20;
+
       // Add data
       x.data = [
         {
@@ -124,7 +127,7 @@ function PieOfAPie(props) {
           ],
         },
         {
-          branch: "Chemie/Pharma, Grundstoffe",
+          branch: "Chemie-/Pharma-, Grundstoffindustrie",
           amount: 0.14,
           icon: Chemie,
           color: am4core.color("#0FAA94"),
@@ -166,7 +169,7 @@ function PieOfAPie(props) {
       pieSeries.labels.template.applyOnClones = true;
       pieSeries.dataFields.value = "amount";
       pieSeries.dataFields.category = "branch";
-      pieSeries.labels.template.html = "<img src={icon} height=30 width=30/>";
+      pieSeries.labels.template.text = "{amount}";
 
       pieSeries.alignLabels = false;
 
@@ -198,6 +201,12 @@ function PieOfAPie(props) {
       // pieSeries2.slices.template.fill = am4core.color("rgba(0, 0, 0, 0)");
       pieSeries2.slices.template.stroke = am4core.color("#ccc");
       pieSeries2.slices.template.strokeWidth = 1;
+
+      let title = x.titles.create();
+      title.text =
+        "Verteilung und Zusammensetzung der KI-Ausgaben\nder deutschen Wirtschaft 2019 nach Branchen in Mrd. €";
+      title.fill = "#ddd";
+      title.dy = -40;
 
       let line1 = container.createChild(am4core.Line);
       line1.strokeDasharray = "2,2";
@@ -282,7 +291,7 @@ function PieOfAPie(props) {
       };
     }
   }, [inViewport]);
-  return <div id='pieofpie' style={{ width: "100%", height: "600px" }} ref={forwardedRef}></div>;
+  return <div id="pieofpie" style={{ width: "100%", height: "600px" }} ref={forwardedRef}></div>;
 }
 
 export default handleViewport(PieOfAPie);
