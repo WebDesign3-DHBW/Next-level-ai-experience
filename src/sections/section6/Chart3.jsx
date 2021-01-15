@@ -38,11 +38,11 @@ function Chart3(props) {
     pieSeries.slices.template.tooltipText = "IKT: {IKT}";
     pieSeries.radius = am4core.percent(43);
     pieSeries.colors.list = [
-      am4core.color('#EDE750'),
-      am4core.color('rgba(165, 173, 180, 0.3)'),
+      am4core.color("#EDE750"),
+      am4core.color("rgba(165, 173, 180, 0.3)"),
     ];
 
-    pieSeries.slices.template.propertyFields.stroke = am4core.color('#EDE750');
+    pieSeries.slices.template.propertyFields.stroke = am4core.color("#EDE750");
     pieSeries.slices.template.strokeWidth = 2;
     pieSeries.slices.template.strokeOpacity = 1;
     pieSeries.slices.template.fillOpacity = 0.15;
@@ -60,18 +60,21 @@ function Chart3(props) {
     pieSeries2.dataFields.value = "Gesamtwirtschaft";
     pieSeries2.dataFields.category = "Nutzen";
     pieSeries2.slices.template.strokeWidth = 0;
-    pieSeries2.slices.template.states.getKey("hover").properties.shiftRadius = 0;
+    pieSeries2.slices.template.states.getKey(
+      "hover"
+    ).properties.shiftRadius = 0;
     pieSeries2.slices.template.states.getKey("hover").properties.scale = 1.1;
     pieSeries2.labels.template.disabled = true;
     pieSeries2.ticks.template.disabled = true;
-    pieSeries2.slices.template.tooltipText = "Gesamtwirtschaft: {Gesamtwirtschaft}";
+    pieSeries2.slices.template.tooltipText =
+      "Gesamtwirtschaft: {Gesamtwirtschaft}";
     pieSeries2.colors.list = [
-      am4core.color('#4F4FFE'),
-      am4core.color('rgba(165, 173, 180, 0.3)'),
+      am4core.color("#4F4FFE"),
+      am4core.color("rgba(165, 173, 180, 0.3)"),
     ];
 
     pieSeries2.slices.template.propertyFields.stroke = am4core.color(
-      'rgb(0, 77, 136)'
+      "rgb(0, 77, 136)"
     );
     pieSeries2.slices.template.strokeWidth = 2;
     pieSeries2.slices.template.strokeOpacity = 1;
@@ -131,7 +134,9 @@ function Chart3(props) {
     x.logo.disabled = true;
     chart.current = x;
   }, []); // end am4core.ready()
-  return <div id="chartdiv_sec6_3" style={{ width: "100%", height: "300px" }}></div>;
+  return (
+    <div id="chartdiv_sec6_3" style={{ width: "100%", height: "300px" }}></div>
+  );
 }
 
 export default Chart3;
