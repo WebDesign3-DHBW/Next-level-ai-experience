@@ -182,7 +182,7 @@ function PieOfAPie(props) {
       pieSeries.slices.template.states.getKey("active").properties.shiftRadius = 0;
 
       pieSeries.slices.template.events.on("hit", function (event) {
-        selectSlice(event.target.dataItem);
+        selectSlice(event.target.dataItem && target.dataItem.dataContext);
       });
 
       let chart2 = container.createChild(am4charts.PieChart);

@@ -212,19 +212,60 @@ function Chart(props) {
           },
         ];
 
-        series.adapter.add("tooltipText", function (ev) {
+        //GUT
+        // series.events.on("beforedatavalidated", function (ev) {
+        //   var source = ev.target.data;
+        //   console.log(source);
+        //   if (source.year) {
+        //     ev.target.data.year = "vor 2010";
+        //   }
+        // });
+
+        series.adapter.add("tooltipText", function (ev, target) {
           let text = "[bold]{dateX}[/]\n";
 
-          x.series.each(function (item) {
-            // if (
-            //   item.tooltipDataItem.dataContext &&
-            //   item.tooltipDataItem.dataContext.year === "2010" &&
-            //   !item.isHidden
-            // ) {
-            //   // let text = "[bold]vor {dateX}[/]\n";
-            //   text = text.replace(/^/, "vor ");
+          // console.log("data", ev.target.data);
+          // var firstItem = series.dataItems.getIndex(0);
+
+          // console.log("year!", firstItem.dateX.getFullYear());
+
+          // if (
+          //   dataItem.year.getTime() ==
+          //   am4core.time.round(new Date(dataItem.date.getTime()), "year").getTime()
+          // ) {
+          //   console.log("luli");
+          // }
+
+          x.series.each(function (item, index) {
+            // console.log("dateX", item.dataItem.dates);
+            // console.log("firstIndex", series.dataItems.getIndex(0));
+            // console.log("item", item.dataItems.getIndex(0));
+
+            // if (series.dataItems.getIndex(0).dateX.getFullYear() === "2010")
+            // series.dataItems.each(function (item) {
+            // if (item.dateX.getFullYear() === "2010") {
+            //   series.tooltipText = "blubb";
             // }
-            if (!item.isHidden)
+            // });
+
+            // console.log(
+            //   "year",
+            //   firstItem.dateX.getFullYear()
+            //   // chart.addData(
+            //   //   { date: new Date(lastdataItem.dateX.getTime() + 1000), value: visits },
+            //   //   1
+            // );
+
+            // Buggy
+            if (
+              item.tooltipDataItem.dataContext &&
+              item.tooltipDataItem.dataContext.year === "2010" &&
+              !item.isHidden
+            ) {
+              // let text = "[bold]vor {dateX}[/]\n";
+              text = text.replace(/^/, "[bold]vor [/]");
+            }
+            if (!item.isHidden) {
               text +=
                 "[" +
                 item.stroke.hex +
@@ -233,10 +274,42 @@ function Chart(props) {
                 ": {" +
                 item.dataFields.valueY +
                 "}\n";
+            }
+            // // var dataItem = target.dataItem.getValue("2010");
+            // console.log(item.dataItem);
+            // console.log(item.dataItems.getIndex(0));
+
+            // console.log("index", index);
+            // if (index == 0) {
+            //   console.log("index", index);
+            //   text = text.replace(/^/, "vor ");
+            // }
           });
 
           return text;
         });
+
+        // series.adapter.add("tooltipText", function (ev) {
+        //   let text = "[bold]{dateX}[/]\n";
+
+        // x.series.each(function (item) {
+        // if (!item.isHidden) {
+        //   text +=
+        //     "[" +
+        //     item.stroke.hex +
+        //     "]●[/] " +
+        //     item.name +
+        //     ": {" +
+        //     item.dataFields.valueY +
+        //     "}\n";
+        // }
+        // if (item.dataItems.getIndex(0).dateX.getFullYear() === "2010" && !item.isHidden) {
+        //   text = text.replace(/^/, "vor ");
+        // }
+        // });
+
+        //   return text;
+        // });
 
         series.tooltip.getFillFromObject = false;
         series.tooltip.background.fill = am4core.color("#65737E");
@@ -244,6 +317,7 @@ function Chart(props) {
         series.tooltip.label.fill = am4core.color("#fff");
 
         series.data = data;
+
         return series;
       }
 
