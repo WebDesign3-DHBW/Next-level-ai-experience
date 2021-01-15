@@ -34,76 +34,76 @@ function Chart(props) {
       // Add data
       x.data = [
         {
-          branch: "Gesamtwirtschaft",
+          branch: 'Gesamtwirtschaft',
           essenziell: 5.8,
           icon: Gesamtwirtschaft,
-          color: am4core.color("#4F4FFE"),
+          color: am4core.color('#4F4FFE'),
         },
         {
-          branch: "Großhandel",
+          branch: 'Großhandel',
           essenziell: 1.0,
           icon: Großhandel,
-          color: am4core.color("#FF00FF"),
+          color: am4core.color('#FF00FF'),
         },
         {
-          branch: "Verkehr, Logistik",
+          branch: 'Verkehr, Logistik',
           essenziell: 1.5,
           icon: VerkehrLogistik,
-          color: am4core.color("#4CC8DD"),
+          color: am4core.color('#4CC8DD'),
         },
         {
-          branch: "Sonst. Dienstleist.",
+          branch: 'Sonst. Dienstleist.',
           essenziell: 2.5,
           icon: SonstDienst,
-          color: am4core.color("#4985D4"),
+          color: am4core.color('#4985D4'),
         },
         {
-          branch: "Sonst. Verarb. Gew.",
+          branch: 'Sonst. Verarb. Gew.',
           essenziell: 3.3,
           icon: SonstVerarb,
-          color: am4core.color("#E1AAFE"),
+          color: am4core.color('#E1AAFE'),
         },
         {
-          branch: "Ver-/Entsorg., Bg.b.",
+          branch: 'Ver-/Entsorg., Bergb.',
           essenziell: 3.6,
           icon: Entsorg,
-          color: am4core.color("#BB57FE"),
+          color: am4core.color('#BB57FE'),
         },
         {
-          branch: "Chemie/Ph., Gr.st.",
+          branch: 'CChemie/Ph., Grundst. In.',
           essenziell: 4.6,
           icon: Chemie,
-          color: am4core.color("#0FAA94"),
+          color: am4core.color('#0FAA94'),
         },
         {
-          branch: "Fahrzeugbau",
+          branch: 'Fahrzeugbau',
           essenziell: 5.1,
           icon: Fahrzeugbau,
-          color: am4core.color("#FFF8F9"),
+          color: am4core.color('#FFF8F9'),
         },
         {
-          branch: "Elektrot./Maschin.b.",
+          branch: 'Elektrot./Maschin.b.',
           essenziell: 6.8,
           icon: Maschinenbau,
-          color: am4core.color("#F09443"),
+          color: am4core.color('#F09443'),
         },
         {
-          branch: "Untern.nahe Dienstl.",
+          branch: 'Untern.nahe Dienstl.',
           essenziell: 11.1,
           icon: UnternNaheDiesnt,
-          color: am4core.color("#FA2662"),
+          color: am4core.color('#FA2662'),
         },
         {
-          branch: "Finanzdienstleist.",
+          branch: 'Finanzdienstleist.',
           essenziell: 12.2,
           icon: Finanzdienstleist,
-          color: am4core.color("#78DF6C"),
+          color: am4core.color('#78DF6C'),
         },
         {
-          branch: "IKT",
+          branch: 'IKT',
           essenziell: 17.8,
           icon: IKT,
-          color: am4core.color("#EDE750"),
+          color: am4core.color('#EDE750'),
         },
       ];
 
@@ -111,13 +111,13 @@ function Chart(props) {
       let categoryAxis = x.yAxes.push(new am4charts.CategoryAxis());
       categoryAxis.dataFields.category = "branch";
       categoryAxis.renderer.grid.template.opacity = 0;
-      categoryAxis.renderer.labels.template.dx = -50;
+      categoryAxis.renderer.labels.template.dx = -70;
 
       let valueAxis = x.xAxes.push(new am4charts.ValueAxis());
       valueAxis.title.text =
         "Anteil der [bold #11A6B6]Unternehmen[/] \n mit KI-Einsatz in % \n aller Unternehmen";
       valueAxis.min = 0;
-      valueAxis.max = 20;
+      valueAxis.max = 25;
       valueAxis.renderer.grid.template.opacity = 0;
       valueAxis.renderer.ticks.template.strokeOpacity = 0.5;
       valueAxis.renderer.ticks.template.length = 10;
@@ -134,6 +134,8 @@ function Chart(props) {
         series.dataFields.categoryY = "branch";
         series.stacked = true;
         series.name = name;
+        series.columns.template.height = am4core.percent(70);
+
 
         series.columns.template.propertyFields.fill = "color";
         series.columns.template.fillOpacity = 0.2;
@@ -144,7 +146,7 @@ function Chart(props) {
         labelBullet.label.horizontalCenter = "left";
         labelBullet.label.truncate = false;
         labelBullet.label.hideOversized = false;
-        labelBullet.label.dx = 5;
+        labelBullet.label.dx = 15;
         labelBullet.label.text = "{valueX}";
       }
 
@@ -155,7 +157,7 @@ function Chart(props) {
       image.height = 35;
       image.verticalCenter = "middle";
       image.horizontalCenter = "right";
-      image.dx = -10;
+      image.dx = -25;
       image.adapter.add("href", (href, target) => {
         if (target.dataItem) {
           return target.dataItem._dataContext.icon;

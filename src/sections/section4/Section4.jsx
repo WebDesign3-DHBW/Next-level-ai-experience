@@ -12,13 +12,13 @@ function Section4() {
         <div className="d-inline-block mt-5">
           <div className="d-flex">
             <div className="w-75 h-100 d-flex">
-              <div style={{ width: '40%' }}>
+              <div style={{ width: '46%' }}>
                 <Chart />
               </div>
-              <div style={{ width: '30%' }}>
+              <div style={{ width: '27%' }}>
                 <Chart2 />
               </div>
-              <div style={{ width: '30%' }}>
+              <div style={{ width: '27%' }}>
                 <Chart3 />
               </div>
             </div>
