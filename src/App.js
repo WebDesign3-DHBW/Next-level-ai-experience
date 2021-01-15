@@ -38,7 +38,6 @@ function App() {
             <ReactFullpage.Wrapper>
               <div className="section">
                 <div className="bg-section1">
-                  <Infomodal />
                   <section>
                     <Section1 fullpageApi={fullpageApi} />
                   </section>
