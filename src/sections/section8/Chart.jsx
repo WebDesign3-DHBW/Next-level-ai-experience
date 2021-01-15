@@ -136,7 +136,7 @@ function Chart(props) {
       image.adapter.add("href", function (href, target) {
         var dataItem = target.parent.dataItem;
         if (dataItem) {
-          return dataItem.treeMapDataItem._dataContext.icon; // geht bestimmt schöner
+          return dataItem.treeMapDataItem.dataContext.icon; // geht bestimmt schöner
         }
       });
 

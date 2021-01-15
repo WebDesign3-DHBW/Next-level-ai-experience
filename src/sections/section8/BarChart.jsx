@@ -152,8 +152,8 @@ function BarChart(props) {
       image.horizontalCenter = "right";
       image.dx = -25;
       image.adapter.add("href", (href, target) => {
-        if (target.dataItem) {
-          return target.dataItem._dataContext.icon;
+        if (target.dataItem && target.dataItem.dataContext) {
+          return target.dataItem.dataContext.icon;
         }
         return href;
       });
@@ -173,7 +173,8 @@ function BarChart(props) {
       className=""
       id="s8_barchart"
       style={{ width: "100%", height: "690px" }}
-      ref={forwardedRef}></div>
+      ref={forwardedRef}
+    ></div>
   );
 }
 

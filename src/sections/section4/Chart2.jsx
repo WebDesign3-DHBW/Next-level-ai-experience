@@ -134,8 +134,8 @@ function Chart2(props) {
       image.horizontalCenter = "right";
       image.dx = -10;
       image.adapter.add("href", (href, target) => {
-        if (target.dataItem) {
-          return target.dataItem._dataContext.icon;
+        if (target.dataItem && target.dataItem.dataContext) {
+          return target.dataItem.dataContext.icon;
         }
         return href;
       });
@@ -151,9 +151,10 @@ function Chart2(props) {
   }, [inViewport]);
   return (
     <div
-      id='s42-stackedbarchart'
+      id="s42-stackedbarchart"
       style={{ width: "100%", height: "650px" }}
-      ref={forwardedRef}></div>
+      ref={forwardedRef}
+    ></div>
   );
 }
 

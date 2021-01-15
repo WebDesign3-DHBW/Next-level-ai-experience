@@ -148,8 +148,8 @@ function BarChart(props) {
       image.horizontalCenter = "right";
       image.dx = -25;
       image.adapter.add("href", (href, target) => {
-        if (target.dataItem) {
-          return target.dataItem._dataContext.icon;
+        if (target.dataItem && target.dataItem.dataContext) {
+          return target.dataItem.dataContext.icon;
         }
         return href;
       });

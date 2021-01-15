@@ -169,7 +169,7 @@ function Chart(props) {
       image.dx = -25;
       image.adapter.add("href", (href, target) => {
         if (target.dataItem) {
-          return target.dataItem._dataContext.icon;
+          return target.dataItem.dataContext.icon;
         }
         return href;
       });
