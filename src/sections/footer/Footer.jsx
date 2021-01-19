@@ -35,7 +35,7 @@ function Footer() {
           <br />
           Onlinepublikation{" "}
           <a
-            className="text-decoration-none studienLink"
+            className="text-decoration-none studienLink" target="_blank"
             href="https://www.bmwi.de/Redaktion/DE/Publikationen/Wirtschaft/einsatz-von-ki-deutsche-wirtschaft.html"
           >
             hier
