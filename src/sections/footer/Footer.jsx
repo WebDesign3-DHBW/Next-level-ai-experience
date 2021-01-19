@@ -7,41 +7,43 @@ function Footer() {
             <h2>Impressum</h2>
           </div>
         </div>
-        <p>
-          Ein studentisches Projekt der <br />
-          DHBW Campus Mosbach, Studiengang Onlinemedien <br />
-          Lohrtalweg 10
-          <br />
-          74821 Mosbach
-          <br />
-          <a href="https://www.mosbach.dhbw.de/" target="_blank" className="text-decoration-none studienLink">
-            www.mosbach.dhbw.de
-          </a>
-        </p>
-        <p>
-          Web Design 3, 29.01.2021
-          <br />
-          Dozent: Dipl.-Des. Lothar B. Blum
-          <br />
-          Kurs: ON18
-          <br />
-          Team: Nils Eisenhauer, Natascha Forster, Felix Keller, Ole Mantei
-        </p>
-        <p>
-          Datengrundlage
-          <br /> „Einsatz von Künstlicher Intelligenz in der Deutschen Wirtschaft“ <br />
-          Stand der KI-Nutzung im Jahr 2019 <br />
-          Bundesministerium für Wirtschaft und Energie (BMWi)
-          <br />
-          Onlinepublikation{" "}
-          <a
-            className="text-decoration-none studienLink" target="_blank"
-            href="https://www.bmwi.de/Redaktion/DE/Publikationen/Wirtschaft/einsatz-von-ki-deutsche-wirtschaft.html"
-          >
-            hier
-          </a>{" "}
-          verfügbar
-        </p>
+        <div className="mt-5" style={{ marginLeft: "10rem" }}>
+          <p>
+            Ein studentisches Projekt der <br />
+            DHBW Campus Mosbach, Studiengang Onlinemedien <br />
+            Lohrtalweg 10
+            <br />
+            74821 Mosbach
+            <br />
+            <a href="https://www.mosbach.dhbw.de/" className="text-decoration-none studienLink">
+              www.mosbach.dhbw.de
+            </a>
+          </p>
+          <p>
+            Web Design 3, 29.01.2021
+            <br />
+            Dozent: Dipl.-Des. Lothar B. Blum
+            <br />
+            Kurs: ON18
+            <br />
+            Team: Nils Eisenhauer, Natascha Forster, Felix Keller, Ole Mantei
+          </p>
+          <p>
+            Datengrundlage
+            <br /> „Einsatz von Künstlicher Intelligenz in der Deutschen Wirtschaft“ <br />
+            Stand der KI-Nutzung im Jahr 2019 <br />
+            Bundesministerium für Wirtschaft und Energie (BMWi)
+            <br />
+            Onlinepublikation{" "}
+            <a
+              className="text-decoration-none studienLink"
+              href="https://www.bmwi.de/Redaktion/DE/Publikationen/Wirtschaft/einsatz-von-ki-deutsche-wirtschaft.html"
+            >
+              hier
+            </a>{" "}
+            verfügbar
+          </p>
+        </div>
       </div>
     </>
   );
