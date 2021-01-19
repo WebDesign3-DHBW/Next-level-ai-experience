@@ -14,7 +14,7 @@ function Footer() {
           <br />
           74821 Mosbach
           <br />
-          <a href="https://www.mosbach.dhbw.de/" className="text-decoration-none">
+          <a href="https://www.mosbach.dhbw.de/" className="text-decoration-none studienLink">
             www.mosbach.dhbw.de
           </a>
         </p>
@@ -35,8 +35,7 @@ function Footer() {
           <br />
           Onlinepublikation{" "}
           <a
-            // className='text-decoration-none'
-            id="studienLink"
+            className="text-decoration-none studienLink"
             href="https://www.bmwi.de/Redaktion/DE/Publikationen/Wirtschaft/einsatz-von-ki-deutsche-wirtschaft.html"
           >
             hier
