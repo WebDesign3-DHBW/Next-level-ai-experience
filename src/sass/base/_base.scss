@@ -96,3 +96,12 @@ b {
     }
   }
 }
+
+#studienLink {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+.bg-footer {
+  pointer-events: none;
+}

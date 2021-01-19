@@ -1,9 +1,9 @@
 function Footer() {
   return (
     <>
-      <div className='d-flex justify-content-center flex-column' style={{ height: "100vh" }}>
-        <div className='pt-5'>
-          <div className='h2-box mb-5'>
+      <div className="d-flex justify-content-center flex-column" style={{ height: "100vh" }}>
+        <div className="pt-5">
+          <div className="h2-box mb-5">
             <h2>Impressum</h2>
           </div>
         </div>
@@ -14,7 +14,7 @@ function Footer() {
           <br />
           74821 Mosbach
           <br />
-          <a href='https://www.mosbach.dhbw.de/' className='text-decoration-none'>
+          <a href="https://www.mosbach.dhbw.de/" className="text-decoration-none">
             www.mosbach.dhbw.de
           </a>
         </p>
@@ -35,8 +35,10 @@ function Footer() {
           <br />
           Onlinepublikation{" "}
           <a
-            className='text-decoration-none'
-            href='https://www.bmwi.de/Redaktion/DE/Publikationen/Wirtschaft/einsatz-von-ki-deutsche-wirtschaft.html'>
+            // className='text-decoration-none'
+            id="studienLink"
+            href="https://www.bmwi.de/Redaktion/DE/Publikationen/Wirtschaft/einsatz-von-ki-deutsche-wirtschaft.html"
+          >
             hier
           </a>{" "}
           verfügbar

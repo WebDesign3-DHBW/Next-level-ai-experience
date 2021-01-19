@@ -30,7 +30,7 @@ function Chart(props) {
       // Add data
       x.data = [
         {
-          branch: "Finanzdienstleist.",
+          branch: "Finanzdienstleistungen",
           color: "#78DF6C",
           value: 17.3,
           icon: Finanzdienstleist,
