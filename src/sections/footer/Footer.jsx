@@ -14,7 +14,7 @@ function Footer() {
           <br />
           74821 Mosbach
           <br />
-          <a href="https://www.mosbach.dhbw.de/" className="text-decoration-none studienLink">
+          <a href="https://www.mosbach.dhbw.de/" target="_blank" className="text-decoration-none studienLink">
             www.mosbach.dhbw.de
           </a>
         </p>
