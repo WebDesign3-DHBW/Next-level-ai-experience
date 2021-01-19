@@ -10,30 +10,32 @@ import Section7 from "./sections/section7/Section7";
 import Section8 from "./sections/section8/Section8";
 import Section9 from "./sections/section9/Section9";
 import Footer from "./sections/footer/Footer";
+import { Infomodal } from "./sections/infomodal/Infomodal";
 
 function App() {
   return (
-    <ReactFullpage
-      scrollingSpeed={1000}
-      navigation={true}
-      navigationPosition={"right"}
-      licenseKey={"214B5874-B885472A-8C782F6A-A63F49CD"}
-      navigationTooltips={[
-        "Start",
-        "Studie",
-        "Bedeutung",
-        "Indikatoren",
-        "Einsatz",
-        "Verfahren",
-        "Anwendungsgebiete",
-        "Umsatz",
-        "Ausgaben",
-        "Impressum",
-      ]}
-      render={({ state, fullpageApi }) => {
-        return (
-          <ReactFullpage.Wrapper>
-            <div className="view">
+    <>
+      <Infomodal />
+      <ReactFullpage
+        scrollingSpeed={1000}
+        navigation={true}
+        navigationPosition={"right"}
+        licenseKey="214B5874-B885472A-8C782F6A-A63F49CD"
+        navigationTooltips={[
+          "Start",
+          "Studie",
+          "Bedeutung",
+          "Indikatoren",
+          "Einsatz",
+          "Verfahren",
+          "Anwendungsgebiete",
+          "Umsatz",
+          "Ausgaben",
+          "Impressum",
+        ]}
+        render={({ state, fullpageApi }) => {
+          return (
+            <ReactFullpage.Wrapper>
               <div className="section">
                 <div className="bg-section1">
                   <section>
@@ -104,11 +106,11 @@ function App() {
                   </section>
                 </div>
               </div>
-            </div>
-          </ReactFullpage.Wrapper>
-        );
-      }}
-    />
+            </ReactFullpage.Wrapper>
+          );
+        }}
+      />
+    </>
   );
 }
 
