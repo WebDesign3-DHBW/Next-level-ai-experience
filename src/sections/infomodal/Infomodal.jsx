@@ -22,14 +22,14 @@ const Button = ({ openModal }) => {
   }
 
   return (
-    <button className="modalButton" ref={btnRef} onClick={handleClick}>
-      <MdInfoOutline />
-    </button>
+      <button className="modalButton" ref={btnRef} onClick={handleClick}>
+        <MdInfoOutline size={40}/>
+      </button>
   );
 };
 
 export const Infomodal = () => {
-  const { modalProps, open } = useModal({ background: "rgba(13, 21, 52, 0.95)" });
+  const { modalProps, open } = useModal({ background: "radial-Gradient(at top right, rgb(13, 21, 52) 40%, rgba(13, 21, 52, .9) 60%)" });
   return (
     <>
       <Button openModal={open} />
