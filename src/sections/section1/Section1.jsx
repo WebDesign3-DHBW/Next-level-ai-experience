@@ -12,6 +12,10 @@ function Section1({ fullpageApi }) {
           Intelligenz in Produkten, Dienstleistungen oder für interne Prozesse eingesetzt. Erfahren
           Sie mehr über den Stellenwert von KI in der Deutschen Wirtschaft.
         </p>
+        <p>
+          Semesterarbeit des Moduls „Multimediales Informationsdesign“ des Fachbereichs Onlinemedien
+          der DHBW Mosbach 2021.{" "}
+        </p>
       </div>
       <Particles
         id="tsparticles"
