@@ -3,7 +3,6 @@ import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import { buchHref } from "../../svg/svgHref";
-import handleViewport from "react-in-viewport";
 
 am4core.useTheme(am4themes_animated);
 
@@ -60,23 +59,18 @@ function Chart1(props) {
     pieSeries2.dataFields.value = "Gesamtwirtschaft";
     pieSeries2.dataFields.category = "Nutzen";
     pieSeries2.slices.template.strokeWidth = 0;
-    pieSeries2.slices.template.states.getKey(
-      "hover"
-    ).properties.shiftRadius = 0;
+    pieSeries2.slices.template.states.getKey("hover").properties.shiftRadius = 0;
     pieSeries2.slices.template.states.getKey("hover").properties.scale = 1.1;
     pieSeries2.labels.template.disabled = true;
     pieSeries2.ticks.template.disabled = true;
-    pieSeries2.slices.template.tooltipText =
-      "Gesamtwirtschaft: {Gesamtwirtschaft}";
+    pieSeries2.slices.template.tooltipText = "Gesamtwirtschaft: {Gesamtwirtschaft}";
     pieSeries2.colors.list = [
       am4core.color("#4F4FFE"),
       am4core.color("rgba(165, 173, 180, 0.3)"), // Note: Here
     ];
 
     // Note: Here
-    pieSeries2.slices.template.propertyFields.stroke = am4core.color(
-      "rgb(0, 77, 136)"
-    );
+    pieSeries2.slices.template.propertyFields.stroke = am4core.color("rgb(0, 77, 136)");
     pieSeries2.slices.template.strokeWidth = 2;
     pieSeries2.slices.template.strokeOpacity = 1;
     pieSeries2.slices.template.fillOpacity = 0.15;
@@ -91,8 +85,10 @@ function Chart1(props) {
 
     const slice1 = pieSeries.slices.template;
     slice1.states.getKey("hover").properties.scale = 1;
+    slice1.states.getKey("active").properties.shiftRadius = 0;
     const slice2 = pieSeries2.slices.template;
     slice2.states.getKey("hover").properties.scale = 1;
+    slice2.states.getKey("active").properties.shiftRadius = 0;
 
     pieSeries.tooltip.label.adapter.add("text", function (text, target) {
       if (target.dataItem && target.dataItem.values.value.percent === 41) {
@@ -133,9 +129,7 @@ function Chart1(props) {
     x.logo.disabled = "true";
     chart.current = x;
   }, []); // end am4core.ready()
-  return (
-    <div id="chartdiv_sec6" style={{ width: "100%", height: "300px" }}></div>
-  );
+  return <div id="chartdiv_sec6" style={{ width: "100%", height: "300px" }}></div>;
 }
 
 export default Chart1;

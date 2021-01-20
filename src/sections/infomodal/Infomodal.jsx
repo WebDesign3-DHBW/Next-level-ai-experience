@@ -22,20 +22,22 @@ const Button = ({ openModal }) => {
   }
 
   return (
-      <button className="modalButton" ref={btnRef} onClick={handleClick}>
-        <MdInfoOutline size={40}/>
-      </button>
+    <button className="modalButton" ref={btnRef} onClick={handleClick}>
+      <MdInfoOutline size={40} />
+    </button>
   );
 };
 
 export const Infomodal = () => {
-  const { modalProps, open } = useModal({ background: "radial-Gradient(at top right, rgb(13, 21, 52) 40%, rgba(13, 21, 52, .9) 60%)" });
+  const { modalProps, open } = useModal({
+    background: "radial-Gradient(at top right, rgb(13, 21, 52) 40%, rgba(13, 21, 52, .9) 60%)",
+  });
   return (
     <>
       <Button openModal={open} />
       <Modal {...modalProps}>
-        <div class="container">
-          <table class="table">
+        <div className="container">
+          <table className="table">
             <thead>
               <tr>
                 <th>Icon</th>
@@ -47,7 +49,7 @@ export const Infomodal = () => {
             <tbody>
               <tr>
                 <td className="infoSvgContainer">
-                  <img src={IKT} alt="IKT"/>
+                  <img src={IKT} alt="IKT" />
                 </td>
                 <td>IKT</td>
                 <td>Informations- und Kommunikationstechnologien</td>
@@ -59,7 +61,7 @@ export const Infomodal = () => {
               </tr>
               <tr>
                 <td className="infoSvgContainer">
-                  <img src={CPG} alt="CPG" />                
+                  <img src={CPG} alt="CPG" />
                 </td>
                 <td>Chemie/ Ph., Grundst. In.</td>
                 <td>Chemie-, Pharma und Grundstoffindustrie</td>
@@ -87,8 +89,8 @@ export const Infomodal = () => {
               </tr>
               <tr>
                 <td className="infoSvgContainer">
-                  <img src={SVG} alt="SVG" />                
-                  </td>
+                  <img src={SVG} alt="SVG" />
+                </td>
                 <td>Sonst. Verarb. Gew.</td>
                 <td>Sonstiges Verarbeitendes Gewerbe</td>
                 <td>
@@ -100,7 +102,7 @@ export const Infomodal = () => {
               </tr>
               <tr>
                 <td className="infoSvgContainer">
-                  <img src={VEB} alt="VEB" />                
+                  <img src={VEB} alt="VEB" />
                 </td>
                 <td>Ver-/ Entsorg., Bergb.</td>
                 <td>Ver- und Entsorgung, Bergbau</td>
