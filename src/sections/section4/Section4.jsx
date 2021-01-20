@@ -22,12 +22,12 @@ function Section4() {
                 <Chart3 />
               </div>
             </div>
-            <div className="w-25 mt-3">
+            <div className="col-2 mt-3">
               <p>
                 Im Jahr 2019 setzten rund 17.500 Unternehmen in Deutschland im
                 Berichtskreis der Innovationserhebung Verfahren der Künstlichen
                 Intelligenz in ihrem Unternehmen ein. Dies entspricht einem
-                Anteil von 5,8 %. In der{' '}
+                Anteil von <br/>5,8 %. In der{' '}
                 <b>IKT-Branche liegt dieser Anteilswert mit 17,8 % </b>
                 erheblich höher. Auch die Ausgaben im Bereich KI (0,58 % des
                 Umsatzes) und der Anteil der hauptsächlich Beschäftigen (1,51 %)
