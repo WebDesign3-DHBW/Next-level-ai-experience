@@ -3,17 +3,6 @@ import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import am4themes_wdTheme from "../../theme";
-import Chemie from "../../svg/PhGrst.svg";
-import Entsorg from "../../svg/EntsorgBgb.svg";
-import Fahrzeugbau from "../../svg/Fahrzeugbau.svg";
-import Finanzdienstleist from "../../svg/Finanzdienstleist.svg";
-import Großhandel from "../../svg/Großhandel.svg";
-import IKT from "../../svg/IKT.svg";
-import Maschinenbau from "../../svg/Maschinb.svg";
-import SonstVerarb from "../../svg/SonstVerarbGew.svg";
-import SonstDienst from "../../svg/SonstDienstleist.svg";
-import UnternNaheDiesnt from "../../svg/UnternnaheDienstl.svg";
-import VerkehrLogistik from "../../svg/VerkehrLogistik.svg";
 import handleViewport from "react-in-viewport";
 
 am4core.useTheme(am4themes_animated);
@@ -40,7 +29,6 @@ function PieOfAPie(props) {
         {
           branch: "IKT",
           amount: 1.5,
-          icon: IKT,
           color: am4core.color("#EDE750"),
           subData: [
             { name: "interne laufende Aufwendungen", value: 88 },
@@ -51,7 +39,6 @@ function PieOfAPie(props) {
         {
           branch: "Elektrotechnik, Maschinenbau",
           amount: 0.68,
-          icon: Maschinenbau,
           color: am4core.color("#F09443"),
           subData: [
             { name: "interne laufende Aufwendungen", value: 66 },
@@ -62,7 +49,6 @@ function PieOfAPie(props) {
         {
           branch: "Fahrzeugbau",
           amount: 0.84,
-          icon: Fahrzeugbau,
           color: am4core.color("#FFF8F9"),
 
           subData: [
@@ -74,7 +60,6 @@ function PieOfAPie(props) {
         {
           branch: "Unternehmensnahe Dienstleistungen",
           amount: 0.65,
-          icon: UnternNaheDiesnt,
           color: am4core.color("#FA2662"),
           subData: [
             { name: "interne laufende Aufwendungen", value: 74 },
@@ -85,7 +70,6 @@ function PieOfAPie(props) {
         {
           branch: "Sonstiges Verarbeitendes Gewerbe",
           amount: 0.26,
-          icon: SonstVerarb,
           color: am4core.color("#E1AAFE"),
           subData: [
             { name: "interne laufende Aufwendungen", value: 69 },
@@ -96,7 +80,6 @@ function PieOfAPie(props) {
         {
           branch: "Finanzdienstleistungen",
           amount: 0.24,
-          icon: Finanzdienstleist,
           color: am4core.color("#78DF6C"),
           subData: [
             { name: "interne laufende Aufwendungen", value: 71 },
@@ -107,7 +90,6 @@ function PieOfAPie(props) {
         {
           branch: "Sonstige Dienstleistungen",
           amount: 0.19,
-          icon: SonstDienst,
           color: am4core.color("#4985D4"),
           subData: [
             { name: "interne laufende Aufwendungen", value: 75 },
@@ -118,7 +100,6 @@ function PieOfAPie(props) {
         {
           branch: "Verkehr und Logistik",
           amount: 0.16,
-          icon: VerkehrLogistik,
           color: am4core.color("#4CC8DD"),
           subData: [
             { name: "interne laufende Aufwendungen", value: 72 },
@@ -129,7 +110,6 @@ function PieOfAPie(props) {
         {
           branch: "Chemie-/Pharma-, Grundstoffindustrie",
           amount: 0.14,
-          icon: Chemie,
           color: am4core.color("#0FAA94"),
           subData: [
             { name: "interne laufende Aufwendungen", value: 69 },
@@ -140,7 +120,6 @@ function PieOfAPie(props) {
         {
           branch: "Ver- und Entsorgung, Bergbau",
           amount: 0.07,
-          icon: Entsorg,
           color: am4core.color("#BB57FE"),
           subData: [
             { name: "interne laufende Aufwendungen", value: 73 },
@@ -151,7 +130,6 @@ function PieOfAPie(props) {
         {
           branch: "Großhandel",
           amount: 0.07,
-          icon: Großhandel,
           color: am4core.color("#FF00FF"),
           subData: [
             { name: "interne laufende Aufwendungen", value: 72 },
@@ -170,6 +148,7 @@ function PieOfAPie(props) {
       pieSeries.dataFields.value = "amount";
       pieSeries.dataFields.category = "branch";
       pieSeries.labels.template.text = "{amount}";
+      pieSeries.labels.template.radius = am4core.percent(10);
 
       pieSeries.alignLabels = false;
 
@@ -198,9 +177,9 @@ function PieOfAPie(props) {
       pieSeries2.ticks.template.disabled = true;
       pieSeries2.alignLabels = false;
       pieSeries2.events.on("positionchanged", updateLines);
-      // pieSeries2.slices.template.fill = am4core.color("rgba(0, 0, 0, 0)");
       pieSeries2.slices.template.stroke = am4core.color("#ccc");
       pieSeries2.slices.template.strokeWidth = 1;
+      pieSeries2.slices.template.tooltipText = "{name} {value}%";
 
       let title = x.titles.create();
       title.text =
